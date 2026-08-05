@@ -1,0 +1,285 @@
+---
+// Shared detail modal for archival items. Populated via JS:
+// window.openItemModal(itemPayload) — see src/lib/catalog.ts for the shape.
+---
+
+<div class="modal-backdrop item-modal-backdrop" id="item-modal-backdrop" aria-hidden="true">
+  <div class="modal item-modal" id="item-modal" role="dialog" aria-modal="true" aria-labelledby="item-modal-title">
+    <button class="modal__close" id="item-modal-close" aria-label="Close item details">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="item-modal__content">
+      <figure class="item-modal__figure">
+        <img src="" alt="" id="item-modal-image" />
+      </figure>
+
+      <div class="item-modal__meta">
+        <ul class="item-modal__tags" id="item-modal-tags" aria-label="Tags"></ul>
+        <h2 class="item-modal__title" id="item-modal-title"></h2>
+        <span class="item-modal__date annotation" id="item-modal-date"></span>
+        <p class="item-modal__caption" id="item-modal-caption"></p>
+
+        <dl class="item-modal__details">
+          <div class="item-modal__detail">
+            <dt>Source</dt>
+            <dd id="item-modal-source"></dd>
+          </div>
+          <div class="item-modal__detail">
+            <dt>Rights</dt>
+            <dd id="item-modal-rights"></dd>
+          </div>
+          <div class="item-modal__detail" id="item-modal-people-row" hidden>
+            <dt>Related People</dt>
+            <dd id="item-modal-people"></dd>
+          </div>
+          <div class="item-modal__detail" id="item-modal-productions-row" hidden>
+            <dt>Related Productions</dt>
+            <dd id="item-modal-productions"></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .item-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2100; /* above the person modal so it can stack on top */
+    background: rgba(26, 20, 16, 0.9);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    overflow-y: auto;
+  }
+
+  .item-modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .item-modal {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 90vh;
+    background: var(--color-cream);
+    overflow-y: auto;
+    transform: translateY(20px) scale(0.98);
+    transition: transform var(--transition-medium);
+  }
+
+  .item-modal-backdrop.open .item-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .item-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-aged-gold), var(--color-rust));
+  }
+
+  .modal__close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-cream);
+    border: 1px solid var(--color-sepia);
+    color: var(--color-tobacco);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+  }
+
+  .modal__close:hover {
+    background: var(--color-espresso);
+    border-color: var(--color-espresso);
+    color: var(--color-cream);
+  }
+
+  .item-modal__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .item-modal__figure {
+    margin: 0;
+    background: var(--color-parchment);
+    padding: 8px;
+    border: 1px solid var(--color-sepia);
+    align-self: start;
+  }
+
+  .item-modal__figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: sepia(10%);
+  }
+
+  .item-modal__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0 0 var(--space-sm);
+    padding: 0;
+  }
+
+  :global(.tag-chip) {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    border: 1px solid var(--color-sepia);
+    background: var(--color-parchment);
+    padding: 0.25em 0.75em;
+  }
+
+  .item-modal__title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin-bottom: 0.25em;
+  }
+
+  .item-modal__date {
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .item-modal__caption {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+
+  .item-modal__details {
+    border-top: 1px solid var(--color-sepia);
+    margin: 0;
+  }
+
+  .item-modal__detail[hidden] {
+    display: none;
+  }
+
+  .item-modal__detail {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-parchment);
+  }
+
+  .item-modal__detail dt {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    padding-top: 0.35em;
+  }
+
+  .item-modal__detail dd {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  .item-modal__detail dd a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 700px) {
+    .item-modal__content {
+      grid-template-columns: 1fr;
+      padding: var(--space-md);
+    }
+
+    .item-modal__detail {
+      grid-template-columns: 1fr;
+      gap: 0.25em;
+    }
+  }
+</style>
+
+<script>
+  import { createModalController } from '../scripts/modal-controller';
+  import { withBase } from '../lib/url';
+
+  const backdrop = document.getElementById('item-modal-backdrop')!;
+  const modal = document.getElementById('item-modal')!;
+  const closeBtn = document.getElementById('item-modal-close')!;
+  const controller = createModalController(backdrop, modal);
+
+  closeBtn.addEventListener('click', () => controller.close());
+
+  function fillLinks(rowId: string, cellId: string, entries: { href: string; label: string }[]) {
+    const row = document.getElementById(rowId)!;
+    const cell = document.getElementById(cellId)!;
+    cell.textContent = '';
+    row.hidden = entries.length === 0;
+    entries.forEach((entry, i) => {
+      if (i > 0) cell.appendChild(document.createTextNode(', '));
+      const a = document.createElement('a');
+      a.href = entry.href;
+      a.textContent = entry.label;
+      cell.appendChild(a);
+    });
+  }
+
+  window.openItemModal = function (item: any) {
+    const image = document.getElementById('item-modal-image') as HTMLImageElement;
+    image.src = item.fullSrc;
+    image.alt = item.title;
+
+    document.getElementById('item-modal-title')!.textContent = item.title;
+    document.getElementById('item-modal-date')!.textContent = item.date;
+    document.getElementById('item-modal-caption')!.textContent = item.caption;
+    document.getElementById('item-modal-source')!.textContent = item.source;
+    document.getElementById('item-modal-rights')!.textContent = item.rights;
+
+    const tags = document.getElementById('item-modal-tags')!;
+    tags.textContent = '';
+    for (const tag of item.tags) {
+      const li = document.createElement('li');
+      li.className = 'tag-chip';
+      li.textContent = tag.label;
+      tags.appendChild(li);
+    }
+
+    fillLinks(
+      'item-modal-people-row',
+      'item-modal-people',
+      item.people.map((p: any) => ({ href: withBase('/people'), label: p.name }))
+    );
+    fillLinks(
+      'item-modal-productions-row',
+      'item-modal-productions',
+      item.productions.map((p: any) => ({ href: withBase('/productions'), label: `${p.title} (${p.year})` }))
+    );
+
+    controller.open(closeBtn as HTMLElement);
+  };
+</script>

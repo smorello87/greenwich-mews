@@ -1,0 +1,87 @@
+[
+  {
+    "id": "hero",
+    "type": "hero",
+    "title": "Greenwich Mews Theater",
+    "subtitle": "Interfaith, Interracial Theater in New York City",
+    "tagline": "1951 — 1973",
+    "intro": "A companion to the book Brotherhood or the New Hell",
+    "image": "hero-theater.png",
+    "imageAlt": "The Greenwich Mews Theater facade on a New York City street"
+  },
+  {
+    "id": "origins",
+    "type": "section",
+    "year": "1951",
+    "title": "Origins",
+    "heading": "Born from Brotherhood",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "",
+    "imageAlt": "Archival photograph of the original Greenwich Mews Theater space",
+    "imagePosition": "right"
+  },
+  {
+    "id": "breaking-barriers",
+    "type": "section",
+    "year": "1952–1956",
+    "title": "Breaking Barriers",
+    "heading": "Where Jim Crow Had No Seat",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisi vel tincidunt lacinia, nisl nunc aliquet nunc, vitae aliquam nisl nunc vel nunc.\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
+    "image": "",
+    "imageAlt": "Interracial cast members in a Greenwich Mews Theater production",
+    "imagePosition": "left"
+  },
+  {
+    "id": "productions",
+    "type": "section",
+    "year": "1955–1965",
+    "title": "The Productions",
+    "heading": "A Stage for the Movement",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum.\n\nAenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla.",
+    "image": "",
+    "imageAlt": "A dramatic production scene from the Greenwich Mews Theater",
+    "imagePosition": "right"
+  },
+  {
+    "id": "network",
+    "type": "section",
+    "year": "1959–1969",
+    "title": "The Network",
+    "heading": "A Constellation of Talent",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.\n\nCras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+    "image": "",
+    "imageAlt": "Artists and performers at the Greenwich Mews Theater",
+    "imagePosition": "left"
+  },
+  {
+    "id": "decline",
+    "type": "section",
+    "year": "1970–1973",
+    "title": "Decline & Legacy",
+    "heading": "The Curtain Falls",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.\n\nEtiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+    "image": "",
+    "imageAlt": "The Greenwich Mews Theater in its final years",
+    "imagePosition": "right"
+  },
+  {
+    "id": "cta",
+    "type": "cta",
+    "heading": "Explore the Archive",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "buttons": [
+      {
+        "label": "People & Documents",
+        "href": "/people"
+      },
+      {
+        "label": "Productions",
+        "href": "/productions"
+      },
+      {
+        "label": "The Book",
+        "href": "/book"
+      }
+    ]
+  }
+]

@@ -1,0 +1,210 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PersonCard from '../components/PersonCard.astro';
+import PersonModal from '../components/PersonModal.astro';
+import ItemModal from '../components/ItemModal.astro';
+import { getPersonPayloads } from '../lib/catalog';
+import { personImage } from '../lib/images';
+import { withBase } from '../lib/url';
+
+const personPayloads = await getPersonPayloads();
+const people = await getCollection('people');
+const thumbnailById = new Map(
+  await Promise.all(
+    people.map(async (p) => [p.data.id, await personImage(p.data.thumbnail)] as const)
+  )
+);
+---
+
+<BaseLayout
+  title="People & Documents"
+  description="Explore the key figures of the Greenwich Mews Theater and the archival documents that tell their stories."
+>
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="year-tag fade-in">1951–1973</span>
+      <h1 class="page-hero__title fade-in">People & Documents</h1>
+      <p class="page-hero__subtitle fade-in">The artists, activists, and visionaries who shaped the Greenwich Mews</p>
+    </div>
+  </section>
+
+  <section class="intro section">
+    <div class="container container--narrow">
+      <div class="intro__content fade-in">
+        <p class="intro__lead">
+          The documents presented here offer a window into a remarkable moment in American theater history.
+          They are drawn from FBI surveillance files, theatrical archives, and personal collections.
+        </p>
+        <p>
+          These materials are necessarily selective. The FBI files, in particular, raise complex questions
+          about privacy, surveillance, and the ethics of using documents created to suppress the very
+          movements they now help us understand. We present them as primary sources that illuminate both
+          the theater's history and the forces arrayed against it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="people section">
+    <div class="container">
+      <div class="people__grid stagger">
+        {personPayloads.map((person) => (
+          <div class="fade-in">
+            <PersonCard
+              id={person.id}
+              name={person.name}
+              role={person.role}
+              years={person.years}
+              thumbnail={thumbnailById.get(person.id)!}
+              documentCount={person.items.length}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="archive-note section">
+    <div class="container container--narrow">
+      <div class="archive-note__inner fade-in">
+        <span class="stamp">Note</span>
+        <h3>About These Archives</h3>
+        <p>
+          The documents featured on this site are held by various institutions including the
+          New York Public Library for the Performing Arts, the Schomburg Center for Research
+          in Black Culture, the Tamiment Library at NYU, and the National Archives.
+          FBI files were obtained through Freedom of Information Act requests.
+        </p>
+        <p>
+          For full citations and additional archival resources, please consult
+          <a href={withBase('/book')}>the book</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <PersonModal />
+  <ItemModal />
+</BaseLayout>
+
+<script define:vars={{ personPayloads }}>
+  // Store people data for modal access
+  window.peopleData = personPayloads;
+
+  // Add click handlers to person cards
+  document.querySelectorAll('.person-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const personId = card.dataset.personId;
+      const person = window.peopleData.find(p => p.id === personId);
+      if (person && window.openPersonModal) {
+        window.openPersonModal(person);
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    text-align: center;
+    background: var(--color-parchment);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-sepia), transparent);
+  }
+
+  .page-hero__inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .page-hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: var(--space-sm) 0;
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+
+  /* Intro */
+  .intro__content {
+    text-align: center;
+  }
+
+  .intro__lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+  }
+
+  .intro__content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* People Grid */
+  .people__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+  }
+
+  /* Archive Note */
+  .archive-note {
+    background: var(--color-parchment);
+  }
+
+  .archive-note__inner {
+    padding: var(--space-md);
+    border: 1px solid var(--color-sepia);
+    position: relative;
+  }
+
+  .archive-note__inner .stamp {
+    position: absolute;
+    top: calc(-1 * var(--space-xs));
+    left: var(--space-md);
+    background: var(--color-parchment);
+    padding: 0 var(--space-xs);
+  }
+
+  .archive-note__inner h3 {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+    color: var(--color-tobacco);
+  }
+
+  .archive-note__inner p {
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .archive-note__inner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .archive-note__inner a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

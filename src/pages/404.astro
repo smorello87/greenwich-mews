@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="The page you are looking for could not be found."
+>
+  <section class="not-found">
+    <div class="not-found__inner">
+      <span class="stamp">File Missing</span>
+      <h1 class="not-found__code">404</h1>
+      <p class="not-found__message">
+        This record could not be located in the archive. It may have been moved,
+        lost, or never catalogued.
+      </p>
+      <div class="not-found__actions">
+        <a href={withBase('/')} class="btn">Return to the Theater</a>
+        <a href={withBase('/archive')} class="btn">Browse the Archive</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+  }
+
+  .not-found__inner {
+    max-width: 32rem;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-sepia);
+    background: var(--color-parchment);
+    position: relative;
+  }
+
+  .not-found__inner .stamp {
+    position: absolute;
+    top: calc(-1 * var(--space-xs));
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-parchment);
+    padding: 0 var(--space-xs);
+  }
+
+  .not-found__code {
+    font-size: clamp(4rem, 12vw, 7rem);
+    letter-spacing: 0.05em;
+    color: var(--color-espresso);
+    margin-bottom: var(--space-xs);
+  }
+
+  .not-found__message {
+    font-style: italic;
+    color: var(--color-tobacco);
+    margin: 0 auto var(--space-md);
+  }
+
+  .not-found__actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

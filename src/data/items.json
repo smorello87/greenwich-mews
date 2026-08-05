@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hughes-fbi-report-1953",
+    "title": "FBI Surveillance Report",
+    "image": "document-fbi.png",
+    "caption": "FBI field report documenting Hughes's involvement with the Greenwich Mews Theater and alleged Communist Party connections.",
+    "date": "1953",
+    "source": "National Archives, FBI Records",
+    "rights": "Public Domain",
+    "tags": ["fbi-file"],
+    "people": ["langston-hughes"],
+    "productions": []
+  },
+  {
+    "id": "simply-heavenly-playbill-1957",
+    "title": "Simply Heavenly Playbill",
+    "image": "document-playbill.png",
+    "caption": "Original playbill from the 1957 production of Simply Heavenly, one of Hughes's most popular musical plays.",
+    "date": "1957",
+    "source": "New York Public Library for the Performing Arts",
+    "rights": "Used with permission",
+    "tags": ["playbill"],
+    "people": ["langston-hughes"],
+    "productions": ["simply-heavenly-1957"]
+  },
+  {
+    "id": "holt-equity-letter-1955",
+    "title": "Letter to Actors' Equity",
+    "image": "document-letter.png",
+    "caption": "Correspondence regarding the theater's non-discriminatory hiring practices and Equity's response.",
+    "date": "1955",
+    "source": "Tamiment Library, NYU",
+    "rights": "Used with permission",
+    "tags": ["letter"],
+    "people": ["stella-holt"],
+    "productions": []
+  },
+  {
+    "id": "holt-fbi-file-1958",
+    "title": "FBI File Excerpt",
+    "image": "document-fbi.png",
+    "caption": "FBI surveillance document listing Holt's affiliations with civil rights and progressive organizations.",
+    "date": "1958",
+    "source": "National Archives, FBI Records",
+    "rights": "Public Domain",
+    "tags": ["fbi-file"],
+    "people": ["stella-holt"],
+    "productions": []
+  },
+  {
+    "id": "holt-backstage-1960",
+    "title": "Backstage at the Mews",
+    "image": "production-1.png",
+    "caption": "Stella Holt directing rehearsals at the Greenwich Mews Theater, circa 1960.",
+    "date": "c. 1960",
+    "source": "Private Collection",
+    "rights": "Used with permission",
+    "tags": ["photograph", "performance"],
+    "people": ["stella-holt"],
+    "productions": []
+  },
+  {
+    "id": "purlie-victorious-program-1960",
+    "title": "Purlie Victorious Program",
+    "image": "document-playbill.png",
+    "caption": "Program from an early staging discussion of Purlie Victorious at the Mews before its Broadway run.",
+    "date": "1960",
+    "source": "Schomburg Center for Research in Black Culture",
+    "rights": "Used with permission",
+    "tags": ["program"],
+    "people": ["ossie-davis"],
+    "productions": []
+  },
+  {
+    "id": "dee-production-still-1958",
+    "title": "Production Still",
+    "image": "production-2.png",
+    "caption": "Ruby Dee in performance at the Greenwich Mews Theater.",
+    "date": "c. 1958",
+    "source": "New York Public Library for the Performing Arts",
+    "rights": "Used with permission",
+    "tags": ["photograph", "performance"],
+    "people": ["ruby-dee"],
+    "productions": []
+  },
+  {
+    "id": "land-beyond-the-river-script-1957",
+    "title": "A Land Beyond the River Script",
+    "image": "document-letter.png",
+    "caption": "Title page from the original script of A Land Beyond the River, which premiered at the Mews in 1957.",
+    "date": "1957",
+    "source": "Schomburg Center for Research in Black Culture",
+    "rights": "Used with permission",
+    "tags": ["script"],
+    "people": ["loften-mitchell"],
+    "productions": ["a-land-beyond-the-river-1957"]
+  },
+  {
+    "id": "trouble-in-mind-poster-1955",
+    "title": "Trouble in Mind Poster",
+    "image": "document-playbill.png",
+    "caption": "Original promotional poster for Trouble in Mind, which won the first Obie Award for Best Original Play in 1956.",
+    "date": "1955",
+    "source": "New York Public Library for the Performing Arts",
+    "rights": "Used with permission",
+    "tags": ["poster"],
+    "people": ["alice-childress"],
+    "productions": ["trouble-in-mind-1955"]
+  },
+  {
+    "id": "childress-fbi-reference-1956",
+    "title": "FBI File Reference",
+    "image": "document-fbi.png",
+    "caption": "FBI cross-reference document mentioning Childress in connection with the Greenwich Mews Theater.",
+    "date": "1956",
+    "source": "National Archives, FBI Records",
+    "rights": "Public Domain",
+    "tags": ["fbi-file"],
+    "people": ["alice-childress"],
+    "productions": []
+  }
+]

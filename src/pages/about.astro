@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+---
+
+<BaseLayout
+  title="About"
+  description="About the author, the project, and the archives behind this digital companion to Brotherhood or the New Hell."
+>
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <h1 class="page-hero__title fade-in">About</h1>
+      <p class="page-hero__subtitle fade-in">The author, the project, and the archives</p>
+    </div>
+  </section>
+
+  <section class="author section">
+    <div class="container">
+      <div class="author__grid">
+        <div class="author__image fade-in-left">
+          <div class="img-frame">
+            <img src={withBase('/images/author-portrait.webp')} alt="Hillary Miller" />
+          </div>
+        </div>
+
+        <div class="author__content fade-in-right">
+          <h2 class="section-heading">About the Author</h2>
+          <h3 class="author__name">Hillary Miller</h3>
+          <p class="author__title">Assistant Director, English M.A. Program<br/>Queens College, City University of New York</p>
+
+          <div class="author__bio">
+            <p>
+              Hillary Miller teaches twentieth and twenty-first century dramatic literature and performance in the English Department at Queens College (CUNY) where she serves as Assistant Director of the English M.A. program. She has published on numerous topics related to theatre post-World War II in the United States, including performance and urban space; racial, ethnic, and geographic inequalities in the arts; activist theatre traditions; and the politics of producing.
+            </p>
+            <p>
+              Her first book, <a href="https://nupress.northwestern.edu/9780810133884/drop-dead/" target="_blank" rel="noopener"><em>Drop Dead: Performance in Crisis, 1970s New York</em></a> (Northwestern University Press, 2016), won the John W. Frick Book Award from the American Theatre and Drama Society and the Barnard Hewitt Award for Outstanding Research in Theatre History from the American Society for Theatre Research. <a href="https://www.routledge.com/Playwrights-on-Television-Conversations-with-Dramatists-1st-Edition/Miller/p/book/9780815352242" target="_blank" rel="noopener"><em>Playwrights on Television: Conversations with Dramatists</em></a> (Routledge, 2020) explores the cultural and economic conditions of playwriting through eighteen edited interviews with prominent U.S.-based stage dramatists. She is currently researching a cultural history about the Greenwich Mews Theatre (1952-1973), one of the first professional theatres in New York to mount plays with integrated casts.
+            </p>
+            <p>
+              Her essays and reviews have appeared in <em>Lateral</em>, <em>PAJ</em>, <em>Performance Research</em>, <em>The Radical History Review</em>, <em>RiDE: The Journal of Applied Theatre and Performance</em>, <em>Theatre Journal</em>, and <em>Theatre Survey</em>. Recent book chapters include "Marching Off-Beat and On Screen: New York's Reform Movements & Charles Hale Hoyt's A Milk White Flag" in <a href="https://uipress.uiowa.edu/books/performing-progressive-era" target="_blank" rel="noopener"><em>Performing the Progressive Era: Immigration, Urban Life, and Nationalism on Stage, 1890-1920</em></a>, eds. J. Christopher Westgate and Max Shulman (University of Iowa Press, 2019), "Television as Theatre Text in the Austere Academy: A Curricular Exploration" in <a href="https://www.routledge.com/Theatre-and-Performance-in-the-Neoliberal-University-Responses-to-an-Academy/Solga/p/book/9781032239606" target="_blank" rel="noopener"><em>Theatre and Performance in the Neoliberal University: Responses to an Academy in Crisis</em></a>, ed. Kim Solga (Routledge, 2020) and "Vinnette Carroll, Langston Hughes, and the Creation of the Gospel Song-Play" in <a href="https://www.bloomsbury.com/us/the-great-north-american-stage-directors-set-1-9781350045699/" target="_blank" rel="noopener"><em>The Great North American Stage Directors, Vol. 4</em></a>, eds. Chase Bringardner and Henry Bial (Bloomsbury Methuen Drama, 2021).
+            </p>
+            <p>
+              She currently serves in the elected position of Vice President of Awards for the Association for Theatre in Higher Education (ATHE), and previously served as Editorial Committee co-leader for the American Theatre and Drama Society (ATDS).
+            </p>
+            <p>
+              She received her Ph.D. in Theatre and Performance from the Graduate Center (City University of New York), an M.F.A. in Dramatic Writing from the Tisch School of the Arts, New York University, and a B.A. in Theatre and Women's Studies from Dartmouth College. She has taught at Baruch College (CUNY), California State University-Northridge, and Stanford University.
+            </p>
+          </div>
+
+          <div class="author__links">
+            <a href="https://www.gc.cuny.edu/people/hillary-miller" class="btn" target="_blank" rel="noopener">Academic Profile</a>
+            <a href="mailto:Hillary.Miller@qc.cuny.edu" class="author__email">Hillary.Miller@qc.cuny.edu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">About the Project</h2>
+
+      <div class="project__content fade-in">
+        <p>
+          <em>Brotherhood or the New Hell</em> began as a dissertation project and evolved over
+          more than a decade of archival research. The book draws on materials from over a dozen
+          archives, including previously classified FBI surveillance files obtained through
+          Freedom of Information Act requests.
+        </p>
+
+        <p>
+          This companion website was developed to extend the book's reach beyond traditional
+          academic publishing. It presents a curated selection of archival materials, a searchable
+          database of productions, and biographical profiles of key figures—resources that could
+          not be included in the print edition but that enrich our understanding of the theater's
+          history.
+        </p>
+
+        <h3>Research Methods</h3>
+        <p>
+          The productions list was compiled from playbills, reviews, institutional records, and
+          oral histories. Where sources conflict, I have noted discrepancies in the book's
+          appendix. The biographical entries synthesize information from published sources,
+          archival collections, and in some cases, interviews with surviving participants and
+          their families.
+        </p>
+
+        <h3>A Note on FBI Files</h3>
+        <p>
+          The FBI maintained surveillance files on the Greenwich Mews Theater and many of its
+          participants. These documents, created by an agency that sought to suppress the very
+          movements they now help us understand, raise complex ethical questions.
+        </p>
+        <p>
+          I present excerpts from these files as primary sources that illuminate both the
+          theater's history and the machinery of state surveillance directed against progressive
+          movements. They should be read critically, with awareness that they reflect the Bureau's
+          biases and priorities rather than objective truth. For a fuller discussion of the
+          ethics and methodology of working with surveillance archives, see the book's introduction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="archives section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">Archives & Collections</h2>
+
+      <div class="archives__list fade-in stagger">
+        <div class="archive-item">
+          <h4>New York Public Library for the Performing Arts</h4>
+          <p>Billy Rose Theatre Division, including playbill and photograph collections</p>
+        </div>
+        <div class="archive-item">
+          <h4>Schomburg Center for Research in Black Culture</h4>
+          <p>Manuscript, Archives and Rare Books Division</p>
+        </div>
+        <div class="archive-item">
+          <h4>Tamiment Library & Robert F. Wagner Labor Archives</h4>
+          <p>New York University</p>
+        </div>
+        <div class="archive-item">
+          <h4>National Archives and Records Administration</h4>
+          <p>FBI Records obtained through FOIA requests</p>
+        </div>
+        <div class="archive-item">
+          <h4>Private Collections</h4>
+          <p>Materials shared by the families of theater participants</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="credits section">
+    <div class="container container--narrow">
+      <h2 class="section-heading section-heading--center fade-in">Acknowledgments</h2>
+
+      <div class="credits__content fade-in">
+        <div class="credits__group">
+          <h4>Funding</h4>
+          <p>
+            This project was supported by a PSC-CUNY Research Award and institutional support
+            from Queens College and the CUNY Graduate Center.
+          </p>
+        </div>
+
+        <div class="credits__group">
+          <h4>Institutional Partners</h4>
+          <ul>
+            <li>Queens College, City University of New York</li>
+            <li>American Social History Project / Center for Media and Learning</li>
+            <li>New Media Lab, CUNY Graduate Center</li>
+          </ul>
+        </div>
+
+        <div class="credits__group">
+          <h4>Website</h4>
+          <p>
+            Site design and development by <a href="https://makeko.com" target="_blank" rel="noopener">Makeko Inc.</a>,
+            in collaboration with the American Social History Project / New Media Lab.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section">
+    <div class="container container--narrow">
+      <div class="contact__inner fade-in">
+        <h3>Get in Touch</h3>
+        <p>
+          For inquiries about the book, this website, or the Greenwich Mews Theater project,
+          please contact:
+        </p>
+        <a href="mailto:Hillary.Miller@qc.cuny.edu" class="contact__email">Hillary.Miller@qc.cuny.edu</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    text-align: center;
+    background: var(--color-parchment);
+    position: relative;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-sepia), transparent);
+  }
+
+  .page-hero__inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .page-hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+  }
+
+  /* Section Headings */
+  .section-heading {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-tobacco);
+    margin-bottom: var(--space-md);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-rust);
+  }
+
+  .section-heading--center {
+    display: block;
+    text-align: center;
+  }
+
+  .section-heading--center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Author Section */
+  .author__grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .author__image .img-frame {
+    aspect-ratio: 3/4;
+  }
+
+  .author__name {
+    font-size: 2rem;
+    margin-bottom: 0.25em;
+  }
+
+  .author__title {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--color-tobacco);
+    margin-bottom: var(--space-md);
+  }
+
+  .author__bio p {
+    margin-bottom: var(--space-sm);
+  }
+
+  .author__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .author__email {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-tobacco);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Project Section */
+  .project {
+    background: var(--color-parchment);
+  }
+
+  .project__content h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+
+  .project__content p {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Archives Section */
+  .archives__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .archive-item {
+    padding: var(--space-sm) var(--space-md);
+    border-left: 3px solid var(--color-sepia);
+    background: var(--color-parchment);
+    transition: border-color var(--transition-fast);
+  }
+
+  .archive-item:hover {
+    border-color: var(--color-rust);
+  }
+
+  .archive-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: 0.25em;
+  }
+
+  .archive-item p {
+    font-size: 0.9375rem;
+    color: var(--color-tobacco);
+  }
+
+  /* Credits Section */
+  .credits {
+    background: var(--color-parchment);
+  }
+
+  .credits__content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .credits__group {
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  .credits__group h4 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-faded-blue);
+    margin-bottom: var(--space-xs);
+  }
+
+  .credits__group ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .credits__group li {
+    margin-bottom: 0.25em;
+  }
+
+  .credits__group a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Contact Section */
+  .contact__inner {
+    text-align: center;
+    padding: var(--space-lg);
+    border: 2px solid var(--color-espresso);
+  }
+
+  .contact__inner h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__inner p {
+    margin-bottom: var(--space-sm);
+    color: var(--color-tobacco);
+  }
+
+  .contact__email {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-rust);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 900px) {
+    .author__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .author__image {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .author__content {
+      text-align: center;
+    }
+
+    .author__links {
+      justify-content: center;
+    }
+
+    .section-heading {
+      display: block;
+      text-align: center;
+    }
+
+    .section-heading::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>

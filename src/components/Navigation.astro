@@ -1,0 +1,243 @@
+---
+import { withBase, isCurrent } from '../lib/url';
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'The Theater' },
+  { href: '/people', label: 'People & Documents' },
+  { href: '/productions', label: 'Productions' },
+  { href: '/archive', label: 'Archive' },
+  { href: '/book', label: 'The Book' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<nav class="nav" id="main-nav">
+  <div class="nav__inner">
+    <a href={withBase('/')} class="nav__logo">
+      <span class="nav__logo-text">Greenwich Mews</span>
+      <span class="nav__logo-sub">Theater 1951–1973</span>
+    </a>
+
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav__toggle-line"></span>
+      <span class="nav__toggle-line"></span>
+      <span class="nav__toggle-line"></span>
+    </button>
+
+    <ul class="nav__links" id="nav-links">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={withBase(item.href)}
+            class:list={['nav__link', { 'nav__link--active': isCurrent(currentPath, item.href) }]}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(245, 240, 230, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-sepia);
+    transition: transform var(--transition-medium), box-shadow var(--transition-fast);
+  }
+
+  .nav--hidden {
+    transform: translateY(-100%);
+  }
+
+  .nav--scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .nav__logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.1;
+  }
+
+  .nav__logo-text {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-espresso);
+    letter-spacing: -0.01em;
+  }
+
+  .nav__logo-sub {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-tobacco);
+  }
+
+  .nav__links {
+    display: flex;
+    list-style: none;
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    text-decoration: none;
+    padding: 0.5em 0;
+    position: relative;
+    transition: color var(--transition-fast);
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-rust);
+    transition: width var(--transition-fast);
+  }
+
+  .nav__link:hover,
+  .nav__link--active {
+    color: var(--color-espresso);
+  }
+
+  .nav__link:hover::after,
+  .nav__link--active::after {
+    width: 100%;
+  }
+
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav__toggle-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-espresso);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .nav__toggle[aria-expanded="true"] .nav__toggle-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav__toggle[aria-expanded="true"] .nav__toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle[aria-expanded="true"] .nav__toggle-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 900px) {
+    .nav__toggle {
+      display: flex;
+    }
+
+    .nav__links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--color-cream);
+      border-bottom: 1px solid var(--color-sepia);
+      padding: var(--space-sm) var(--space-md);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--transition-fast);
+    }
+
+    .nav__links.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav__link {
+      display: block;
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--color-parchment);
+    }
+
+    .nav__links li:last-child .nav__link {
+      border-bottom: none;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    links?.classList.toggle('open');
+  });
+
+  // Hide nav on scroll down, show on scroll up
+  let lastScroll = 0;
+  const nav = document.getElementById('main-nav');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 100) {
+      nav?.classList.add('nav--scrolled');
+    } else {
+      nav?.classList.remove('nav--scrolled');
+    }
+
+    if (currentScroll > lastScroll && currentScroll > 200) {
+      nav?.classList.add('nav--hidden');
+    } else {
+      nav?.classList.remove('nav--hidden');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>

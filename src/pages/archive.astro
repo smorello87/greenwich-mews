@@ -1,0 +1,484 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ItemModal from '../components/ItemModal.astro';
+import { getItemPayloads, tagLabel } from '../lib/catalog';
+import { itemImage } from '../lib/images';
+import { getCollection } from 'astro:content';
+
+const itemPayloads = await getItemPayloads();
+const itemEntries = await getCollection('items');
+const imageById = new Map(
+  await Promise.all(
+    itemEntries.map(async (e) => [e.data.id, await itemImage(e.data.image)] as const)
+  )
+);
+
+const tagCounts = new Map<string, number>();
+for (const item of itemPayloads) {
+  for (const tag of item.tags) {
+    tagCounts.set(tag.slug, (tagCounts.get(tag.slug) ?? 0) + 1);
+  }
+}
+const tags = [...tagCounts.entries()]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .map(([slug, count]) => ({ slug, label: tagLabel(slug), count }));
+
+const searchText = (item: (typeof itemPayloads)[number]) =>
+  [
+    item.title,
+    item.caption,
+    item.date,
+    ...item.tags.map((t) => t.label),
+    ...item.people.map((p) => p.name),
+    ...item.productions.map((p) => p.title),
+  ]
+    .join(' ')
+    .toLowerCase();
+---
+
+<BaseLayout
+  title="Archive"
+  description="Browse the full collection of archival items — photographs, playbills, letters, FBI files, and more — from the Greenwich Mews Theater, 1951–1973."
+>
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="year-tag fade-in">1951–1973</span>
+      <h1 class="page-hero__title fade-in">The Archive</h1>
+      <p class="page-hero__subtitle fade-in">Photographs, playbills, letters, and surveillance files from the collection</p>
+    </div>
+  </section>
+
+  <section class="archive section">
+    <div class="container">
+      <div class="archive-controls fade-in">
+        <div class="archive-filters" role="group" aria-label="Filter by tag">
+          <span class="archive-filters__label">Filter</span>
+          {tags.map((tag) => (
+            <button
+              type="button"
+              class="filter-chip"
+              data-tag={tag.slug}
+              aria-pressed="false"
+            >
+              {tag.label}
+              <span class="filter-chip__count">{tag.count}</span>
+            </button>
+          ))}
+        </div>
+
+        <div class="archive-search">
+          <label for="archive-search" class="visually-hidden">Search the archive</label>
+          <input
+            type="search"
+            id="archive-search"
+            class="archive-search__input"
+            placeholder="Search titles, captions, people..."
+          />
+          <span class="archive-count"><span id="archive-count">{itemPayloads.length}</span> of {itemPayloads.length} items</span>
+        </div>
+      </div>
+
+      <div class="archive-grid stagger" id="archive-grid">
+        {itemPayloads.map((item) => (
+          <button
+            type="button"
+            class="archive-card fade-in"
+            data-item-id={item.id}
+            data-tags={item.tags.map((t) => t.slug).join(' ')}
+            data-search={searchText(item)}
+            aria-haspopup="dialog"
+          >
+            <span class="archive-card__image">
+              <Image src={imageById.get(item.id)!} alt={item.title} width={480} loading="lazy" />
+            </span>
+            <span class="archive-card__body">
+              <span class="archive-card__title">{item.title}</span>
+              <span class="archive-card__date">{item.date}</span>
+              <span class="archive-card__tags">
+                {item.tags.map((tag) => (
+                  <span class="tag-chip">{tag.label}</span>
+                ))}
+              </span>
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <p class="archive-empty" id="archive-empty" hidden>
+        No items match the current filters.
+        <button type="button" class="archive-empty__reset" id="archive-reset">Clear filters</button>
+      </p>
+    </div>
+  </section>
+
+  <section class="archive-note section">
+    <div class="container container--narrow">
+      <div class="archive-note__inner fade-in">
+        <span class="stamp">Note</span>
+        <h3>About These Materials</h3>
+        <p>
+          Items are tagged by type and subject — a single photograph may appear under both
+          Performance and Headshot, for example — and are cross-referenced with the people
+          and productions they document. Select an item for its full caption, source, and
+          rights information.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ItemModal />
+</BaseLayout>
+
+<script define:vars={{ itemPayloads }}>
+  window.archiveItems = Object.fromEntries(itemPayloads.map((i) => [i.id, i]));
+</script>
+
+<script>
+  const grid = document.getElementById('archive-grid')!;
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.archive-card'));
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.filter-chip'));
+  const searchInput = document.getElementById('archive-search') as HTMLInputElement;
+  const countEl = document.getElementById('archive-count')!;
+  const emptyEl = document.getElementById('archive-empty')!;
+  const resetBtn = document.getElementById('archive-reset')!;
+
+  const activeTags = new Set<string>();
+
+  function applyFilters() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    for (const card of cards) {
+      const cardTags = (card.dataset.tags ?? '').split(' ');
+      const tagMatch =
+        activeTags.size === 0 || cardTags.some((t) => activeTags.has(t));
+      const searchMatch =
+        !query || (card.dataset.search ?? '').includes(query);
+      const show = tagMatch && searchMatch;
+      card.hidden = !show;
+      if (show) visible++;
+    }
+    countEl.textContent = String(visible);
+    emptyEl.hidden = visible > 0;
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      const tag = chip.dataset.tag!;
+      if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        chip.setAttribute('aria-pressed', 'false');
+      } else {
+        activeTags.add(tag);
+        chip.setAttribute('aria-pressed', 'true');
+      }
+      applyFilters();
+    });
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+
+  resetBtn.addEventListener('click', () => {
+    activeTags.clear();
+    searchInput.value = '';
+    for (const chip of chips) chip.setAttribute('aria-pressed', 'false');
+    applyFilters();
+  });
+
+  for (const card of cards) {
+    card.addEventListener('click', () => {
+      const item = (window as any).archiveItems[card.dataset.itemId!];
+      if (item) window.openItemModal(item);
+    });
+  }
+</script>
+
+<style>
+  /* Page Hero (shared pattern) */
+  .page-hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    text-align: center;
+    background: var(--color-parchment);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-sepia), transparent);
+  }
+
+  .page-hero__inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .page-hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: var(--space-sm) 0;
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+
+  /* Controls */
+  .archive-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-parchment);
+    border: 1px solid var(--color-sepia);
+  }
+
+  .archive-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .archive-filters__label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-tobacco);
+    margin-right: var(--space-xs);
+  }
+
+  .filter-chip {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-tobacco);
+    background: var(--color-cream);
+    border: 1px solid var(--color-sepia);
+    padding: 0.4em 0.9em;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-chip:hover {
+    border-color: var(--color-tobacco);
+    color: var(--color-espresso);
+  }
+
+  .filter-chip:focus-visible {
+    outline: 2px solid var(--color-rust);
+    outline-offset: 2px;
+  }
+
+  .filter-chip[aria-pressed="true"] {
+    background: var(--color-espresso);
+    border-color: var(--color-espresso);
+    color: var(--color-cream);
+  }
+
+  .filter-chip__count {
+    font-size: 0.625rem;
+    opacity: 0.7;
+    margin-left: 0.4em;
+  }
+
+  .archive-search {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .archive-search__input {
+    flex: 1;
+    min-width: 220px;
+    max-width: 400px;
+    padding: 0.6em 1em;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    border: 1px solid var(--color-sepia);
+    background: var(--color-cream);
+    color: var(--color-ink);
+    transition: border-color var(--transition-fast);
+  }
+
+  .archive-search__input:focus {
+    outline: none;
+    border-color: var(--color-tobacco);
+  }
+
+  .archive-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    white-space: nowrap;
+  }
+
+  /* Grid */
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .archive-card[hidden] {
+    display: none;
+  }
+
+  .archive-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--color-parchment);
+    border: 1px solid var(--color-sepia);
+    padding: 8px;
+    cursor: pointer;
+    font: inherit;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .archive-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    border-color: var(--color-tobacco);
+  }
+
+  .archive-card:focus-visible {
+    outline: 2px solid var(--color-rust);
+    outline-offset: 3px;
+  }
+
+  .archive-card__image {
+    display: block;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--color-cream);
+    margin-bottom: var(--space-xs);
+  }
+
+  .archive-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(10%);
+    transition: transform var(--transition-slow);
+  }
+
+  .archive-card:hover .archive-card__image img {
+    transform: scale(1.04);
+  }
+
+  .archive-card__body {
+    display: block;
+    padding: 0 4px 4px;
+  }
+
+  .archive-card__title {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-espresso);
+    margin-bottom: 0.25em;
+  }
+
+  .archive-card__date {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: var(--color-faded-blue);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5em;
+  }
+
+  .archive-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .archive-card__tags .tag-chip {
+    font-size: 0.5625rem;
+    padding: 0.2em 0.6em;
+    background: var(--color-cream);
+  }
+
+  /* Empty state */
+  .archive-empty {
+    text-align: center;
+    padding: var(--space-lg) 0;
+    font-style: italic;
+    color: var(--color-tobacco);
+    margin: 0 auto;
+  }
+
+  .archive-empty__reset {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: none;
+    border: 1px solid var(--color-sepia);
+    color: var(--color-tobacco);
+    padding: 0.4em 1em;
+    margin-left: var(--space-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .archive-empty__reset:hover {
+    background: var(--color-espresso);
+    border-color: var(--color-espresso);
+    color: var(--color-cream);
+  }
+
+  /* Archive Note */
+  .archive-note {
+    background: var(--color-parchment);
+  }
+
+  .archive-note__inner {
+    padding: var(--space-md);
+    border: 1px solid var(--color-sepia);
+    position: relative;
+  }
+
+  .archive-note__inner .stamp {
+    position: absolute;
+    top: calc(-1 * var(--space-xs));
+    left: var(--space-md);
+    background: var(--color-parchment);
+    padding: 0 var(--space-xs);
+  }
+
+  .archive-note__inner h3 {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+    color: var(--color-tobacco);
+  }
+
+  .archive-note__inner p {
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+  }
+</style>

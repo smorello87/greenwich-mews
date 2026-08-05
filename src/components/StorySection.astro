@@ -1,0 +1,222 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  id: string;
+  year?: string;
+  title: string;
+  heading: string;
+  content: string;
+  image: ImageMetadata | null;
+  imageAlt: string;
+  imagePosition?: 'left' | 'right';
+  index: number;
+}
+
+const { id, year, title, heading, content, image, imageAlt, imagePosition = 'right', index } = Astro.props;
+
+const paragraphs = content.split('\n\n');
+---
+
+<section class={`story-section story-section--${imagePosition}`} id={id} data-section-index={index}>
+  <div class="story-section__inner">
+    <div class="story-section__content fade-in">
+      {year && (
+        <div class="story-section__meta">
+          <span class="year-tag">{year}</span>
+          <span class="story-section__title">{title}</span>
+        </div>
+      )}
+      <h2 class="story-section__heading">{heading}</h2>
+      <div class="story-section__text">
+        {paragraphs.map((p) => (
+          <p>{p}</p>
+        ))}
+      </div>
+    </div>
+
+    <div class={`story-section__image fade-in-${imagePosition === 'left' ? 'left' : 'right'}`}>
+      <div class="img-frame">
+        {image ? (
+          <Image src={image} alt={imageAlt} width={800} loading="lazy" />
+        ) : (
+          <div class="img-placeholder">placeholder</div>
+        )}
+      </div>
+      {image && (
+        <div class="story-section__image-caption annotation">
+          {imageAlt}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <div class="story-section__number" aria-hidden="true">
+    {String(index).padStart(2, '0')}
+  </div>
+</section>
+
+<style>
+  .story-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-xl) 0;
+    overflow: hidden;
+  }
+
+  .story-section__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .story-section--left .story-section__inner {
+    direction: rtl;
+  }
+
+  .story-section--left .story-section__content,
+  .story-section--left .story-section__image {
+    direction: ltr;
+  }
+
+  .story-section__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .story-section__title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-tobacco);
+  }
+
+  .story-section__heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-md);
+    position: relative;
+  }
+
+  .story-section__heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-rust);
+    margin-top: var(--space-sm);
+  }
+
+  .story-section__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .story-section__text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-espresso);
+  }
+
+  .story-section__image {
+    position: relative;
+  }
+
+  .story-section__image .img-frame {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-parchment);
+    border: 2px dashed var(--color-sepia);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-tobacco);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .story-section__image .img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .story-section:hover .story-section__image .img-frame img {
+    transform: scale(1.03);
+  }
+
+  .story-section__image-caption {
+    margin-top: var(--space-sm);
+    font-style: italic;
+    max-width: 80%;
+  }
+
+  .story-section__number {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(8rem, 20vw, 16rem);
+    font-weight: 700;
+    color: var(--color-sepia);
+    opacity: 0.1;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .story-section--right .story-section__number {
+    left: -5%;
+  }
+
+  .story-section--left .story-section__number {
+    right: -5%;
+  }
+
+  /* Alternating background */
+  .story-section:nth-child(even) {
+    background: var(--color-parchment);
+  }
+
+  @media (max-width: 900px) {
+    .story-section {
+      min-height: auto;
+      padding: var(--space-lg) 0;
+    }
+
+    .story-section__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .story-section--left .story-section__inner {
+      direction: ltr;
+    }
+
+    .story-section__image {
+      order: -1;
+    }
+
+    .story-section__number {
+      display: none;
+    }
+  }
+</style>

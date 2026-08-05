@@ -1,0 +1,237 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductionTable from '../components/ProductionTable.astro';
+import TimelineItem from '../components/TimelineItem.astro';
+import { itemImage } from '../lib/images';
+import { withBase } from '../lib/url';
+
+const productionsData = (await getCollection('productions')).map((e) => e.data);
+const featuredProductions = await Promise.all(
+  productionsData
+    .filter(p => p.featured && p.image && p.description)
+    .map(async (p) => ({ ...p, imageMeta: await itemImage(p.image!) }))
+);
+---
+
+<BaseLayout
+  title="Productions"
+  description="A chronological list of all known productions at the Greenwich Mews Theater from 1951 to 1973."
+>
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="year-tag fade-in">1951–1973</span>
+      <h1 class="page-hero__title fade-in">Productions</h1>
+      <p class="page-hero__subtitle fade-in">Twenty-two years of groundbreaking theater</p>
+    </div>
+  </section>
+
+  <section class="intro section">
+    <div class="container container--narrow">
+      <div class="intro__content fade-in">
+        <p class="intro__lead">
+          The Greenwich Mews Theater produced over 45 plays during its two-decade run, providing
+          a stage for some of the most important voices in American drama.
+        </p>
+        <p>
+          This list is adapted from the book's appendix. It documents all known productions and
+          the artists who brought them to life—revealing a remarkable network that connected the
+          Civil Rights movement, the Harlem Renaissance's legacy, and the emerging Black Arts Movement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="table-section section">
+    <div class="container">
+      <h2 class="section-title fade-in">
+        <span class="section-title__text">Complete Productions List</span>
+        <span class="section-title__line"></span>
+      </h2>
+      <div class="fade-in">
+        <ProductionTable productions={productionsData} />
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section section">
+    <div class="container">
+      <h2 class="section-title section-title--center fade-in">
+        <span class="section-title__text">Featured Productions</span>
+        <span class="section-title__sub">Key moments in the theater's history</span>
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline__line" aria-hidden="true"></div>
+        {featuredProductions.map((prod, index) => (
+          <TimelineItem
+            year={prod.year}
+            title={prod.title}
+            image={prod.imageMeta}
+            description={prod.description!}
+            notes={prod.notes}
+            index={index}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta section">
+    <div class="container container--narrow">
+      <div class="cta__inner fade-in">
+        <h3>Explore the People Behind the Productions</h3>
+        <p>
+          Learn about the playwrights, directors, and performers who made the Greenwich Mews
+          a landmark in American theater history.
+        </p>
+        <a href={withBase('/people')} class="btn">People & Documents</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    text-align: center;
+    background: var(--color-parchment);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-sepia), transparent);
+  }
+
+  .page-hero__inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .page-hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: var(--space-sm) 0;
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+  }
+
+  /* Intro */
+  .intro__content {
+    text-align: center;
+  }
+
+  .intro__lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+  }
+
+  .intro__content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section Title */
+  .section-title {
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .section-title--center {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+  }
+
+  .section-title__text {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-tobacco);
+    white-space: nowrap;
+  }
+
+  .section-title__line {
+    flex: 1;
+    height: 1px;
+    background: var(--color-sepia);
+  }
+
+  .section-title__sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  /* Table Section */
+  .table-section {
+    background: var(--color-cream);
+  }
+
+  /* Timeline Section */
+  .timeline-section {
+    background: var(--color-parchment);
+    overflow: hidden;
+  }
+
+  .timeline {
+    position: relative;
+    padding: var(--space-lg) 0;
+  }
+
+  .timeline__line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-sepia);
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 900px) {
+    .timeline__line {
+      left: 30px;
+    }
+  }
+
+  /* CTA */
+  .cta__inner {
+    text-align: center;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-sepia);
+    background: var(--color-parchment);
+  }
+
+  .cta__inner h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta__inner p {
+    margin: 0 auto var(--space-md);
+    max-width: 50ch;
+    color: var(--color-tobacco);
+  }
+</style>

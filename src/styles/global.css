@@ -1,0 +1,392 @@
+/* Greenwich Mews Theater - Documentary Archive Aesthetic */
+
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  /* Colors - Warm archival palette */
+  --color-cream: #F5F0E6;
+  --color-parchment: #EDE4D3;
+  --color-sepia: #D4C4A8;
+  --color-tobacco: #8B7355;
+  --color-espresso: #3D2B1F;
+  --color-ink: #1A1410;
+  --color-rust: #A45A3D;
+  --color-aged-gold: #B8923A;
+  --color-faded-blue: #4A6670;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Layout */
+  --max-width: 1400px;
+  --content-width: 800px;
+
+  /* Transitions */
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-espresso);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  color: var(--color-tobacco);
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: var(--color-rust);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-espresso);
+}
+
+/* Typewriter-style annotations */
+.annotation {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-tobacco);
+  letter-spacing: 0.05em;
+}
+
+.year-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-faded-blue);
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border: 1px solid var(--color-sepia);
+  background: var(--color-parchment);
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container--narrow {
+  max-width: var(--content-width);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 1em 2em;
+  border: 2px solid var(--color-espresso);
+  background: transparent;
+  color: var(--color-espresso);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-espresso);
+  transition: left var(--transition-medium);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--color-cream);
+}
+
+.btn:hover::before {
+  left: 0;
+}
+
+.btn--primary {
+  background: var(--color-espresso);
+  color: var(--color-cream);
+}
+
+.btn--primary::before {
+  background: var(--color-rust);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered delays for children */
+.stagger > *:nth-child(1) { transition-delay: 0s; }
+.stagger > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger > *:nth-child(5) { transition-delay: 0.4s; }
+.stagger > *:nth-child(6) { transition-delay: 0.5s; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-sepia), transparent);
+  margin: var(--space-lg) 0;
+}
+
+.divider--short {
+  width: 120px;
+  margin: var(--space-md) 0;
+}
+
+/* Film strip border effect */
+.film-border {
+  position: relative;
+  padding: var(--space-sm);
+  background: var(--color-ink);
+}
+
+.film-border::before,
+.film-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-ink) 0px,
+    var(--color-ink) 4px,
+    var(--color-cream) 4px,
+    var(--color-cream) 8px,
+    var(--color-ink) 8px,
+    var(--color-ink) 16px
+  );
+}
+
+.film-border::before { left: 0; }
+.film-border::after { right: 0; }
+
+/* Archive stamp effect */
+.stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-rust);
+  border: 2px solid var(--color-rust);
+  padding: 0.5em 1em;
+  transform: rotate(-3deg);
+  opacity: 0.8;
+}
+
+/* ===== IMAGES ===== */
+.img-frame {
+  position: relative;
+  background: var(--color-parchment);
+  padding: 8px;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.1),
+    0 8px 16px rgba(0,0,0,0.1);
+}
+
+.img-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: sepia(15%) contrast(1.05);
+}
+
+.img-frame::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--color-aged-gold);
+  color: var(--color-ink);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tobacco);
+  border: 2px solid var(--color-parchment);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-espresso);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}

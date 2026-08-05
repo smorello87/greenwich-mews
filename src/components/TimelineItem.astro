@@ -1,0 +1,196 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  year: number;
+  title: string;
+  image: ImageMetadata;
+  description: string;
+  notes?: string;
+  index: number;
+}
+
+const { year, title, image, description, notes, index } = Astro.props;
+const isEven = index % 2 === 0;
+---
+
+<div class={`timeline-item ${isEven ? 'timeline-item--left' : 'timeline-item--right'}`}>
+  <div class="timeline-item__marker">
+    <span class="timeline-item__year">{year}</span>
+  </div>
+
+  <div class="timeline-item__card fade-in">
+    <div class="timeline-item__image">
+      <Image src={image} alt={title} width={640} loading="lazy" />
+    </div>
+    <div class="timeline-item__content">
+      <h3 class="timeline-item__title">{title}</h3>
+      {notes && <span class="timeline-item__notes">{notes}</span>}
+      <p class="timeline-item__desc">{description}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-md);
+    align-items: center;
+    padding: var(--space-lg) 0;
+  }
+
+  .timeline-item__marker {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: var(--color-espresso);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-item__marker::before,
+  .timeline-item__marker::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: var(--color-sepia);
+    z-index: 1;
+  }
+
+  .timeline-item__marker::before {
+    top: -100%;
+    height: 100%;
+  }
+
+  .timeline-item__marker::after {
+    bottom: -100%;
+    height: 100%;
+  }
+
+  .timeline-item:first-child .timeline-item__marker::before {
+    display: none;
+  }
+
+  .timeline-item:last-child .timeline-item__marker::after {
+    display: none;
+  }
+
+  .timeline-item__year {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-item__card {
+    background: var(--color-cream);
+    border: 1px solid var(--color-sepia);
+    overflow: hidden;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .timeline-item__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .timeline-item--left .timeline-item__card {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .timeline-item--right .timeline-item__card {
+    grid-column: 3;
+  }
+
+  .timeline-item--left .timeline-item__marker {
+    grid-row: 1;
+  }
+
+  .timeline-item__image {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: var(--color-parchment);
+  }
+
+  .timeline-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(15%);
+    transition: transform var(--transition-slow);
+  }
+
+  .timeline-item__card:hover .timeline-item__image img {
+    transform: scale(1.05);
+  }
+
+  .timeline-item__content {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .timeline-item__title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-espresso);
+    margin-bottom: 0.25em;
+  }
+
+  .timeline-item__notes {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-rust);
+    background: rgba(164, 90, 61, 0.1);
+    padding: 0.25em 0.5em;
+    margin-bottom: 0.75em;
+  }
+
+  .timeline-item__desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-tobacco);
+  }
+
+  /* Mobile: Stack vertically */
+  @media (max-width: 900px) {
+    .timeline-item {
+      grid-template-columns: auto 1fr;
+      gap: var(--space-sm);
+    }
+
+    .timeline-item__marker {
+      grid-column: 1;
+      grid-row: 1;
+      width: 60px;
+      height: 60px;
+    }
+
+    .timeline-item__card {
+      grid-column: 2 !important;
+      grid-row: 1;
+    }
+
+    .timeline-item__marker::before,
+    .timeline-item__marker::after {
+      left: 50%;
+    }
+
+    .timeline-item__year {
+      font-size: 0.75rem;
+    }
+  }
+</style>

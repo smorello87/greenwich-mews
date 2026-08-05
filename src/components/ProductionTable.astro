@@ -1,0 +1,372 @@
+---
+interface Production {
+  year: number;
+  title: string;
+  playwright: string;
+  director: string;
+  cast: string[];
+  notes: string;
+  featured: boolean;
+}
+
+interface Props {
+  productions: Production[];
+}
+
+const { productions } = Astro.props;
+---
+
+<div class="table-wrapper">
+  <div class="table-controls">
+    <div class="table-search">
+      <label for="production-search" class="visually-hidden">Search productions</label>
+      <input
+        type="search"
+        id="production-search"
+        class="table-search__input"
+        placeholder="Search by title, playwright, director, or cast..."
+      />
+      <svg class="table-search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="M21 21l-4.35-4.35"></path>
+      </svg>
+    </div>
+
+    <div class="table-count">
+      <span id="result-count">{productions.length}</span> of {productions.length} productions
+    </div>
+  </div>
+
+  <div class="table-scroll">
+    <table class="productions-table" id="productions-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="year">
+            Year
+            <span class="sort-icon">↕</span>
+          </th>
+          <th class="sortable" data-sort="title">
+            Title
+            <span class="sort-icon">↕</span>
+          </th>
+          <th class="sortable" data-sort="playwright">
+            Playwright
+            <span class="sort-icon">↕</span>
+          </th>
+          <th class="sortable" data-sort="director">
+            Director
+            <span class="sort-icon">↕</span>
+          </th>
+          <th>Cast</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {productions.map((prod) => (
+          <tr class:list={[{ 'featured': prod.featured }]} data-searchable={`${prod.year} ${prod.title} ${prod.playwright} ${prod.director} ${prod.cast.join(' ')} ${prod.notes}`.toLowerCase()}>
+            <td class="cell-year">{prod.year}</td>
+            <td class="cell-title">
+              {prod.title}
+              {prod.featured && <span class="featured-badge" title="Featured production">★</span>}
+            </td>
+            <td>{prod.playwright}</td>
+            <td>{prod.director}</td>
+            <td class="cell-cast">{prod.cast.join(', ')}</td>
+            <td class="cell-notes">{prod.notes}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-legend">
+    <span class="featured-badge">★</span> Featured productions have additional information in the timeline below
+  </div>
+</div>
+
+<style>
+  .table-wrapper {
+    background: var(--color-cream);
+    border: 1px solid var(--color-sepia);
+  }
+
+  .table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-sepia);
+    background: var(--color-parchment);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .table-search {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .table-search__input {
+    width: 100%;
+    padding: 0.75em 1em 0.75em 2.75em;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    border: 1px solid var(--color-sepia);
+    background: var(--color-cream);
+    color: var(--color-ink);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .table-search__input::placeholder {
+    color: var(--color-tobacco);
+    opacity: 0.7;
+  }
+
+  .table-search__input:focus {
+    outline: none;
+    border-color: var(--color-rust);
+    box-shadow: 0 0 0 3px rgba(164, 90, 61, 0.1);
+  }
+
+  .table-search__icon {
+    position: absolute;
+    left: 0.875em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-tobacco);
+    pointer-events: none;
+  }
+
+  .table-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-tobacco);
+    letter-spacing: 0.05em;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  .productions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+
+  .productions-table th,
+  .productions-table td {
+    padding: 0.875em 1em;
+    text-align: left;
+    border-bottom: 1px solid var(--color-sepia);
+  }
+
+  .productions-table th {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    background: var(--color-parchment);
+    position: sticky;
+    top: 0;
+    white-space: nowrap;
+  }
+
+  .productions-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: color var(--transition-fast);
+  }
+
+  .productions-table th.sortable:hover {
+    color: var(--color-espresso);
+  }
+
+  .sort-icon {
+    margin-left: 0.5em;
+    opacity: 0.4;
+    transition: opacity var(--transition-fast);
+  }
+
+  .productions-table th.sortable:hover .sort-icon,
+  .productions-table th.sorted .sort-icon {
+    opacity: 1;
+  }
+
+  .productions-table th.sorted-asc .sort-icon::after {
+    content: '↑';
+  }
+
+  .productions-table th.sorted-desc .sort-icon::after {
+    content: '↓';
+  }
+
+  .productions-table tbody tr {
+    transition: background var(--transition-fast);
+  }
+
+  .productions-table tbody tr:hover {
+    background: var(--color-parchment);
+  }
+
+  .productions-table tbody tr.featured {
+    background: rgba(184, 146, 58, 0.08);
+  }
+
+  .productions-table tbody tr.featured:hover {
+    background: rgba(184, 146, 58, 0.15);
+  }
+
+  .productions-table tbody tr.hidden {
+    display: none;
+  }
+
+  .cell-year {
+    font-family: var(--font-mono);
+    color: var(--color-faded-blue);
+    white-space: nowrap;
+  }
+
+  .cell-title {
+    font-weight: 600;
+    color: var(--color-espresso);
+  }
+
+  .cell-cast {
+    font-size: 0.875rem;
+    color: var(--color-tobacco);
+    max-width: 200px;
+  }
+
+  .cell-notes {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-tobacco);
+    font-style: italic;
+  }
+
+  .featured-badge {
+    display: inline-block;
+    color: var(--color-aged-gold);
+    margin-left: 0.5em;
+    font-size: 0.875em;
+  }
+
+  .table-legend {
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--color-sepia);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-tobacco);
+    background: var(--color-parchment);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 768px) {
+    .productions-table th,
+    .productions-table td {
+      padding: 0.625em 0.5em;
+      font-size: 0.8125rem;
+    }
+
+    .cell-cast {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('production-search') as HTMLInputElement;
+  const table = document.getElementById('productions-table');
+  const resultCount = document.getElementById('result-count');
+  const rows = table?.querySelectorAll('tbody tr');
+
+  // Search functionality
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    rows?.forEach(row => {
+      const searchable = row.getAttribute('data-searchable') || '';
+      const matches = query === '' || searchable.includes(query);
+
+      row.classList.toggle('hidden', !matches);
+      if (matches) visibleCount++;
+    });
+
+    if (resultCount) resultCount.textContent = String(visibleCount);
+  });
+
+  // Sort functionality
+  const sortableHeaders = table?.querySelectorAll('th.sortable');
+  let currentSort = { column: '', direction: 'asc' };
+
+  sortableHeaders?.forEach(header => {
+    header.addEventListener('click', () => {
+      const column = header.getAttribute('data-sort') || '';
+
+      // Toggle direction if same column
+      if (currentSort.column === column) {
+        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort.column = column;
+        currentSort.direction = 'asc';
+      }
+
+      // Update header classes
+      sortableHeaders.forEach(h => {
+        h.classList.remove('sorted', 'sorted-asc', 'sorted-desc');
+      });
+      header.classList.add('sorted', `sorted-${currentSort.direction}`);
+
+      // Sort rows
+      const tbody = table?.querySelector('tbody');
+      const rowsArray = Array.from(rows || []);
+
+      rowsArray.sort((a, b) => {
+        let aVal = '';
+        let bVal = '';
+
+        switch(column) {
+          case 'year':
+            aVal = a.querySelector('.cell-year')?.textContent || '';
+            bVal = b.querySelector('.cell-year')?.textContent || '';
+            return currentSort.direction === 'asc'
+              ? parseInt(aVal) - parseInt(bVal)
+              : parseInt(bVal) - parseInt(aVal);
+          case 'title':
+            aVal = a.querySelector('.cell-title')?.textContent || '';
+            bVal = b.querySelector('.cell-title')?.textContent || '';
+            break;
+          case 'playwright':
+            aVal = a.querySelectorAll('td')[2]?.textContent || '';
+            bVal = b.querySelectorAll('td')[2]?.textContent || '';
+            break;
+          case 'director':
+            aVal = a.querySelectorAll('td')[3]?.textContent || '';
+            bVal = b.querySelectorAll('td')[3]?.textContent || '';
+            break;
+        }
+
+        const comparison = aVal.localeCompare(bVal);
+        return currentSort.direction === 'asc' ? comparison : -comparison;
+      });
+
+      rowsArray.forEach(row => tbody?.appendChild(row));
+    });
+  });
+</script>

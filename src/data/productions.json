@@ -1,0 +1,342 @@
+[
+  {
+    "id": "unto-such-glory-1951",
+    "year": 1951,
+    "title": "Unto Such Glory",
+    "playwright": "Paul Green",
+    "director": "Stella Holt",
+    "cast": [
+      "Ensemble Cast"
+    ],
+    "notes": "Inaugural production",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-world-of-sholom-aleichem-1952",
+    "year": 1952,
+    "title": "The World of Sholom Aleichem",
+    "playwright": "Arnold Perl",
+    "director": "Howard Da Silva",
+    "cast": [
+      "Morris Carnovsky",
+      "Ruby Dee",
+      "Jack Gilford"
+    ],
+    "notes": "Interfaith programming",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "A landmark interfaith production that brought together Jewish and African American artists, demonstrating the theater's unique mission of cultural bridge-building."
+  },
+  {
+    "id": "the-climate-of-eden-1954",
+    "year": 1954,
+    "title": "The Climate of Eden",
+    "playwright": "Moss Hart",
+    "director": "Stella Holt",
+    "cast": [
+      "Ensemble Cast"
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "trouble-in-mind-1955",
+    "year": 1955,
+    "title": "Trouble in Mind",
+    "playwright": "Alice Childress",
+    "director": "Clarice Taylor",
+    "cast": [
+      "Clarice Taylor",
+      "Hilda Haynes"
+    ],
+    "notes": "First Obie Award winner, 1956",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Alice Childress's groundbreaking play about racism in the theater industry won the first Obie Award for Best Original Play, establishing the Mews as a venue for serious Black drama."
+  },
+  {
+    "id": "the-amen-corner-1956",
+    "year": 1956,
+    "title": "The Amen Corner",
+    "playwright": "James Baldwin",
+    "director": "Frank Silvera",
+    "cast": [
+      "Beah Richards",
+      "Frank Silvera"
+    ],
+    "notes": "World premiere of Baldwin's first play",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "James Baldwin's first play received its world premiere at the Mews, launching the theatrical career of one of America's most important writers."
+  },
+  {
+    "id": "simply-heavenly-1957",
+    "year": 1957,
+    "title": "Simply Heavenly",
+    "playwright": "Langston Hughes",
+    "director": "Stella Holt",
+    "cast": [
+      "Melvin Stewart",
+      "Claudia McNeil"
+    ],
+    "notes": "Musical; moved to Broadway",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Langston Hughes's joyful musical about Harlem life became one of the theater's biggest hits, eventually transferring to Broadway."
+  },
+  {
+    "id": "a-land-beyond-the-river-1957",
+    "year": 1957,
+    "title": "A Land Beyond the River",
+    "playwright": "Loften Mitchell",
+    "director": "Stella Holt",
+    "cast": [
+      "Diana Sands",
+      "Robert Earl Jones"
+    ],
+    "notes": "Based on Briggs v. Elliott",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Loften Mitchell's drama about the school desegregation case that preceded Brown v. Board of Education brought Civil Rights history to the stage."
+  },
+  {
+    "id": "garden-district-1958",
+    "year": 1958,
+    "title": "Garden District",
+    "playwright": "Tennessee Williams",
+    "director": "Herbert Machiz",
+    "cast": [
+      "Anne Meacham",
+      "Cathleen Nesbitt"
+    ],
+    "notes": "Off-Broadway premiere",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-blacks-1959",
+    "year": 1959,
+    "title": "The Blacks",
+    "playwright": "Jean Genet",
+    "director": "Gene Frankel",
+    "cast": [
+      "James Earl Jones",
+      "Cicely Tyson",
+      "Maya Angelou",
+      "Louis Gossett Jr."
+    ],
+    "notes": "Longest-running Off-Broadway non-musical at the time",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Jean Genet's provocative play about race and identity featured a legendary cast and became the longest-running Off-Broadway non-musical of its era."
+  },
+  {
+    "id": "the-prodigal-1960",
+    "year": 1960,
+    "title": "The Prodigal",
+    "playwright": "Jack Richardson",
+    "director": "Stuart Vaughan",
+    "cast": [
+      "Ensemble Cast"
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "tambourines-to-glory-1961",
+    "year": 1961,
+    "title": "Tambourines to Glory",
+    "playwright": "Langston Hughes",
+    "director": "Stella Holt",
+    "cast": [
+      "Clara Ward",
+      "Gospel Choir"
+    ],
+    "notes": "Gospel musical",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Hughes's gospel musical brought the sounds of the Black church to the downtown theater, featuring the legendary Clara Ward and her gospel choir."
+  },
+  {
+    "id": "moon-on-a-rainbow-shawl-1962",
+    "year": 1962,
+    "title": "Moon on a Rainbow Shawl",
+    "playwright": "Errol John",
+    "director": "George Roy Hill",
+    "cast": [
+      "James Earl Jones",
+      "Cicely Tyson"
+    ],
+    "notes": "Caribbean drama",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "in-white-america-1963",
+    "year": 1963,
+    "title": "In White America",
+    "playwright": "Martin B. Duberman",
+    "director": "Martin B. Duberman",
+    "cast": [
+      "Gloria Foster",
+      "James Greene"
+    ],
+    "notes": "Documentary theater",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "This documentary drama about the Black experience in America became one of the most important theatrical statements of the Civil Rights era."
+  },
+  {
+    "id": "funnyhouse-of-a-negro-1964",
+    "year": 1964,
+    "title": "Funnyhouse of a Negro",
+    "playwright": "Adrienne Kennedy",
+    "director": "Michael Kahn",
+    "cast": [
+      "Billie Allen"
+    ],
+    "notes": "Obie Award for Best Play",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Adrienne Kennedy's surrealist exploration of racial identity won the Obie Award and established Kennedy as a major avant-garde voice."
+  },
+  {
+    "id": "the-toilet-the-slave-1965",
+    "year": 1965,
+    "title": "The Toilet / The Slave",
+    "playwright": "Amiri Baraka (LeRoi Jones)",
+    "director": "Leo Garen",
+    "cast": [
+      "James Earl Jones"
+    ],
+    "notes": "Double bill; controversial",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Amiri Baraka's confrontational double bill challenged audiences and critics, marking a shift toward more militant Black theater."
+  },
+  {
+    "id": "happy-ending-day-of-absence-1966",
+    "year": 1966,
+    "title": "Happy Ending / Day of Absence",
+    "playwright": "Douglas Turner Ward",
+    "director": "Douglas Turner Ward",
+    "cast": [
+      "Douglas Turner Ward",
+      "Robert Hooks"
+    ],
+    "notes": "Satires on race relations",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Douglas Turner Ward's satirical double bill used humor to critique American race relations, launching the Negro Ensemble Company."
+  },
+  {
+    "id": "who-s-got-his-own-1967",
+    "year": 1967,
+    "title": "Who's Got His Own",
+    "playwright": "Ron Milner",
+    "director": "Stella Holt",
+    "cast": [
+      "Glynn Turman"
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "song-of-the-lusitanian-bogey-1968",
+    "year": 1968,
+    "title": "Song of the Lusitanian Bogey",
+    "playwright": "Peter Weiss",
+    "director": "Stella Holt",
+    "cast": [
+      "Ensemble Cast"
+    ],
+    "notes": "Anti-colonial drama",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "to-be-young-gifted-and-black-1969",
+    "year": 1969,
+    "title": "To Be Young, Gifted and Black",
+    "playwright": "Lorraine Hansberry (adapted by Robert Nemiroff)",
+    "director": "Gene Frankel",
+    "cast": [
+      "Barbara Baxley",
+      "Cicely Tyson"
+    ],
+    "notes": "Posthumous Hansberry tribute",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "This tribute to Lorraine Hansberry, adapted from her writings after her death, became a touchstone for the Black Arts Movement."
+  },
+  {
+    "id": "boesman-and-lena-1970",
+    "year": 1970,
+    "title": "Boesman and Lena",
+    "playwright": "Athol Fugard",
+    "director": "John Berry",
+    "cast": [
+      "James Earl Jones",
+      "Ruby Dee"
+    ],
+    "notes": "South African apartheid drama",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Athol Fugard's searing drama about apartheid South Africa starred the legendary duo of James Earl Jones and Ruby Dee."
+  },
+  {
+    "id": "the-sty-of-the-blind-pig-1971",
+    "year": 1971,
+    "title": "The Sty of the Blind Pig",
+    "playwright": "Phillip Hayes Dean",
+    "director": "Stella Holt",
+    "cast": [
+      "Clarice Taylor",
+      "Moses Gunn"
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "wedding-band-1972",
+    "year": 1972,
+    "title": "Wedding Band",
+    "playwright": "Alice Childress",
+    "director": "Stella Holt",
+    "cast": [
+      "Ruby Dee",
+      "James Broderick"
+    ],
+    "notes": "Interracial love story",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Alice Childress's powerful drama about an interracial relationship in the Jim Crow South became one of the theater's final major productions."
+  },
+  {
+    "id": "the-river-niger-1973",
+    "year": 1973,
+    "title": "The River Niger",
+    "playwright": "Joseph A. Walker",
+    "director": "Douglas Turner Ward",
+    "cast": [
+      "Douglas Turner Ward"
+    ],
+    "notes": "Final season; Tony Award winner",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "The theater's final season featured this Tony Award-winning drama, a fitting conclusion to two decades of groundbreaking work."
+  }
+]

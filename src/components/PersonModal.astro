@@ -1,0 +1,326 @@
+---
+// Person detail modal. Populated via JS:
+// window.openPersonModal(personPayload) — see src/lib/catalog.ts for the shape.
+---
+
+<div class="modal-backdrop" id="person-modal-backdrop" aria-hidden="true">
+  <div class="modal" id="person-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal__close" id="modal-close" aria-label="Close modal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="modal__content">
+      <div class="modal__header">
+        <div class="modal__portrait">
+          <img src="" alt="" id="modal-portrait" />
+        </div>
+        <div class="modal__info">
+          <span class="modal__years annotation" id="modal-years"></span>
+          <h2 class="modal__title" id="modal-title"></h2>
+          <p class="modal__role" id="modal-role"></p>
+        </div>
+      </div>
+
+      <div class="modal__bio" id="modal-bio"></div>
+
+      <div class="modal__documents">
+        <h3 class="modal__section-title">
+          <span class="stamp">Documents</span>
+        </h3>
+        <div class="modal__doc-grid" id="modal-doc-grid">
+          <!-- Item cards populated via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(26, 20, 16, 0.9);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    overflow-y: auto;
+  }
+
+  .modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    background: var(--color-cream);
+    overflow-y: auto;
+    transform: translateY(20px) scale(0.98);
+    transition: transform var(--transition-medium);
+  }
+
+  .modal-backdrop.open .modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-rust), var(--color-aged-gold));
+  }
+
+  .modal__close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--color-sepia);
+    color: var(--color-tobacco);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+  }
+
+  .modal__close:hover {
+    background: var(--color-espresso);
+    border-color: var(--color-espresso);
+    color: var(--color-cream);
+  }
+
+  .modal__content {
+    padding: var(--space-lg);
+  }
+
+  .modal__header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-sepia);
+  }
+
+  .modal__portrait {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--color-parchment);
+  }
+
+  .modal__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(15%);
+  }
+
+  .modal__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .modal__years {
+    margin-bottom: var(--space-xs);
+  }
+
+  .modal__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.25em;
+  }
+
+  .modal__role {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+  }
+
+  .modal__bio {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+    max-width: 70ch;
+  }
+
+  .modal__section-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .modal__doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
+
+  /* Item cards (added via JS) */
+  :global(.doc-card) {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font: inherit;
+    background: var(--color-parchment);
+    padding: 8px;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  :global(.doc-card:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  :global(.doc-card:focus-visible) {
+    outline: 2px solid var(--color-rust);
+    outline-offset: 2px;
+  }
+
+  :global(.doc-card__image) {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin-bottom: var(--space-xs);
+    background: var(--color-cream);
+  }
+
+  :global(.doc-card__image img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(10%);
+  }
+
+  :global(.doc-card__title) {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-espresso);
+    margin-bottom: 0.25em;
+  }
+
+  :global(.doc-card__date) {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: var(--color-faded-blue);
+    letter-spacing: 0.1em;
+  }
+
+  :global(.doc-card__tags) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 0.5em;
+  }
+
+  :global(.doc-card__tags .tag-chip) {
+    font-size: 0.5625rem;
+    padding: 0.2em 0.6em;
+    background: var(--color-cream);
+  }
+
+  @media (max-width: 600px) {
+    .modal__content {
+      padding: var(--space-md);
+    }
+
+    .modal__header {
+      grid-template-columns: 1fr;
+    }
+
+    .modal__portrait {
+      max-width: 200px;
+    }
+
+    .modal__doc-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { createModalController } from '../scripts/modal-controller';
+
+  const backdrop = document.getElementById('person-modal-backdrop')!;
+  const modal = document.getElementById('person-modal')!;
+  const closeBtn = document.getElementById('modal-close')!;
+  const controller = createModalController(backdrop, modal);
+
+  closeBtn.addEventListener('click', () => controller.close());
+
+  function buildItemCard(item: any): HTMLButtonElement {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'doc-card';
+    card.setAttribute('aria-haspopup', 'dialog');
+
+    const figure = document.createElement('div');
+    figure.className = 'doc-card__image';
+    const img = document.createElement('img');
+    img.src = item.thumbSrc;
+    img.alt = item.title;
+    img.loading = 'lazy';
+    figure.appendChild(img);
+
+    const title = document.createElement('p');
+    title.className = 'doc-card__title';
+    title.textContent = item.title;
+
+    const date = document.createElement('span');
+    date.className = 'doc-card__date';
+    date.textContent = item.date;
+
+    const tags = document.createElement('span');
+    tags.className = 'doc-card__tags';
+    for (const tag of item.tags) {
+      const chip = document.createElement('span');
+      chip.className = 'tag-chip';
+      chip.textContent = tag.label;
+      tags.appendChild(chip);
+    }
+
+    card.append(figure, title, date, tags);
+    card.addEventListener('click', () => window.openItemModal(item));
+    return card;
+  }
+
+  window.openPersonModal = function (person: any) {
+    const portrait = document.getElementById('modal-portrait') as HTMLImageElement;
+    portrait.src = person.portraitSrc;
+    portrait.alt = person.name;
+
+    document.getElementById('modal-years')!.textContent = person.years;
+    document.getElementById('modal-title')!.textContent = person.name;
+    document.getElementById('modal-role')!.textContent = person.role;
+    document.getElementById('modal-bio')!.textContent = person.bio;
+
+    const docGrid = document.getElementById('modal-doc-grid')!;
+    docGrid.textContent = '';
+    for (const item of person.items) {
+      docGrid.appendChild(buildItemCard(item));
+    }
+
+    controller.open(closeBtn as HTMLElement);
+  };
+</script>

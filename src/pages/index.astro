@@ -1,0 +1,356 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StorySection from '../components/StorySection.astro';
+import narrativeData from '../data/narrative.json';
+import { narrativeImage } from '../lib/images';
+import { withBase } from '../lib/url';
+
+const hero = narrativeData.find(s => s.type === 'hero');
+const sections = narrativeData.filter(s => s.type === 'section');
+const cta = narrativeData.find(s => s.type === 'cta');
+const heroImage = hero?.image ? await narrativeImage(hero.image) : null;
+const sectionImages = await Promise.all(
+  sections.map((s) => (s.image ? narrativeImage(s.image) : null))
+);
+---
+
+<BaseLayout title="Greenwich Mews Theater">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__background">
+      {heroImage && (
+        <Image
+          src={heroImage}
+          alt={hero?.imageAlt ?? ''}
+          class="hero__image"
+          widths={[800, 1400, 2000]}
+          sizes="100vw"
+          loading="eager"
+        />
+      )}
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__badge fade-in">
+        <span class="stamp">Archive</span>
+      </div>
+
+      <h1 class="hero__title fade-in">{hero?.title}</h1>
+
+      <p class="hero__subtitle fade-in">{hero?.subtitle}</p>
+
+      <div class="hero__meta fade-in stagger">
+        <span class="hero__years">{hero?.tagline}</span>
+        <span class="hero__divider">—</span>
+        <span class="hero__intro">{hero?.intro}</span>
+      </div>
+
+      <div class="hero__scroll fade-in">
+        <span class="hero__scroll-text">Scroll to explore</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+
+    <div class="hero__film-strip" aria-hidden="true">
+      <div class="hero__film-holes"></div>
+    </div>
+  </section>
+
+  <!-- Narrative Sections -->
+  {sections.map((section, index) => (
+    <StorySection
+      id={section.id}
+      year={section.year}
+      title={section.title}
+      heading={section.heading}
+      content={section.content}
+      image={sectionImages[index]}
+      imageAlt={section.imageAlt}
+      imagePosition={section.imagePosition as 'left' | 'right'}
+      index={index + 1}
+    />
+  ))}
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="cta__inner">
+      <h2 class="cta__heading fade-in">{cta?.heading}</h2>
+      <p class="cta__text fade-in">{cta?.content}</p>
+      <div class="cta__buttons fade-in stagger">
+        {cta?.buttons?.map((btn) => (
+          <a href={withBase(btn.href)} class="btn">{btn.label}</a>
+        ))}
+      </div>
+    </div>
+
+    <div class="cta__decoration" aria-hidden="true">
+      <span>1951</span>
+      <span class="cta__decoration-line"></span>
+      <span>1973</span>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--color-ink);
+  }
+
+  .hero__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(30%) contrast(1.1);
+    opacity: 0.6;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 20, 16, 0.4) 0%,
+      rgba(26, 20, 16, 0.6) 50%,
+      rgba(26, 20, 16, 0.9) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+    max-width: 900px;
+  }
+
+  .hero__badge {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__badge .stamp {
+    color: var(--color-aged-gold);
+    border-color: var(--color-aged-gold);
+  }
+
+  .hero__title {
+    font-size: clamp(3rem, 10vw, 7rem);
+    color: var(--color-cream);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: var(--color-parchment);
+    opacity: 0.9;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-sepia);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero__years {
+    color: var(--color-aged-gold);
+  }
+
+  .hero__divider {
+    opacity: 0.5;
+  }
+
+  .hero__scroll {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .hero__scroll-text {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-sepia);
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--color-sepia), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  .hero__film-strip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: var(--color-ink);
+    z-index: 2;
+  }
+
+  .hero__film-holes {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    width: 14px;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 8px,
+      var(--color-espresso) 8px,
+      var(--color-espresso) 20px,
+      transparent 20px,
+      transparent 28px
+    );
+  }
+
+  /* ===== CTA ===== */
+  .cta {
+    position: relative;
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-espresso);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent,
+      var(--color-aged-gold),
+      transparent
+    );
+  }
+
+  .cta__inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta__heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--color-cream);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta__text {
+    font-size: 1.25rem;
+    color: var(--color-parchment);
+    opacity: 0.8;
+    margin-bottom: var(--space-lg);
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .cta .btn {
+    border-color: var(--color-parchment);
+    color: var(--color-parchment);
+  }
+
+  .cta .btn::before {
+    background: var(--color-rust);
+  }
+
+  .cta .btn:hover {
+    border-color: var(--color-rust);
+  }
+
+  .cta__decoration {
+    position: absolute;
+    bottom: var(--space-md);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--color-tobacco);
+    opacity: 0.3;
+  }
+
+  .cta__decoration-line {
+    width: 100px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  @media (max-width: 768px) {
+    .hero__film-strip {
+      display: none;
+    }
+
+    .hero__meta {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .hero__divider {
+      display: none;
+    }
+
+    .cta {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .cta__decoration {
+      display: none;
+    }
+  }
+</style>

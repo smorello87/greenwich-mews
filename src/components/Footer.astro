@@ -1,0 +1,245 @@
+---
+import { withBase } from '../lib/url';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <p class="footer__title">Greenwich Mews Theater</p>
+        <p class="footer__subtitle">Interfaith, Interracial Theater in New York City</p>
+        <p class="footer__years">1951 — 1973</p>
+      </div>
+
+      <nav class="footer__nav">
+        <div class="footer__col">
+          <h4 class="footer__heading">Explore</h4>
+          <ul class="footer__links">
+            <li><a href={withBase('/')}>The Theater</a></li>
+            <li><a href={withBase('/people')}>People & Documents</a></li>
+            <li><a href={withBase('/productions')}>Productions</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">About</h4>
+          <ul class="footer__links">
+            <li><a href={withBase('/book')}>The Book</a></li>
+            <li><a href={withBase('/about')}>Credits</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__book-note">
+        Companion website for <em>Brotherhood or the New Hell: The Greenwich Mews Theater, 1951–1973</em>
+      </p>
+
+      <div class="footer__credits">
+        <p>&copy; {currentYear} Hillary Miller</p>
+        <span class="footer__separator">·</span>
+        <p>Site by <a href="https://makeko.com" target="_blank" rel="noopener">Makeko Inc.</a></p>
+        <span class="footer__separator">·</span>
+        <p>Hosted by <a href="#">New Media Lab</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__stamp">
+    <span>Archive</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-espresso);
+    color: var(--color-parchment);
+    padding: var(--space-xl) 0 var(--space-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+      var(--color-rust) 0%,
+      var(--color-aged-gold) 50%,
+      var(--color-rust) 100%
+    );
+  }
+
+  .footer__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(212, 196, 168, 0.2);
+  }
+
+  .footer__brand {
+    max-width: 400px;
+  }
+
+  .footer__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-cream);
+    margin-bottom: 0.25em;
+  }
+
+  .footer__subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 0.5em;
+  }
+
+  .footer__years {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    color: var(--color-aged-gold);
+  }
+
+  .footer__nav {
+    display: flex;
+    gap: var(--space-xl);
+  }
+
+  .footer__heading {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-sepia);
+    margin-bottom: var(--space-sm);
+    font-weight: 400;
+  }
+
+  .footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer__links li {
+    margin-bottom: 0.5em;
+  }
+
+  .footer__links a {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-parchment);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .footer__links a:hover {
+    opacity: 1;
+    color: var(--color-cream);
+  }
+
+  .footer__bottom {
+    padding-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer__book-note {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.9375rem;
+    opacity: 0.7;
+  }
+
+  .footer__book-note em {
+    color: var(--color-cream);
+  }
+
+  .footer__credits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+  }
+
+  .footer__credits a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer__credits a:hover {
+    color: var(--color-cream);
+  }
+
+  .footer__separator {
+    opacity: 0.5;
+  }
+
+  .footer__stamp {
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(212, 196, 168, 0.05);
+    transform: rotate(-15deg);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  @media (max-width: 768px) {
+    .footer__main {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .footer__nav {
+      gap: var(--space-lg);
+    }
+
+    .footer__stamp {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer__nav {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .footer__credits {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer__separator {
+      display: none;
+    }
+  }
+</style>

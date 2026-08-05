@@ -1,0 +1,81 @@
+---
+interface Props {
+  width: number;
+  height: number;
+  label?: string;
+  alt: string;
+  class?: string;
+}
+
+const { width, height, label, alt, class: className } = Astro.props;
+
+// Generate a sepia-toned placeholder with grain texture
+const aspectRatio = width / height;
+const viewBoxWidth = 400;
+const viewBoxHeight = Math.round(viewBoxWidth / aspectRatio);
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label={alt}
+>
+  <defs>
+    <filter id={`noise-${label?.replace(/\s/g, '-')}`}>
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <linearGradient id={`vignette-${label?.replace(/\s/g, '-')}`} x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4C4A8;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#8B7355;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3D2B1F;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base color -->
+  <rect width="100%" height="100%" fill={`url(#vignette-${label?.replace(/\s/g, '-')})`}/>
+
+  <!-- Grain texture -->
+  <rect width="100%" height="100%" filter={`url(#noise-${label?.replace(/\s/g, '-')})`} opacity="0.12"/>
+
+  <!-- Border -->
+  <rect x="2" y="2" width={viewBoxWidth - 4} height={viewBoxHeight - 4} fill="none" stroke="#D4C4A8" stroke-width="1" opacity="0.3"/>
+
+  <!-- Label -->
+  {label && (
+    <g>
+      <text
+        x="50%"
+        y="45%"
+        font-family="Georgia, serif"
+        font-size="16"
+        fill="#F5F0E6"
+        text-anchor="middle"
+        opacity="0.5"
+      >
+        {label}
+      </text>
+      <text
+        x="50%"
+        y="55%"
+        font-family="Courier, monospace"
+        font-size="10"
+        fill="#D4C4A8"
+        text-anchor="middle"
+        opacity="0.4"
+      >
+        Placeholder
+      </text>
+    </g>
+  )}
+</svg>
+
+<style>
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

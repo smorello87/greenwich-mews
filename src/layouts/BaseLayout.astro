@@ -1,0 +1,85 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { withBase } from '../lib/url';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Companion website for Brotherhood or the New Hell: The Greenwich Mews Theater, 1951–1973",
+  image = "/images/og-image.jpg"
+} = Astro.props;
+
+const siteTitle = title === 'Greenwich Mews Theater'
+  ? title
+  : `${title} | Greenwich Mews Theater`;
+
+// Social crawlers reject relative image paths, so resolve to an absolute URL.
+const socialImage = new URL(withBase(image), Astro.site).href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <title>{siteTitle}</title>
+  </head>
+  <body>
+    <Navigation />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Scroll-triggered animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  #main-content {
+    min-height: 100vh;
+    padding-top: 80px; /* Account for fixed nav */
+  }
+</style>

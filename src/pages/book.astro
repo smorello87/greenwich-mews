@@ -1,0 +1,455 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="The Book"
+  description="Brotherhood or the New Hell: The Greenwich Mews Theater, 1951–1973 by Hillary Miller"
+>
+  <section class="book-hero">
+    <div class="book-hero__inner">
+      <div class="book-hero__cover fade-in-left">
+        <div class="book-cover">
+          <div class="book-cover__spine"></div>
+          <div class="book-cover__front">
+            <div class="book-cover__placeholder">placeholder</div>
+            <div class="book-cover__overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-hero__info fade-in-right">
+        <span class="stamp">Now Available</span>
+        <h1 class="book-hero__title">Brotherhood or the New Hell</h1>
+        <p class="book-hero__subtitle">The Greenwich Mews Theater, 1951–1973</p>
+        <p class="book-hero__author">By Hillary Miller</p>
+
+        <div class="book-hero__meta">
+          <div class="meta-item">
+            <span class="meta-label">Publisher</span>
+            <span class="meta-value">University Press</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Publication Date</span>
+            <span class="meta-value">2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Pages</span>
+            <span class="meta-value">320</span>
+          </div>
+        </div>
+
+        <div class="book-hero__buttons">
+          <a href="#" class="btn btn--primary">Pre-Order Now</a>
+          <a href="#synopsis" class="btn">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="synopsis section" id="synopsis">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">About the Book</h2>
+
+      <div class="synopsis__content fade-in">
+        <p class="synopsis__lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+
+        <p>
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="toc section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">Contents</h2>
+
+      <div class="toc__list fade-in stagger">
+        <div class="toc__item">
+          <span class="toc__number">Introduction</span>
+          <span class="toc__title">The Theater in the Church Basement</span>
+        </div>
+        <div class="toc__item">
+          <span class="toc__number">Part I</span>
+          <span class="toc__title">Origins, 1951–1954</span>
+        </div>
+        <div class="toc__item">
+          <span class="toc__number">Part II</span>
+          <span class="toc__title">The Movement Years, 1955–1965</span>
+        </div>
+        <div class="toc__item">
+          <span class="toc__number">Part III</span>
+          <span class="toc__title">Black Power and the End, 1966–1973</span>
+        </div>
+        <div class="toc__item">
+          <span class="toc__number">Conclusion</span>
+          <span class="toc__title">Archives of Surveillance, Archives of Resistance</span>
+        </div>
+        <div class="toc__item toc__item--appendix">
+          <span class="toc__number">Appendix</span>
+          <span class="toc__title">Complete Productions List, 1951–1973</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="praise section">
+    <div class="container container--narrow">
+      <h2 class="section-heading section-heading--center fade-in">Praise</h2>
+
+      <div class="praise__grid fade-in stagger">
+        <blockquote class="praise__quote">
+          <p>
+            "A vital recovery of a forgotten chapter in American theater history. Miller's
+            archival work is extraordinary, and her analysis of the FBI files is both chilling
+            and illuminating."
+          </p>
+          <cite>— Advance praise pending</cite>
+        </blockquote>
+
+        <blockquote class="praise__quote">
+          <p>
+            "Miller shows how the Greenwich Mews was both a product of and a challenge to
+            Cold War liberalism. Essential reading for anyone interested in the intersection
+            of theater, race, and politics."
+          </p>
+          <cite>— Advance praise pending</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  </BaseLayout>
+
+<style>
+  /* Book Hero */
+  .book-hero {
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-espresso);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-rust), var(--color-aged-gold));
+  }
+
+  .book-hero__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .book-cover {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    perspective: 1000px;
+  }
+
+  .book-cover__front {
+    position: relative;
+    aspect-ratio: 2/3;
+    background: var(--color-parchment);
+    box-shadow:
+      5px 5px 20px rgba(0,0,0,0.3),
+      15px 15px 40px rgba(0,0,0,0.2);
+    transform: rotateY(-5deg);
+    transition: transform var(--transition-slow);
+  }
+
+  .book-cover:hover .book-cover__front {
+    transform: rotateY(0deg);
+  }
+
+  .book-cover__front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .book-cover__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-parchment);
+    border: 2px dashed var(--color-sepia);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-tobacco);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .book-cover__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .book-cover__spine {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, var(--color-tobacco), var(--color-espresso));
+    transform: rotateY(90deg);
+    transform-origin: right;
+  }
+
+  .book-hero__info {
+    color: var(--color-cream);
+  }
+
+  .book-hero__info .stamp {
+    color: var(--color-aged-gold);
+    border-color: var(--color-aged-gold);
+    margin-bottom: var(--space-md);
+  }
+
+  .book-hero__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--color-cream);
+    margin-bottom: 0.25em;
+    line-height: 1.1;
+  }
+
+  .book-hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-parchment);
+    opacity: 0.9;
+    margin-bottom: 0.5em;
+  }
+
+  .book-hero__author {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-sepia);
+    margin-bottom: var(--space-md);
+  }
+
+  .book-hero__meta {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+  }
+
+  .meta-value {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-parchment);
+  }
+
+  .book-hero__buttons {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .book-hero__buttons .btn {
+    border-color: var(--color-parchment);
+    color: var(--color-parchment);
+  }
+
+  .book-hero__buttons .btn::before {
+    background: var(--color-rust);
+  }
+
+  .book-hero__buttons .btn:hover {
+    border-color: var(--color-rust);
+  }
+
+  .book-hero__buttons .btn--primary {
+    background: var(--color-rust);
+    border-color: var(--color-rust);
+    color: var(--color-cream);
+  }
+
+  /* Section Headings */
+  .section-heading {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-tobacco);
+    margin-bottom: var(--space-md);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-rust);
+  }
+
+  .section-heading--center {
+    display: block;
+    text-align: center;
+  }
+
+  .section-heading--center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Synopsis */
+  .synopsis {
+    background: var(--color-parchment);
+  }
+
+  .synopsis__lead {
+    font-size: 1.375rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    color: var(--color-espresso);
+  }
+
+  .synopsis__content p {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* TOC */
+  .toc__list {
+    border: 1px solid var(--color-sepia);
+  }
+
+  .toc__item {
+    display: flex;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-sepia);
+    transition: background var(--transition-fast);
+  }
+
+  .toc__item:last-child {
+    border-bottom: none;
+  }
+
+  .toc__item:hover {
+    background: var(--color-parchment);
+  }
+
+  .toc__item--appendix {
+    background: var(--color-parchment);
+  }
+
+  .toc__number {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-faded-blue);
+    min-width: 100px;
+  }
+
+  .toc__title {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    color: var(--color-espresso);
+  }
+
+  /* Praise */
+  .praise {
+    background: var(--color-parchment);
+  }
+
+  .praise__grid {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .praise__quote {
+    padding: var(--space-md);
+    border-left: 3px solid var(--color-rust);
+    background: var(--color-cream);
+  }
+
+  .praise__quote p {
+    font-size: 1.0625rem;
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+
+  .praise__quote cite {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-tobacco);
+    font-style: normal;
+  }
+
+  @media (max-width: 900px) {
+    .book-hero__inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .book-cover {
+      margin-bottom: var(--space-md);
+    }
+
+    .book-hero__meta {
+      justify-content: center;
+    }
+
+    .book-hero__buttons {
+      justify-content: center;
+    }
+
+    .toc__item {
+      flex-direction: column;
+      gap: 0.25em;
+    }
+
+    .toc__number {
+      min-width: auto;
+    }
+  }
+</style>
