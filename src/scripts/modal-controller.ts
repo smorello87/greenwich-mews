@@ -43,6 +43,13 @@ export function createModalController(
   }
 
   function open(initialFocus?: HTMLElement) {
+    // Opening an already-open modal must not push a second stack entry or
+    // register a second keydown listener — that would let one Escape close
+    // this modal and the one beneath it.
+    if (stack.includes(controller)) {
+      (initialFocus ?? focusables()[0])?.focus();
+      return;
+    }
     lastFocused = document.activeElement as HTMLElement | null;
     stack.push(controller);
     backdrop.classList.add('open');

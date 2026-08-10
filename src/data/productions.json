@@ -1,44 +1,717 @@
 [
   {
-    "id": "unto-such-glory-1951",
+    "id": "the-decision-1951",
     "year": 1951,
-    "title": "Unto Such Glory",
-    "playwright": "Paul Green",
-    "director": "Stella Holt",
+    "title": "The Decision",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Edward Chodorov",
+    "director": "Ronnie Paris",
     "cast": [
-      "Ensemble Cast"
+      "Ruth Attaway",
+      "Robert Brown",
+      "Alfred Elkins",
+      "Miriam Craig",
+      "Jack Dana",
+      "MacGregor Gibbs",
+      "Milroy Ingram",
+      "Bernard Kates",
+      "Antoinette \"Toni\" Kray",
+      "Carl Vincent Lee",
+      "Paulene Myers",
+      "Lloyd Richards",
+      "Mike St. John",
+      "Joe Sargeant",
+      "Joy Saunders",
+      "Sy Travers",
+      "Howard Turrell"
     ],
-    "notes": "Inaugural production",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Edward Chodorov"
+      },
+      {
+        "role": "Director",
+        "names": "Ronnie Paris"
+      },
+      {
+        "role": "Producer",
+        "names": "Bernard Rosen"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Jerry Fritz"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Muriel Boudin"
+      },
+      {
+        "role": "Technical Director",
+        "names": "Thurman Falk"
+      },
+      {
+        "role": "Sets",
+        "names": "Ronnie Paris"
+      },
+      {
+        "role": "Lights",
+        "names": "Joe Coffee"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Jack Shor"
+      }
+    ],
+    "notes": "",
     "featured": false,
     "image": null,
     "description": null
   },
   {
-    "id": "the-world-of-sholom-aleichem-1952",
-    "year": 1952,
-    "title": "The World of Sholom Aleichem",
-    "playwright": "Arnold Perl",
-    "director": "Howard Da Silva",
+    "id": "the-young-and-fair-1951",
+    "year": 1951,
+    "title": "The Young and Fair",
+    "company": "greenwich-mews-theatre",
+    "playwright": "N. Richard Nash",
+    "director": "Paul Mann",
     "cast": [
-      "Morris Carnovsky",
-      "Ruby Dee",
-      "Jack Gilford"
+      "Florence Anglin",
+      "Betty Bendyk",
+      "Ellie Pine",
+      "Bea Roth",
+      "Virginia Stevens"
     ],
-    "notes": "Interfaith programming",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "A landmark interfaith production that brought together Jewish and African American artists, demonstrating the theater's unique mission of cultural bridge-building."
-  },
-  {
-    "id": "the-climate-of-eden-1954",
-    "year": 1954,
-    "title": "The Climate of Eden",
-    "playwright": "Moss Hart",
-    "director": "Stella Holt",
-    "cast": [
-      "Ensemble Cast"
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "N. Richard Nash"
+      },
+      {
+        "role": "Director",
+        "names": "Paul Mann"
+      }
     ],
     "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "widower-s-houses-1952",
+    "year": 1952,
+    "title": "Widower's Houses",
+    "company": "greenwich-mews-theatre",
+    "playwright": "George Bernard Shaw",
+    "director": "Mike Kellin",
+    "cast": [
+      "Jack Banning",
+      "Shirley Blanc",
+      "Stefan Gierasch",
+      "Bernard Kates",
+      "Antoinette \"Toni\" Kray",
+      "Jerry Morris",
+      "Howard Wierum"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "George Bernard Shaw"
+      },
+      {
+        "role": "Director",
+        "names": "Mike Kellin"
+      },
+      {
+        "role": "Producer",
+        "names": "Rachele Wall"
+      },
+      {
+        "role": "Asst. Producer",
+        "names": "Mickey Williams"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Beth Garde"
+      },
+      {
+        "role": "Asst. Stage Manager",
+        "names": "David Lucas"
+      },
+      {
+        "role": "Sets",
+        "names": "Marc K. Heine"
+      },
+      {
+        "role": "Costumes",
+        "names": "Burnelle Babcock"
+      },
+      {
+        "role": "Lights",
+        "names": "Noah Kalkut, David Lucas"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Jack Shor"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "monday-s-heroes-1953",
+    "year": 1953,
+    "title": "Monday's Heroes",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Les Pine",
+    "director": "Michael Lewin",
+    "cast": [
+      "Lisa Baker",
+      "Joe Bernard",
+      "Zina Bethune",
+      "Terry Carter",
+      "Russ Dore",
+      "Robert Ellenstein",
+      "Hazen Gifford",
+      "Lou Goss",
+      "Bill Gunn",
+      "Hilda Haynes",
+      "Bernard Kates",
+      "Eva Levin",
+      "Salem Ludwig",
+      "Albert Ottenheimer",
+      "Eli Rill",
+      "Bea Roth",
+      "Joy Saunders",
+      "Royce Wallace"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Les Pine"
+      },
+      {
+        "role": "Director",
+        "names": "Michael Lewin"
+      },
+      {
+        "role": "Producer",
+        "names": "Larney Rutledge"
+      },
+      {
+        "role": "Business Manager",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Louise Wierum, Joe Lieberman"
+      },
+      {
+        "role": "Asst. Stage Manager",
+        "names": "Irving Gold"
+      },
+      {
+        "role": "Technical Director",
+        "names": "Jay Zimmet"
+      },
+      {
+        "role": "Sets",
+        "names": "Sonia Lowenstein"
+      },
+      {
+        "role": "Costumes",
+        "names": "Burnelle Babcock"
+      },
+      {
+        "role": "Lights",
+        "names": "C. Adler"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Dale Robbins, Jack Shor"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-emperor-s-clothes-1953",
+    "year": 1953,
+    "title": "The Emperor's Clothes",
+    "company": "greenwich-mews-theatre",
+    "playwright": "George Tabori",
+    "director": "David Pressman",
+    "cast": [
+      "R. Graham Brown",
+      "Alice Childress",
+      "Margaret Croydon",
+      "Jack Dana",
+      "Stephanie Elliot",
+      "Michael Lewin",
+      "David Lucas",
+      "Jose P.H. Pesko",
+      "Anne Starr Roberts",
+      "Howard Wierum"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "George Tabori"
+      },
+      {
+        "role": "Director",
+        "names": "David Pressman"
+      },
+      {
+        "role": "Business Manager",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Terry Carter"
+      },
+      {
+        "role": "Technical Director",
+        "names": "David Lucas"
+      },
+      {
+        "role": "House Manager",
+        "names": "Terry Carter"
+      },
+      {
+        "role": "Sets",
+        "names": "Paul Stone"
+      },
+      {
+        "role": "Costumes",
+        "names": "Robert Riley"
+      },
+      {
+        "role": "Lights",
+        "names": "David Lucas"
+      },
+      {
+        "role": "Props",
+        "names": "Joe Lieberman"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "a-time-of-storm-1954",
+    "year": 1954,
+    "title": "A Time of Storm",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Sheldon Stark",
+    "director": "Michael Howard",
+    "cast": [
+      "Betty Bendyk",
+      "R. Graham Brown",
+      "Chevi Colton",
+      "Miriam Craig",
+      "Anne Fielding",
+      "MacGregor Gibbs",
+      "Carlos Gorbea",
+      "James Karen",
+      "Sandra Kazan",
+      "Mike Kellin",
+      "Michael Lewin",
+      "Peter Prince",
+      "Joy Saunders",
+      "Jane White"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Sheldon Stark"
+      },
+      {
+        "role": "Director",
+        "names": "Michael Howard"
+      },
+      {
+        "role": "Producer",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Artistic Coordinator",
+        "names": "Osceola Archer"
+      },
+      {
+        "role": "Sets",
+        "names": "Robert Soule"
+      },
+      {
+        "role": "Costumes",
+        "names": "Frank Brady"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Lola Pergament"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "in-splendid-error-1954",
+    "year": 1954,
+    "title": "In Splendid Error",
+    "company": "greenwich-mews-theatre",
+    "playwright": "William Branch",
+    "director": "Salem Ludwig",
+    "cast": [
+      "Maxwell Glanville",
+      "Louis Guss",
+      "Charles Harrigan",
+      "John Leighton",
+      "Donna Liggins",
+      "Kenneth Manigault",
+      "William Marshall",
+      "Albert Ottenheimer",
+      "Alfred Sander",
+      "Clarice Taylor",
+      "Lance Taylor",
+      "Howard Wierum"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "William Branch"
+      },
+      {
+        "role": "Director",
+        "names": "Salem Ludwig"
+      },
+      {
+        "role": "Administrative Coordinator",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Artistic Coordinator",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Maxwell Glanville"
+      },
+      {
+        "role": "Production Asst.",
+        "names": "Jane Wright, Joe Lieberman, Mary Gale"
+      },
+      {
+        "role": "Technical Asst.",
+        "names": "Alan Harper, Jerry Balash"
+      },
+      {
+        "role": "Sets",
+        "names": "George Corrin"
+      },
+      {
+        "role": "Costumes",
+        "names": "Dorothy Croissant"
+      },
+      {
+        "role": "Lights",
+        "names": "George Corrin"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Lola Pergament"
+      }
+    ],
+    "notes": "",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "William Branch's drama about Frederick Douglass and the raid on Harpers Ferry, directed by Salem Ludwig, with William Marshall and Clarice Taylor."
+  },
+  {
+    "id": "major-barbara-1954",
+    "year": 1954,
+    "title": "Major Barbara",
+    "company": "greenwich-mews-theatre",
+    "playwright": "George Bernard Shaw",
+    "director": "Paul Vincent Gordon, Peter Kass",
+    "cast": [
+      "Florence Anglin",
+      "R. Graham Brown",
+      "Anne Fielding",
+      "Edwin Gordon",
+      "James B. McMahon",
+      "Kenneth Manigault",
+      "Helen Martin",
+      "Clark Morgan",
+      "Karen Morley",
+      "Charles Randall",
+      "Dorothy Reed",
+      "Diana Sands",
+      "Jack Sydow",
+      "Clarice Taylor"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "George Bernard Shaw"
+      },
+      {
+        "role": "Director",
+        "names": "Paul Vincent Gordon, Peter Kass"
+      },
+      {
+        "role": "Producer",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Sets",
+        "names": "George Corwin"
+      },
+      {
+        "role": "Costumes",
+        "names": "Pat Zipprodt"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "an-evening-with-shaw-1955",
+    "year": 1955,
+    "title": "An Evening with Shaw",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Bernard Shaw",
+    "director": "Eli Rill",
+    "cast": [
+      "Robert Blossoms",
+      "Tony Frost",
+      "Mamie Jones",
+      "Janine Manatis"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Bernard Shaw"
+      },
+      {
+        "role": "Director",
+        "names": "Eli Rill"
+      },
+      {
+        "role": "Sets",
+        "names": "Maurice Bugeaud"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "juno-and-the-paycock-1955",
+    "year": 1955,
+    "title": "Juno and the Paycock",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Seán O'Casey",
+    "director": "Frank Silvera",
+    "cast": [
+      "Howard Augusta",
+      "James N. Clark",
+      "Miriam Craig",
+      "Alfreda Diggs",
+      "Virginia Downing",
+      "Anne Fielding",
+      "Charles Harrigan",
+      "Ben Jenné",
+      "John Leighton",
+      "James B. McMahon",
+      "Helen Martin",
+      "Clark Morgan",
+      "Albert Ottenheimer",
+      "Howard Wierum",
+      "Edmund Williams"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Seán O'Casey"
+      },
+      {
+        "role": "Director",
+        "names": "Frank Silvera"
+      },
+      {
+        "role": "Administrative Coordinator",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Artistic Coordinator",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Helen Martin"
+      },
+      {
+        "role": "Production Asst.",
+        "names": "Anja Roters, Betty Liggins, Jon Katz, James Clark"
+      },
+      {
+        "role": "Sets",
+        "names": "Sonia Lowenstein"
+      },
+      {
+        "role": "Costumes",
+        "names": "Dorothy Croissant"
+      },
+      {
+        "role": "Lights",
+        "names": "Jerry Balash"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Lola Pergament"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "musicomedy-1955",
+    "year": 1955,
+    "title": "Musicomedy",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Alice Childress, Langston Hughes, Seán O'Casey",
+    "director": "Maxwell Glanville",
+    "cast": [
+      "Liam Lenihan",
+      "Kenneth Manigault",
+      "Freddie Marin",
+      "Clark Morgan",
+      "Diana Sands",
+      "Jack Sydow"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Alice Childress, Langston Hughes, Seán O'Casey"
+      },
+      {
+        "role": "Director",
+        "names": "Maxwell Glanville"
+      },
+      {
+        "role": "Asst. Director",
+        "names": "Austin Briggs-Hall"
+      },
+      {
+        "role": "Choreography",
+        "names": "Allegro Kane"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Frank Brents, Willfred Sales"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Howard Augusta"
+      },
+      {
+        "role": "Sets",
+        "names": "Betty Liggins"
+      },
+      {
+        "role": "Lights",
+        "names": "George Lewis"
+      }
+    ],
+    "notes": "Variety show",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-anniversary-switch-in-time-1955",
+    "year": 1955,
+    "title": "The Anniversary / Switch in Time",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Anton Chekhov, Lola Pergament",
+    "director": "Jack Sydow",
+    "cast": [
+      "Jim Clark",
+      "William Edmonson",
+      "Ellen Holly",
+      "Fredric Martin",
+      "Charles Randall",
+      "Eli Rill",
+      "Ruth Volner"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Anton Chekhov, Lola Pergament"
+      },
+      {
+        "role": "Director",
+        "names": "Jack Sydow"
+      },
+      {
+        "role": "Artistic Director",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Administrative Coordinator",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Jim Clark"
+      },
+      {
+        "role": "Production Asst.",
+        "names": "George Borkin, Anja Roters, Judith Strand"
+      },
+      {
+        "role": "Sets",
+        "names": "Sonia Lowenstein"
+      },
+      {
+        "role": "Costumes",
+        "names": "Louise Evans"
+      },
+      {
+        "role": "Lights",
+        "names": "Jerry Balash"
+      },
+      {
+        "role": "Sound",
+        "names": "Jerry Balash"
+      },
+      {
+        "role": "Public Relations",
+        "names": "Lola Pergament"
+      }
+    ],
+    "notes": "Presented as the \"2 for Fun\" double bill",
     "featured": false,
     "image": null,
     "description": null
@@ -47,102 +720,579 @@
     "id": "trouble-in-mind-1955",
     "year": 1955,
     "title": "Trouble in Mind",
+    "company": "greenwich-mews-theatre",
     "playwright": "Alice Childress",
-    "director": "Clarice Taylor",
+    "director": "Clarice Taylor, Alice Childress",
     "cast": [
-      "Clarice Taylor",
-      "Hilda Haynes"
+      "Howard Augusta",
+      "Charles Bettis",
+      "Stephanie Elliot",
+      "Hal England",
+      "Hilda Haynes",
+      "Louise Kemp",
+      "Liam Lenihan",
+      "James B. McMahon",
+      "Clarice Taylor"
     ],
-    "notes": "First Obie Award winner, 1956",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Alice Childress"
+      },
+      {
+        "role": "Director",
+        "names": "Clarice Taylor, Alice Childress"
+      },
+      {
+        "role": "Administrative Coordinator",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Artistic Coordinator",
+        "names": "Lily Turner"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Howard Augusta"
+      },
+      {
+        "role": "Production Asst.",
+        "names": "Dorothy Barry, Maurice Bugeaud, Anita Honis, Bill Kellogg, Linda Steinberg"
+      },
+      {
+        "role": "Sets",
+        "names": "Vincent Sorrentino"
+      },
+      {
+        "role": "Lights",
+        "names": "Vincent Sorrentino"
+      }
+    ],
+    "notes": "",
     "featured": true,
     "image": "production-1.png",
-    "description": "Alice Childress's groundbreaking play about racism in the theater industry won the first Obie Award for Best Original Play, establishing the Mews as a venue for serious Black drama."
+    "description": "Alice Childress's play about racism inside the theatre industry, co-directed by the playwright and Clarice Taylor, who also led the cast."
   },
   {
-    "id": "the-amen-corner-1956",
+    "id": "a-doll-s-house-1956",
     "year": 1956,
-    "title": "The Amen Corner",
-    "playwright": "James Baldwin",
-    "director": "Frank Silvera",
+    "title": "A Doll's House",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Henrik Ibsen",
+    "director": "Miriam Goldina",
     "cast": [
-      "Beah Richards",
-      "Frank Silvera"
+      "Charlotte Acheson",
+      "Miriam Craig",
+      "Maurine Holbert",
+      "HM Koutoukas",
+      "Michael Lewin",
+      "James B. McMahon",
+      "Howard Wierum"
     ],
-    "notes": "World premiere of Baldwin's first play",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "James Baldwin's first play received its world premiere at the Mews, launching the theatrical career of one of America's most important writers."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Henrik Ibsen"
+      },
+      {
+        "role": "Composer",
+        "names": "Reginald Godden"
+      },
+      {
+        "role": "Translation",
+        "names": "Miriam Goldina"
+      },
+      {
+        "role": "Director",
+        "names": "Miriam Goldina"
+      },
+      {
+        "role": "Choreography",
+        "names": "Valentina Litvinoff"
+      },
+      {
+        "role": "Producer",
+        "names": "Miriam Goldina"
+      },
+      {
+        "role": "Sets",
+        "names": "Robert Motley"
+      },
+      {
+        "role": "Costumes",
+        "names": "Juana Merino"
+      },
+      {
+        "role": "Lights",
+        "names": "Adrian Hall"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "simply-heavenly-1957",
-    "year": 1957,
-    "title": "Simply Heavenly",
-    "playwright": "Langston Hughes",
-    "director": "Stella Holt",
+    "id": "me-candido-1956",
+    "year": 1956,
+    "title": "Me Candido",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Walt Anderson",
+    "director": "Sidney Walters",
     "cast": [
-      "Melvin Stewart",
-      "Claudia McNeil"
+      "Anna Appel",
+      "Florence Anglin",
+      "Jerry Austin",
+      "Fran Bennett",
+      "Sam Cohen",
+      "Míriam Colón",
+      "Geena Goodwin",
+      "Bambi Lee Green",
+      "Jerry Jarrett",
+      "David Kerwin",
+      "Bill Landsman",
+      "Sigurd Lomaki",
+      "Carlos Montalbán",
+      "José Pérez",
+      "Maggi Speer",
+      "Dorothy Stasney",
+      "Stanley Sayer"
     ],
-    "notes": "Musical; moved to Broadway",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Langston Hughes's joyful musical about Harlem life became one of the theater's biggest hits, eventually transferring to Broadway."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Walt Anderson"
+      },
+      {
+        "role": "Director",
+        "names": "Sidney Walters"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Maggi Speer"
+      },
+      {
+        "role": "Sets",
+        "names": "Sonia Lowenstein"
+      },
+      {
+        "role": "Costumes",
+        "names": "Leo B. Meyer"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-beaver-coat-1956",
+    "year": 1956,
+    "title": "The Beaver Coat",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Gerhart Hauptmann",
+    "director": "Daphne Elliot",
+    "cast": [
+      "Elaine Eldridge",
+      "Anne Fielding",
+      "Tom Pedi",
+      "Neil Sheldon",
+      "Jack Sorlan",
+      "Howard Wierum"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Gerhart Hauptmann"
+      },
+      {
+        "role": "Director",
+        "names": "Daphne Elliot"
+      },
+      {
+        "role": "Sets",
+        "names": "Helen Pond, Herbert Senn"
+      },
+      {
+        "role": "Costumes",
+        "names": "E. Oliver Olsen"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
     "id": "a-land-beyond-the-river-1957",
     "year": 1957,
     "title": "A Land Beyond the River",
+    "company": "greenwich-mews-theatre",
     "playwright": "Loften Mitchell",
-    "director": "Stella Holt",
+    "director": "Michael Howard",
     "cast": [
+      "Jacqueline Barnes",
+      "Fran Bennett",
+      "R. Graham Brown",
+      "Ted Butler",
+      "Clayton Corbin",
+      "Peggy Devello",
+      "Charles Griffin",
+      "Lionel Habas",
+      "Donald Julian",
+      "Will Lawrie",
+      "George Lucas",
+      "Helen Martin",
+      "Eric Richmond",
       "Diana Sands",
-      "Robert Earl Jones"
+      "Richard Ward",
+      "Howard Wierum"
     ],
-    "notes": "Based on Briggs v. Elliott",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Loften Mitchell"
+      },
+      {
+        "role": "Director",
+        "names": "Michael Howard"
+      },
+      {
+        "role": "Music",
+        "names": "Richard Ward"
+      },
+      {
+        "role": "Business Manager",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Production Coordinator",
+        "names": "Laurence L. Olvin"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Fran Bennett"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Sigurd Lomaki"
+      },
+      {
+        "role": "House Manager",
+        "names": "Hal England"
+      },
+      {
+        "role": "Sets",
+        "names": "John Raymond Friemann"
+      },
+      {
+        "role": "Original Design",
+        "names": "Romare Bearden"
+      },
+      {
+        "role": "Lights",
+        "names": "Alan Crain"
+      },
+      {
+        "role": "Props",
+        "names": "Rosemary Hanley"
+      },
+      {
+        "role": "Public Relations",
+        "names": "David Lipsky, Richard Falk, Alvin Chick Webb"
+      },
+      {
+        "role": "Understudies",
+        "names": "Raymond Saint-Jacques, Harold Scott"
+      }
+    ],
+    "notes": "",
     "featured": true,
     "image": "production-1.png",
-    "description": "Loften Mitchell's drama about the school desegregation case that preceded Brown v. Board of Education brought Civil Rights history to the stage."
+    "description": "Loften Mitchell's drama of the South Carolina school desegregation fight, with Diana Sands and Helen Martin. Romare Bearden supplied the original design."
   },
   {
-    "id": "garden-district-1958",
+    "id": "a-journey-with-strangers-1958",
     "year": 1958,
-    "title": "Garden District",
-    "playwright": "Tennessee Williams",
-    "director": "Herbert Machiz",
+    "title": "A Journey with Strangers",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Richard Lortz",
+    "director": "Adrian Hall",
     "cast": [
-      "Anne Meacham",
-      "Cathleen Nesbitt"
+      "Mike Antonakes",
+      "Esther Benson",
+      "Edward Blessington",
+      "Ted Butler",
+      "David Ford",
+      "Maggie Gerrity",
+      "Jack Graham",
+      "Stephen Harris",
+      "Lois Holmes",
+      "Rusty Parker",
+      "Michel Ray",
+      "Donald Robinson",
+      "Mary Sinclair",
+      "Norma Winters",
+      "Tania Wisbar"
     ],
-    "notes": "Off-Broadway premiere",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Richard Lortz"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Larry Parker"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Howard London"
+      },
+      {
+        "role": "Sets",
+        "names": "Robert Soule, Sigurd Lomaki"
+      },
+      {
+        "role": "Costumes",
+        "names": "Robert Soule"
+      },
+      {
+        "role": "Lights",
+        "names": "Larry Parker"
+      }
+    ],
+    "notes": "",
     "featured": false,
     "image": null,
     "description": null
   },
   {
-    "id": "the-blacks-1959",
+    "id": "the-courageous-one-1958",
+    "year": 1958,
+    "title": "The Courageous One",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Miriam Goldina, adapted from Gorky's Meshtchane",
+    "director": "Miriam Goldina",
+    "cast": [
+      "Joan Astley",
+      "Betty Bendyk",
+      "Harrison Brooke",
+      "Howland Chamberlin",
+      "Miriam Green",
+      "Maurine Holbert",
+      "Mike Jackson",
+      "Tom Pedi",
+      "Marin Riley",
+      "Mal Throne",
+      "Michael Wagner",
+      "Mervyn Williams",
+      "Agnes Young"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Miriam Goldina, adapted from Gorky's Meshtchane"
+      },
+      {
+        "role": "Translation",
+        "names": "Miriam Goldina, Helen Choat"
+      },
+      {
+        "role": "Director",
+        "names": "Miriam Goldina"
+      },
+      {
+        "role": "Musical Arrangement",
+        "names": "Julia Adams"
+      },
+      {
+        "role": "Coordinator",
+        "names": "Laurence L. Olvin"
+      },
+      {
+        "role": "Sets",
+        "names": "Charles Brandon"
+      },
+      {
+        "role": "Costumes",
+        "names": "Mary McKinley"
+      },
+      {
+        "role": "Lights",
+        "names": "Norman Blumenfeld"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-ballad-of-jazz-street-1959",
     "year": 1959,
-    "title": "The Blacks",
-    "playwright": "Jean Genet",
-    "director": "Gene Frankel",
+    "title": "The Ballad of Jazz Street",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Norton Cooper",
+    "director": "Adrian Hall",
     "cast": [
-      "James Earl Jones",
-      "Cicely Tyson",
-      "Maya Angelou",
-      "Louis Gossett Jr."
+      "Roy Adams",
+      "Juan Kee",
+      "Avon Long",
+      "Helen Martin",
+      "Edward Russell",
+      "Lonnie Sattin",
+      "Tina Sattin",
+      "Richard Ward"
     ],
-    "notes": "Longest-running Off-Broadway non-musical at the time",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Jean Genet's provocative play about race and identity featured a legendary cast and became the longest-running Off-Broadway non-musical of its era."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Norton Cooper"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Managing Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Music",
+        "names": "Nat Pierce"
+      },
+      {
+        "role": "Asst. Producer",
+        "names": "Frances Drucker"
+      },
+      {
+        "role": "General Management",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Production Coordinator",
+        "names": "Laurence L. Olvin"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Andrew Mihok"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Ray Brown"
+      },
+      {
+        "role": "Sets",
+        "names": "Frank Meottel"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "the-prodigal-1960",
+    "id": "the-trip-to-bountiful-1959",
+    "year": 1959,
+    "title": "The Trip To Bountiful",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Horton Foote",
+    "director": "Adrian Hall",
+    "cast": [
+      "Aileen Ewart",
+      "Edward Grover",
+      "Katherine Helmond",
+      "J. Frank Lucas",
+      "John Bill Jones",
+      "Sid Lee",
+      "Marguerite Lenert",
+      "Howard London",
+      "Elizabeth Moore",
+      "Mary Lee Rowland",
+      "Nancy Stephens",
+      "Tom Wright"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Horton Foote"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Sets",
+        "names": "Robert Soule"
+      },
+      {
+        "role": "Costumes",
+        "names": "Robert Soule"
+      },
+      {
+        "role": "Lights",
+        "names": "Wayne Brown"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "a-country-scandal-1960",
     "year": 1960,
-    "title": "The Prodigal",
-    "playwright": "Jack Richardson",
-    "director": "Stuart Vaughan",
+    "title": "A Country Scandal",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Alex Szogyi",
+    "director": "Amnon Kabatchnik",
     "cast": [
-      "Ensemble Cast"
+      "Paul Andor",
+      "Conrad Bain",
+      "Beatrice Bakalyar",
+      "Patricia Davies",
+      "Crystal Field",
+      "Max Gulack",
+      "Mark Lendard",
+      "Jack Johnson",
+      "Bruce Kimes",
+      "Sim Landres",
+      "Gene Peterson",
+      "Earle Rankin",
+      "Roberta Royse",
+      "Willy Switkes",
+      "Carol Teitel",
+      "Ronald Weyand"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Alex Szogyi"
+      },
+      {
+        "role": "Director",
+        "names": "Amnon Kabatchnik"
+      },
+      {
+        "role": "Presented by",
+        "names": "Lois Bianchi, Amnon Kabatchnik"
+      },
+      {
+        "role": "Sets",
+        "names": "Richard Bianchi"
+      },
+      {
+        "role": "Costumes",
+        "names": "Mary Ann Reed"
+      }
     ],
     "notes": "",
     "featured": false,
@@ -150,101 +1300,812 @@
     "description": null
   },
   {
-    "id": "tambourines-to-glory-1961",
+    "id": "marcus-in-the-high-grass-1960",
+    "year": 1960,
+    "title": "Marcus in the High Grass",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Bill Gunn",
+    "director": "Brian Shaw",
+    "cast": [
+      "David Ford",
+      "Maurice Brenner",
+      "Burt Brinckerhoff",
+      "Mickey Lee",
+      "Max Gulack",
+      "J. Frank Lucas",
+      "Joanna March",
+      "Parker McCormick",
+      "Eulalie Noble",
+      "Ed Preble",
+      "Linda Ross",
+      "Lanna Saunders"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Bill Gunn"
+      },
+      {
+        "role": "Director",
+        "names": "Brian Shaw"
+      },
+      {
+        "role": "Presented by",
+        "names": "Greenwich Mews Players, Stella Holt, Carl F. Salmaggi, George White"
+      },
+      {
+        "role": "Sets",
+        "names": "Jack Cornwell"
+      },
+      {
+        "role": "Costumes",
+        "names": "Bill Hargate"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "donogoo-1961",
     "year": 1961,
-    "title": "Tambourines to Glory",
-    "playwright": "Langston Hughes",
-    "director": "Stella Holt",
+    "title": "Donogoo",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Jules Romains",
+    "director": "Adrian Hall",
     "cast": [
-      "Clara Ward",
-      "Gospel Choir"
+      "Russell Bailey",
+      "Ronald Bishop",
+      "Raleigh Bond",
+      "Jenny Duncan",
+      "Brendan Fay",
+      "Flore",
+      "George Martin",
+      "William Mullaney",
+      "Jonathan Taylor",
+      "Wells Richardson",
+      "Janice Wilson",
+      "Richard Woods"
     ],
-    "notes": "Gospel musical",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Hughes's gospel musical brought the sounds of the Black church to the downtown theater, featuring the legendary Clara Ward and her gospel choir."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Jules Romains"
+      },
+      {
+        "role": "Translation",
+        "names": "James B. Gidney"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Music",
+        "names": "Denis Jeffrey Blood"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Production Coordinator",
+        "names": "Maurice Schaded"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Robert Buzzell"
+      },
+      {
+        "role": "Sets",
+        "names": "Robert Soule"
+      },
+      {
+        "role": "Costumes",
+        "names": "Domingo A. Rodriguez"
+      },
+      {
+        "role": "Lights",
+        "names": "Jules Fisher"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "moon-on-a-rainbow-shawl-1962",
+    "id": "red-roses-for-me-1961",
+    "year": 1961,
+    "title": "Red Roses for Me",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Seán O'Casey",
+    "director": "Adrian Hall",
+    "cast": [
+      "William Cain",
+      "Mildred Dunnock",
+      "Robert Fields"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Seán O'Casey"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt, Milton Reverby, Beverly Landau"
+      },
+      {
+        "role": "Co-producer",
+        "names": "John Terry Brown, Jr."
+      },
+      {
+        "role": "Production Manager",
+        "names": "Maurice Schaded"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Robert Buzzell"
+      },
+      {
+        "role": "Sets",
+        "names": "Robert Soule"
+      },
+      {
+        "role": "Press Agent",
+        "names": "David Lipsky"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-cave-dwellers-1961",
+    "year": 1961,
+    "title": "The Cave Dwellers",
+    "company": "greenwich-mews-theatre",
+    "playwright": "William Saroyan",
+    "director": "Michael Lindsay-Hogg",
+    "cast": [
+      "Susan Barrow",
+      "Geraldine Fitzgerald",
+      "Karen Lund",
+      "Joanna Miles",
+      "David Scott Milton",
+      "George Morfogen",
+      "Gerald Richards",
+      "Jerry Rockwood",
+      "David Rosenbaum",
+      "Kenneth Vitulli",
+      "Anthony Zerbe"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "William Saroyan"
+      },
+      {
+        "role": "Director",
+        "names": "Michael Lindsay-Hogg"
+      },
+      {
+        "role": "Music",
+        "names": "Bernardo Segall"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt, Elizabeth Roberts, Maurice Schaded in association with Arthur Loeb"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Sheila Kortlucke"
+      },
+      {
+        "role": "Design",
+        "names": "John Ross"
+      }
+    ],
+    "notes": "",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "William Saroyan's parable of a company of outcasts squatting in a condemned theatre, starring Geraldine Fitzgerald, with Joanna Miles and Anthony Zerbe."
+  },
+  {
+    "id": "the-mikado-1961",
+    "year": 1961,
+    "title": "The Mikado",
+    "company": "greenwich-mews-theatre",
+    "playwright": "William Schwenck Gilbert (libretto)",
+    "director": "Dorothy Raedler",
+    "cast": [
+      "Raymond Allen",
+      "Arden Anderson",
+      "Sally Birckhead",
+      "John Bridson",
+      "Jo Chesley",
+      "L.D. Clements",
+      "Mary Ann Staffa",
+      "Jayson Steinbeck",
+      "Thomas S. Vasiloff"
+    ],
+    "credits": [
+      {
+        "role": "Librettist",
+        "names": "William Schwenck Gilbert"
+      },
+      {
+        "role": "Composer",
+        "names": "Arthur Sullivan"
+      },
+      {
+        "role": "Director",
+        "names": "Dorothy Raedler"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Ronald Bush"
+      },
+      {
+        "role": "Producer",
+        "names": "Dorothy Raedler in association with Stella Holt, David Lipsky"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Frank Wicks"
+      },
+      {
+        "role": "Sets",
+        "names": "Frank Wicks"
+      },
+      {
+        "role": "Costumes",
+        "names": "American Savoyards"
+      },
+      {
+        "role": "Lights",
+        "names": "Frank Wicks"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-mousetrap-1961",
+    "year": 1961,
+    "title": "The Mousetrap",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Agatha Christie",
+    "director": "Adrian Hall",
+    "cast": [
+      "John D. Irving",
+      "Allen Joseph",
+      "Barry Newman",
+      "John Scanlon",
+      "Barbara Stanton",
+      "Angela Thorton",
+      "Margaretta Warwick",
+      "John Wynne-Evans"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Agatha Christie"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-student-prince-1961",
+    "year": 1961,
+    "title": "The Student Prince",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Dorothy Donnelly (book & lyrics)",
+    "director": "Dorothy Raedler",
+    "cast": [
+      "Raymond Allen",
+      "Arden Anderson",
+      "Sally Birckhead",
+      "Bruce Carrithers",
+      "L.D. Clements",
+      "William Duval",
+      "Rita Falbel",
+      "Joyce Miko",
+      "Bob Randall",
+      "Mary Ann Staffa",
+      "Nick Titakis",
+      "Thomas S. Vasiloff"
+    ],
+    "credits": [
+      {
+        "role": "Book & Lyrics",
+        "names": "Dorothy Donnelly"
+      },
+      {
+        "role": "Director",
+        "names": "Dorothy Raedler"
+      },
+      {
+        "role": "Music",
+        "names": "Sigmund Romberg"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Ronald Bush"
+      },
+      {
+        "role": "Producer",
+        "names": "Dorothy Raedler in association with Stella Holt and David Lipsky"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Frank Wicks"
+      },
+      {
+        "role": "Sets",
+        "names": "Frank Wicks"
+      },
+      {
+        "role": "Lights",
+        "names": "Frank Wicks"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-silver-tassie-1962",
     "year": 1962,
-    "title": "Moon on a Rainbow Shawl",
-    "playwright": "Errol John",
-    "director": "George Roy Hill",
+    "title": "The Silver Tassie",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Seán O'Casey",
+    "director": "Adrian Hall",
     "cast": [
-      "James Earl Jones",
-      "Cicely Tyson"
+      "Raymond Allen",
+      "William Cain",
+      "Martin J. Cassidy",
+      "Martin Sullivan",
+      "Rebecca Thompson"
     ],
-    "notes": "Caribbean drama",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Seán O'Casey"
+      },
+      {
+        "role": "Director",
+        "names": "Adrian Hall"
+      },
+      {
+        "role": "Sponsors",
+        "names": "Stella Holt, Beverly Landau"
+      }
+    ],
+    "notes": "",
     "featured": false,
     "image": null,
     "description": null
   },
   {
-    "id": "in-white-america-1963",
+    "id": "the-chief-thing-1963",
     "year": 1963,
-    "title": "In White America",
-    "playwright": "Martin B. Duberman",
-    "director": "Martin B. Duberman",
+    "title": "The Chief Thing",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Nikolai Evreinov",
+    "director": "Bo Herrod",
     "cast": [
-      "Gloria Foster",
-      "James Greene"
+      "Betty Aruda",
+      "John Bazarini",
+      "Ewing Cherry",
+      "Martin J. Kelley",
+      "Antoinette \"Toni\" Kray",
+      "Andree Lambert",
+      "Frank Nastasi",
+      "Dorothy Parish",
+      "Bernard Reed",
+      "Robert Patrick Sullivan",
+      "Ronald Weyand"
     ],
-    "notes": "Documentary theater",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "This documentary drama about the Black experience in America became one of the most important theatrical statements of the Civil Rights era."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Nikolai Evreinov"
+      },
+      {
+        "role": "Translation",
+        "names": "Herman Bernstein, Leo Randole"
+      },
+      {
+        "role": "Director",
+        "names": "Bo Herrod"
+      },
+      {
+        "role": "Choreography",
+        "names": "Bill De Silva"
+      },
+      {
+        "role": "Producer",
+        "names": "Bo Herrod, Richard Sasso and Harold Sypher in association with Stella Holt"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Greg Adams"
+      },
+      {
+        "role": "Sets",
+        "names": "Michael Allen Hampshire"
+      },
+      {
+        "role": "Costumes",
+        "names": "Anthea Giannakourous"
+      },
+      {
+        "role": "Lights",
+        "names": "Chuck Hover"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "funnyhouse-of-a-negro-1964",
+    "id": "walk-in-darkness-1963",
+    "year": 1963,
+    "title": "Walk in Darkness",
+    "company": "greenwich-mews-theatre",
+    "playwright": "William Hairston",
+    "director": "Sidney Walters",
+    "cast": [
+      "James Murray Arnold",
+      "Michael Disimone",
+      "Virginia Donaldson",
+      "Robert Fass I",
+      "Wayne Grice",
+      "Don Hudson",
+      "Ian Jenkins",
+      "Glenn Kezer",
+      "David Roberts",
+      "Roger Robinson",
+      "Allen Royce",
+      "Stanley Sayer",
+      "Barbara Schneider",
+      "Richard Ward",
+      "Harry A. White",
+      "Clarence Williams III",
+      "Ronald Willoughby",
+      "James Woodall"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "William Hairston"
+      },
+      {
+        "role": "Director",
+        "names": "Sidney Walters"
+      },
+      {
+        "role": "Music",
+        "names": "George Fischoff"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Robert Fass I"
+      },
+      {
+        "role": "Sets",
+        "names": "Ming Cho Lee"
+      },
+      {
+        "role": "Costumes",
+        "names": "Irish Ayres"
+      },
+      {
+        "role": "Lights",
+        "names": "Ming Cho Lee"
+      },
+      {
+        "role": "Public Relations",
+        "names": "David Lipsky"
+      }
+    ],
+    "notes": "",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "William Hairston's drama, designed by Ming Cho Lee, with a cast that included Roger Robinson and Clarence Williams III."
+  },
+  {
+    "id": "jericho-jim-crow-1964",
     "year": 1964,
-    "title": "Funnyhouse of a Negro",
-    "playwright": "Adrienne Kennedy",
-    "director": "Michael Kahn",
+    "title": "Jericho-Jim Crow",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Langston Hughes",
+    "director": "Alvin Ailey, William Hairston",
     "cast": [
-      "Billie Allen"
+      "Joseph Attles",
+      "William Cain",
+      "Dorothy Drake",
+      "Micki Grant",
+      "Rosalie King",
+      "Gilbert Price",
+      "The Hugh Porter Gospel Singers"
     ],
-    "notes": "Obie Award for Best Play",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Langston Hughes"
+      },
+      {
+        "role": "Director",
+        "names": "Alvin Ailey, William Hairston"
+      },
+      {
+        "role": "Music Arrangement & Direction",
+        "names": "Professor Hugh Porter"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Asst. Producer",
+        "names": "Frances Drucker"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "William Cain"
+      },
+      {
+        "role": "Costumes",
+        "names": "Ves Harper"
+      },
+      {
+        "role": "Lights",
+        "names": "Ves Harper"
+      }
+    ],
+    "notes": "",
     "featured": true,
     "image": "production-1.png",
-    "description": "Adrienne Kennedy's surrealist exploration of racial identity won the Obie Award and established Kennedy as a major avant-garde voice."
+    "description": "Langston Hughes's gospel song-play on the history of the freedom struggle, co-directed by Alvin Ailey and William Hairston with the Hugh Porter Gospel Singers."
   },
   {
-    "id": "the-toilet-the-slave-1965",
+    "id": "the-exception-and-the-rule-1965",
     "year": 1965,
-    "title": "The Toilet / The Slave",
-    "playwright": "Amiri Baraka (LeRoi Jones)",
-    "director": "Leo Garen",
+    "title": "The Exception and the Rule",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Bertolt Brecht",
+    "director": "Isaiah Sheffer",
     "cast": [
-      "James Earl Jones"
+      "Joseph Attles",
+      "Willard Bond",
+      "Joe Bousard",
+      "Ron Faber",
+      "Sam Greene",
+      "Johnny Harris",
+      "Jeannette Hodge",
+      "Paul E. Richards",
+      "William Shorr",
+      "Charles Sullivan",
+      "Ron Vaad"
     ],
-    "notes": "Double bill; controversial",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Amiri Baraka's confrontational double bill challenged audiences and critics, marking a shift toward more militant Black theater."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Bertolt Brecht"
+      },
+      {
+        "role": "Translation",
+        "names": "Eric Bentley"
+      },
+      {
+        "role": "Director",
+        "names": "Isaiah Sheffer"
+      },
+      {
+        "role": "Music",
+        "names": "Stefan Wolpe"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Arnold Black"
+      },
+      {
+        "role": "Producer",
+        "names": "Beverly Landau, Stella Holt, Henrietta Stein"
+      },
+      {
+        "role": "Asst. Producer",
+        "names": "Stephanie Sills, Yanna Brandt"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Jim Gore"
+      },
+      {
+        "role": "Sets",
+        "names": "Peter Wingate"
+      },
+      {
+        "role": "Costumes",
+        "names": "Eve Gribbin"
+      },
+      {
+        "role": "Lights",
+        "names": "Jim Gore"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "happy-ending-day-of-absence-1966",
+    "id": "the-prodigal-son-1965",
+    "year": 1965,
+    "title": "The Prodigal Son",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Langston Hughes",
+    "director": "Vinnette Carroll",
+    "cast": [
+      "Joseph Attles",
+      "Vinnette Carroll",
+      "Dorothy Drake",
+      "Marion Franklin",
+      "Trina Frazier",
+      "Johnny Harris",
+      "Jeannette Hodge",
+      "Jean Perry",
+      "Robert A. Pinkston",
+      "Ronald Platts",
+      "Philip A. Stamps",
+      "Glory Van Scott",
+      "Sylvia Terry",
+      "Teddy Williams",
+      "Jeffrey Wilson",
+      "Hattie Winston"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Langston Hughes"
+      },
+      {
+        "role": "Director",
+        "names": "Vinnette Carroll"
+      },
+      {
+        "role": "Choreography",
+        "names": "Syvilla Fort"
+      },
+      {
+        "role": "Music Arrangement & Direction",
+        "names": "Marion Franklin"
+      },
+      {
+        "role": "Producer",
+        "names": "Beverly Landau, Stella Holt, Henrietta Stein"
+      },
+      {
+        "role": "Asst. Producer",
+        "names": "Stephanie Sills, Yanna Brandt"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Jim Gore"
+      },
+      {
+        "role": "Sets",
+        "names": "Peter Wingate"
+      },
+      {
+        "role": "Costumes",
+        "names": "Eve Gribbin"
+      },
+      {
+        "role": "Lights",
+        "names": "Jim Gore"
+      }
+    ],
+    "notes": "A gospel song-play",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Hughes's gospel song-play directed by Vinnette Carroll, choreographed by Syvilla Fort, introducing Hattie Winston."
+  },
+  {
+    "id": "the-world-of-my-america-1966",
     "year": 1966,
-    "title": "Happy Ending / Day of Absence",
-    "playwright": "Douglas Turner Ward",
-    "director": "Douglas Turner Ward",
-    "cast": [
-      "Douglas Turner Ward",
-      "Robert Hooks"
+    "title": "The World of My America",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Paulene Myers (adapted & arranged)",
+    "director": "Arthur A. Seidelman",
+    "cast": [],
+    "credits": [
+      {
+        "role": "Adapted & Arranged by",
+        "names": "Paulene Myers"
+      },
+      {
+        "role": "Director",
+        "names": "Arthur A. Seidelman"
+      },
+      {
+        "role": "Choreography",
+        "names": "Jimmie Fields"
+      },
+      {
+        "role": "Music",
+        "names": "Michael Hennagin"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt, Gertrude Apple"
+      },
+      {
+        "role": "Gown Design",
+        "names": "Jesse Jacobs"
+      }
     ],
-    "notes": "Satires on race relations",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Douglas Turner Ward's satirical double bill used humor to critique American race relations, launching the Negro Ensemble Company."
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "who-s-got-his-own-1967",
+    "id": "la-celestina-1967",
     "year": 1967,
-    "title": "Who's Got His Own",
-    "playwright": "Ron Milner",
-    "director": "Stella Holt",
+    "title": "La Celestina",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Fernando de Rojas",
+    "director": "Andrés Castro",
     "cast": [
-      "Glynn Turman"
+      "Magaly Alabau",
+      "Alice Blair",
+      "Mark Bouche",
+      "George Dal Lago",
+      "Silvia Brito",
+      "Joal Carlo",
+      "Miguel de Grandy Jr.",
+      "Gloria Goyames",
+      "Manuel Martin",
+      "Errol Miguel",
+      "Mildred Quirós",
+      "Carlos Rafart",
+      "Antonia Rey",
+      "Manuel Suárez",
+      "Clotilde Vasquez"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Fernando de Rojas"
+      },
+      {
+        "role": "Director",
+        "names": "Andrés Castro"
+      },
+      {
+        "role": "Producer",
+        "names": "Gilberto Zaldívar, De Mena Gallery"
+      }
     ],
     "notes": "",
     "featured": false,
@@ -252,58 +2113,200 @@
     "description": null
   },
   {
-    "id": "song-of-the-lusitanian-bogey-1968",
+    "id": "the-oxcart-la-carreta-1967",
+    "year": 1967,
+    "title": "The Oxcart (La Carreta)",
+    "company": "greenwich-mews-theatre",
+    "playwright": "René Marqués",
+    "director": "Lloyd Richards",
+    "cast": [
+      "Teodorina Bello",
+      "Lucy Boscana",
+      "Míriam Colón",
+      "Ruben Figueroa",
+      "Raúl Juliá",
+      "Corina Magureanu",
+      "William Myers",
+      "José Pérez",
+      "Carla Pinza",
+      "Jose Ocasio",
+      "Sol Serlin",
+      "Mary Tahmin"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "René Marqués"
+      },
+      {
+        "role": "Translation",
+        "names": "Charles R. Pilditch"
+      },
+      {
+        "role": "Director",
+        "names": "Lloyd Richards"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Asst. Producer",
+        "names": "Frances Drucker"
+      },
+      {
+        "role": "Presented by",
+        "names": "George P. Edgar"
+      },
+      {
+        "role": "Business Manager",
+        "names": "Gilberto Zaldívar"
+      },
+      {
+        "role": "Production Manager",
+        "names": "Walter Mason"
+      },
+      {
+        "role": "Sets",
+        "names": "Douglas Schmidt"
+      },
+      {
+        "role": "Costumes",
+        "names": "Joseph Aulisi"
+      },
+      {
+        "role": "Lights",
+        "names": "Jim Gore"
+      }
+    ],
+    "notes": "",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "René Marqués's account of a Puerto Rican family's migration, directed by Lloyd Richards, with Míriam Colón, Lucy Boscana and Raúl Juliá."
+  },
+  {
+    "id": "the-trials-of-brother-jero-the-strong-breed-1967",
+    "year": 1967,
+    "title": "The Trials of Brother Jero / The Strong Breed",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Wole Soyinka",
+    "director": "Cynthia Belgrave",
+    "cast": [
+      "Afolabi Ajayi",
+      "Mary Alice",
+      "Cynthia Belgrave",
+      "Austin Briggs Hall Jr.",
+      "Edward Luis Espinosa",
+      "Yvette Hawkins",
+      "Lauren Jones",
+      "Peggy Kirkpatrick",
+      "Roger Robinson",
+      "Harold Scott",
+      "G. Tito Shaw",
+      "James Spruill",
+      "Yvonne Warden",
+      "Vernon Washington"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Wole Soyinka"
+      },
+      {
+        "role": "Director",
+        "names": "Cynthia Belgrave"
+      },
+      {
+        "role": "Music",
+        "names": "Pat Patrick"
+      },
+      {
+        "role": "Presented by",
+        "names": "Farris-Belgrave Productions in association with Afolabi Ajayi"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Bernard Ward"
+      },
+      {
+        "role": "Sets",
+        "names": "Jack Blackman"
+      },
+      {
+        "role": "Costumes",
+        "names": "Edward Wolrond"
+      },
+      {
+        "role": "Lights",
+        "names": "Jack Blackman"
+      }
+    ],
+    "notes": "Double bill",
+    "featured": true,
+    "image": "production-1.png",
+    "description": "Wole Soyinka's double bill, directed by Cynthia Belgrave, with Mary Alice, Roger Robinson and Harold Scott."
+  },
+  {
+    "id": "carricknabauna-1968",
     "year": 1968,
-    "title": "Song of the Lusitanian Bogey",
-    "playwright": "Peter Weiss",
-    "director": "Stella Holt",
+    "title": "Carricknabauna",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Padraic Colum, Basil Burwell (adapted)",
+    "director": "Larry Arrick",
     "cast": [
-      "Ensemble Cast"
+      "Anne Draper",
+      "Neil Fitzgerald",
+      "Martyn Green",
+      "Denise Huot",
+      "Mark Jenkins",
+      "Brid Lynch",
+      "Tanny McDonald",
+      "Rosemary McNamara",
+      "Hal Norman",
+      "Olive Murphy",
+      "Christopher Strater"
     ],
-    "notes": "Anti-colonial drama",
-    "featured": false,
-    "image": null,
-    "description": null
-  },
-  {
-    "id": "to-be-young-gifted-and-black-1969",
-    "year": 1969,
-    "title": "To Be Young, Gifted and Black",
-    "playwright": "Lorraine Hansberry (adapted by Robert Nemiroff)",
-    "director": "Gene Frankel",
-    "cast": [
-      "Barbara Baxley",
-      "Cicely Tyson"
-    ],
-    "notes": "Posthumous Hansberry tribute",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "This tribute to Lorraine Hansberry, adapted from her writings after her death, became a touchstone for the Black Arts Movement."
-  },
-  {
-    "id": "boesman-and-lena-1970",
-    "year": 1970,
-    "title": "Boesman and Lena",
-    "playwright": "Athol Fugard",
-    "director": "John Berry",
-    "cast": [
-      "James Earl Jones",
-      "Ruby Dee"
-    ],
-    "notes": "South African apartheid drama",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Athol Fugard's searing drama about apartheid South Africa starred the legendary duo of James Earl Jones and Ruby Dee."
-  },
-  {
-    "id": "the-sty-of-the-blind-pig-1971",
-    "year": 1971,
-    "title": "The Sty of the Blind Pig",
-    "playwright": "Phillip Hayes Dean",
-    "director": "Stella Holt",
-    "cast": [
-      "Clarice Taylor",
-      "Moses Gunn"
+    "credits": [
+      {
+        "role": "Adapted by",
+        "names": "Padraic Colum, Basil Burwell"
+      },
+      {
+        "role": "Director",
+        "names": "Larry Arrick"
+      },
+      {
+        "role": "Asst. Director",
+        "names": "Rhoda Levine"
+      },
+      {
+        "role": "Music",
+        "names": "Harriet Ballin"
+      },
+      {
+        "role": "Producer",
+        "names": "Stella Holt"
+      },
+      {
+        "role": "Production Stage Manager",
+        "names": "Robert Buzzell"
+      },
+      {
+        "role": "Sets",
+        "names": "Jock Stockwell"
+      },
+      {
+        "role": "Costumes",
+        "names": "Jock Stockwell"
+      },
+      {
+        "role": "Lights",
+        "names": "Jock Stockwell"
+      },
+      {
+        "role": "Public Relations",
+        "names": "David Lipsky"
+      }
     ],
     "notes": "",
     "featured": false,
@@ -311,32 +2314,844 @@
     "description": null
   },
   {
-    "id": "wedding-band-1972",
-    "year": 1972,
-    "title": "Wedding Band",
-    "playwright": "Alice Childress",
-    "director": "Stella Holt",
+    "id": "jericho-jim-crow-1968",
+    "year": 1968,
+    "title": "Jericho-Jim Crow",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Langston Hughes",
+    "director": "Alvin Ailey, William Hairston",
     "cast": [
-      "Ruby Dee",
-      "James Broderick"
+      "Joseph Attles",
+      "Dorothy Drake",
+      "Hilda Harris",
+      "Barney Hodges",
+      "Rosalie King",
+      "Dion Watts",
+      "The Hugh Porter Gospel Singers"
     ],
-    "notes": "Interracial love story",
-    "featured": true,
-    "image": "production-1.png",
-    "description": "Alice Childress's powerful drama about an interracial relationship in the Jim Crow South became one of the theater's final major productions."
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Langston Hughes"
+      },
+      {
+        "role": "Director",
+        "names": "Alvin Ailey, William Hairston"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Professor Hugh Porter"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Brock Williams"
+      },
+      {
+        "role": "Lights",
+        "names": "Ray McCutcheon"
+      }
+    ],
+    "notes": "Revival of the 1964 production",
+    "featured": false,
+    "image": null,
+    "description": null
   },
   {
-    "id": "the-river-niger-1973",
-    "year": 1973,
-    "title": "The River Niger",
-    "playwright": "Joseph A. Walker",
-    "director": "Douglas Turner Ward",
+    "id": "la-dama-duende-1968",
+    "year": 1968,
+    "title": "La Dama Duende",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Pedro Calderón de la Barca",
+    "director": "René Buch",
     "cast": [
-      "Douglas Turner Ward"
+      "Magaly Alabau",
+      "Lamberto Cano",
+      "Luz Castaños",
+      "Janio Grego",
+      "Maruja Mas",
+      "Manuel Montero",
+      "Margarita Neidelman",
+      "Carlos Rafart",
+      "Roberto Robles",
+      "Tony Salim"
     ],
-    "notes": "Final season; Tony Award winner",
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Pedro Calderón de la Barca"
+      },
+      {
+        "role": "Director",
+        "names": "René Buch"
+      },
+      {
+        "role": "Producer",
+        "names": "Gilberto Zaldívar and Las Artes, Inc."
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "walk-together-children-1968",
+    "year": 1968,
+    "title": "Walk Together Children",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Vinie Burrows",
+    "director": "Vinie Burrows",
+    "cast": [
+      "Vinie Burrows"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Vinie Burrows"
+      },
+      {
+        "role": "Director",
+        "names": "Vinie Burrows"
+      },
+      {
+        "role": "Presented by",
+        "names": "Robert Hooks, Michael Tolan in association with Ananse Productions"
+      },
+      {
+        "role": "Sets",
+        "names": "Kert Lundell"
+      },
+      {
+        "role": "Costumes",
+        "names": "Arthur McGee"
+      },
+      {
+        "role": "Lights",
+        "names": "Fritz deBoer"
+      }
+    ],
+    "notes": "The black scene in prose, poetry and song",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "winter-journey-1968",
+    "year": 1968,
+    "title": "Winter Journey",
+    "company": "greenwich-mews-theatre",
+    "playwright": "Clifford Odets",
+    "director": "Mitchell Nestor",
+    "cast": [
+      "Walter Allen",
+      "Patrick Baldauff",
+      "John Batiste",
+      "Jean Fowler",
+      "Will Hare",
+      "Barbara Loden",
+      "Delos V. Smith Jr.",
+      "Robert Viharo"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Clifford Odets"
+      },
+      {
+        "role": "Director",
+        "names": "Mitchell Nestor"
+      },
+      {
+        "role": "Music",
+        "names": "John Batiste"
+      },
+      {
+        "role": "Producer",
+        "names": "Herbert S. Alpert, Mitchell Nestor"
+      },
+      {
+        "role": "Production Stage Manager",
+        "names": "Carmine Pontilena"
+      },
+      {
+        "role": "Sets",
+        "names": "Richard Kerry"
+      },
+      {
+        "role": "Costumes",
+        "names": "Jan"
+      },
+      {
+        "role": "Lights",
+        "names": "Richard Kerry"
+      },
+      {
+        "role": "Sound",
+        "names": "John Batiste"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "la-difunta-cruce-de-vias-and-las-pericas-1969",
+    "year": 1969,
+    "title": "La Difunta, Cruce de Vías, and Las Pericas",
+    "company": "greenwich-mews-spanish-theatre",
+    "playwright": "Miguel de Unamuno, Carlos Solórzano, Nicolas Dorr",
+    "director": "Luz Castaños, René Buch",
+    "cast": [
+      "Lolina Gutierrez",
+      "Inez Ivette",
+      "Emilio Rodríguez",
+      "Gay Darlene Bidart",
+      "Tony Díaz",
+      "Miriam Cruz",
+      "Milagros Horrego",
+      "Linda Monteiro",
+      "Shelly Pearson"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Miguel de Unamuno, Carlos Solórzano, Nicolas Dorr"
+      },
+      {
+        "role": "Director",
+        "names": "Luz Castaños, René Buch"
+      },
+      {
+        "role": "Producer",
+        "names": "Gilberto Zaldívar"
+      },
+      {
+        "role": "Sets",
+        "names": "Zita Gomez De Kanelba"
+      }
+    ],
+    "notes": "Triple bill. The source lists the cast separately for each play: La Difunta — Lolina Gutierrez, Inez Ivette, Emilio Rodríguez; Cruce de Vías — Gay Darlene Bidart, Tony Díaz; Las Pericas — Miriam Cruz, Milagros Horrego, Linda Monteiro, Shelly Pearson.",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "el-si-de-las-ninas-when-a-girl-says-yes-1971",
+    "year": 1971,
+    "title": "El Sí De Las Niñas (When a Girl Says Yes)",
+    "company": "greenwich-mews-spanish-theatre",
+    "playwright": "Leandro Fernández de Moratín",
+    "director": "Norberto Kerner",
+    "cast": [
+      "Tanya Payán"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Leandro Fernández de Moratín"
+      },
+      {
+        "role": "Translation",
+        "names": "William M. Davis"
+      },
+      {
+        "role": "Director",
+        "names": "Norberto Kerner"
+      },
+      {
+        "role": "Producer",
+        "names": "Gilberto Zaldívar"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "life-is-a-dream-la-vida-es-sueno-1971",
+    "year": 1971,
+    "title": "Life is a Dream (La Vida Es Sueño)",
+    "company": "greenwich-mews-spanish-theatre",
+    "playwright": "Pedro Calderón de la Barca",
+    "director": "René Buch",
+    "cast": [
+      "Miriam Cruz",
+      "Esteban Chalbaud",
+      "Felix Fernández",
+      "George Dal Lago",
+      "Jean-Paul Delgado",
+      "Ernesto González",
+      "James H. Poulliott",
+      "José Rodríguez",
+      "Isabel Segovia"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Pedro Calderón de la Barca"
+      },
+      {
+        "role": "Translation",
+        "names": "Kathleen Raine, R.M. Nadal"
+      },
+      {
+        "role": "Director",
+        "names": "René Buch"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Juan Viccini"
+      },
+      {
+        "role": "Producer",
+        "names": "Gilberto Zaldívar"
+      },
+      {
+        "role": "Sets",
+        "names": "Bob Troie"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-late-show-1971",
+    "year": 1971,
+    "title": "The Late Show",
+    "company": "village-church-arts-ministry",
+    "playwright": "Ken McGuire",
+    "director": "Barry Plaxen, Ron Vaad",
+    "cast": [
+      "Tommy Hall",
+      "Norman Parker",
+      "Edward Seams",
+      "Keith Carsey"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Ken McGuire"
+      },
+      {
+        "role": "Director",
+        "names": "Barry Plaxen, Ron Vaad"
+      },
+      {
+        "role": "Producer",
+        "names": "The Splinters Company (Keith Carsey, Richard Drew, Barry Plaxen, John Toland)"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "yerma-1971",
+    "year": 1971,
+    "title": "Yerma",
+    "company": "greenwich-mews-spanish-theatre",
+    "playwright": "Federico García Lorca",
+    "director": "René Buch",
+    "cast": [
+      "Luz Castaños",
+      "Lina Centeno",
+      "Esteban Chalbaud",
+      "Miriam Cruz",
+      "Janice Dean",
+      "Jean-Paul Delgado",
+      "Elisavietta",
+      "Pedro Fernández",
+      "Milagros Horrego",
+      "Alicia Kaplan",
+      "Gail Kellstrom",
+      "Norberto Kerner",
+      "Linda Monteiro",
+      "Orlando Morfi",
+      "Enrique Puebla",
+      "Magaly Raffo",
+      "Larry Ramos",
+      "Jean Rosado",
+      "Marcelino Rosado",
+      "Juan Carlos Sawage",
+      "Isabel Segovia",
+      "Susan Seltzer",
+      "Rafael Triana",
+      "Conchita Vargas"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Federico García Lorca"
+      },
+      {
+        "role": "Translation",
+        "names": "James Graham-Lujan, Richard L. O'Connell"
+      },
+      {
+        "role": "Director",
+        "names": "René Buch"
+      },
+      {
+        "role": "Choreography",
+        "names": "Graciela Daniele"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Juan Viccini"
+      },
+      {
+        "role": "Producer",
+        "names": "Gilberto Zaldívar"
+      },
+      {
+        "role": "Sets",
+        "names": "Bob Troie"
+      },
+      {
+        "role": "Costumes",
+        "names": "Bob Troie"
+      },
+      {
+        "role": "Lights",
+        "names": "Ray McCutcheon"
+      }
+    ],
+    "notes": "",
     "featured": true,
     "image": "production-1.png",
-    "description": "The theater's final season featured this Tony Award-winning drama, a fitting conclusion to two decades of groundbreaking work."
+    "description": "Federico García Lorca's tragedy for the Greenwich Mews Spanish Theatre, directed by René Buch with choreography by Graciela Daniele."
+  },
+  {
+    "id": "el-asno-1972",
+    "year": 1972,
+    "title": "El Asno",
+    "company": "village-church-arts-ministry",
+    "playwright": "Jose Ruibal",
+    "director": "Luz Castaños",
+    "cast": [
+      "Cesar Bayona",
+      "Jean Cacharel",
+      "Enrique Cancio",
+      "Marcos Delgado",
+      "Tony Díaz",
+      "Alicia Kaplan",
+      "Margarita Leicher",
+      "Maria Meulener",
+      "Manolo de Orellana",
+      "Phyllis Richmond",
+      "Jimmy Roman",
+      "Jorge Ros"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Jose Ruibal"
+      },
+      {
+        "role": "Director",
+        "names": "Luz Castaños"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "ladybug-1972",
+    "year": 1972,
+    "title": "Ladybug",
+    "company": "village-church-arts-ministry",
+    "playwright": "Dakota Don Peterson",
+    "director": "Patricia Carmichael",
+    "cast": [
+      "Vic Cappa",
+      "Patrick L. Farrelly",
+      "Sindy Hawke",
+      "Susan Kaslow",
+      "Derek Kucsak",
+      "Jozella Reed"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Dakota Don Peterson"
+      },
+      {
+        "role": "Director",
+        "names": "Patricia Carmichael"
+      },
+      {
+        "role": "Musical Director",
+        "names": "Bill Hughes"
+      },
+      {
+        "role": "Orchestrations",
+        "names": "Don Sturrock"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Dion Drislane"
+      },
+      {
+        "role": "Sets",
+        "names": "Jay Kotcher"
+      },
+      {
+        "role": "Lights",
+        "names": "Susan Chapman"
+      },
+      {
+        "role": "Sound",
+        "names": "Gary and Timmy Harris"
+      },
+      {
+        "role": "Native American Consultant",
+        "names": "Suzan Shown (Harjo)"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "nosotros-somos-dios-1972",
+    "year": 1972,
+    "title": "Nosotros Somos Dios",
+    "company": "village-church-arts-ministry",
+    "playwright": "Wilberto Cantón",
+    "director": "Luz Castaños",
+    "cast": [
+      "Mark Beardsley",
+      "Radames De La Campa",
+      "Manolo de Orellana",
+      "Iris Díaz",
+      "Guillermo Duarte",
+      "Alicia Kaplan",
+      "Margarita Leicher",
+      "Jorge Ros",
+      "Carlos Tolentino"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Wilberto Cantón"
+      },
+      {
+        "role": "Director",
+        "names": "Luz Castaños"
+      },
+      {
+        "role": "Associate Director",
+        "names": "Lennie Senfeld [Fenfeld?] and Tony Díaz"
+      },
+      {
+        "role": "Producer",
+        "names": "Nuestro Teatro"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-business-of-good-government-1972",
+    "year": 1972,
+    "title": "The Business of Good Government",
+    "company": "village-church-arts-ministry",
+    "playwright": "John Arden, Margaretta D'Arcy",
+    "director": "Archie L. Gresham",
+    "cast": [
+      "Anthony Caldarella",
+      "Mitchell Carrey",
+      "Semina De Laurentis",
+      "Joan Graves",
+      "Robert Haggerty",
+      "Robert Lanchester",
+      "Hardy Phippen",
+      "Jay Pierce",
+      "Donald Roberts",
+      "Rocky Shook",
+      "Susan Stevens",
+      "William Walsh",
+      "Nancy Kendall Stitt (soloist)"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "John Arden, Margaretta D'Arcy"
+      },
+      {
+        "role": "Composer",
+        "names": "Joseph Fennimore"
+      },
+      {
+        "role": "Director",
+        "names": "Archie L. Gresham"
+      },
+      {
+        "role": "Musical Director",
+        "names": "William Bourne"
+      },
+      {
+        "role": "Costumes",
+        "names": "Barbara Rusten"
+      },
+      {
+        "role": "Costumer",
+        "names": "Donna Gresham"
+      },
+      {
+        "role": "Lights",
+        "names": "Daniel Adams"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-contrast-1972",
+    "year": 1972,
+    "title": "The Contrast",
+    "company": "village-church-arts-ministry",
+    "playwright": "Royall Tyler",
+    "director": "Anthony Stimac",
+    "cast": [
+      "Pamela Adams",
+      "Joan Bell",
+      "Grady Clarkson",
+      "Bob Denison",
+      "Amelia Haas",
+      "Gene Kelton",
+      "Ty McConnell",
+      "Philip Mackenzie",
+      "Patti Perkins"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Royall Tyler"
+      },
+      {
+        "role": "Adapted by",
+        "names": "Anthony Stimac"
+      },
+      {
+        "role": "Lyricist",
+        "names": "Steve Brown"
+      },
+      {
+        "role": "Composer",
+        "names": "Don Pippin"
+      },
+      {
+        "role": "Director",
+        "names": "Anthony Stimac"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "the-downtown-holy-lady-1972",
+    "year": 1972,
+    "title": "The Downtown Holy Lady",
+    "company": "village-church-arts-ministry",
+    "playwright": "Joseph Caldwell",
+    "director": "Allan Albert",
+    "cast": [
+      "Avis Alexander",
+      "Rod Britt",
+      "Michael Donnely",
+      "Carol Emshoff",
+      "Michael Fairman",
+      "Marlene Fisher",
+      "Kenneth Fuchs",
+      "Clio Vias",
+      "Bill O'Boyle",
+      "Nick Quinault",
+      "Douglas Stone",
+      "Peter Von Berg"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Joseph Caldwell"
+      },
+      {
+        "role": "Director",
+        "names": "Allan Albert"
+      },
+      {
+        "role": "Artistic Director",
+        "names": "William Glenesk"
+      },
+      {
+        "role": "Music Supervision",
+        "names": "Daniel Troob"
+      },
+      {
+        "role": "Producer",
+        "names": "The Splinters Company (Keith Carsey, Richard Drew, Barry Plaxen)"
+      },
+      {
+        "role": "Theatre Manager",
+        "names": "Archie L. Gresham"
+      },
+      {
+        "role": "Sets",
+        "names": "Paul Zalon"
+      },
+      {
+        "role": "Lights",
+        "names": "Vincent LaLomia"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "he-s-got-a-jones-1973",
+    "year": 1973,
+    "title": "He's Got a Jones",
+    "company": "village-church-arts-ministry",
+    "playwright": "G. Tito Shaw",
+    "director": "G. Tito Shaw",
+    "cast": [
+      "Terry Alexander",
+      "Susan Pearson",
+      "Yvonne Southerland",
+      "Count Stovall"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "G. Tito Shaw"
+      },
+      {
+        "role": "Director",
+        "names": "G. Tito Shaw"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "how-mister-mockinpott-was-cured-of-his-sufferings-1973",
+    "year": 1973,
+    "title": "How Mister Mockinpott Was Cured of His Sufferings",
+    "company": "village-church-arts-ministry",
+    "playwright": "Peter Weiss",
+    "director": "Manfred Bormann",
+    "cast": [
+      "Nicki Kaplan",
+      "Linda Lashbrook",
+      "Rita Litton",
+      "Oliver Malcolmson",
+      "Paul Meacham",
+      "Bill Roulet",
+      "Robert B. Silver",
+      "Victor Truro"
+    ],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Peter Weiss"
+      },
+      {
+        "role": "Composer",
+        "names": "Robert Raines"
+      },
+      {
+        "role": "Translation",
+        "names": "Christopher Holme"
+      },
+      {
+        "role": "Director",
+        "names": "Manfred Bormann"
+      },
+      {
+        "role": "Asst. Director",
+        "names": "Cheryl Mitchell"
+      },
+      {
+        "role": "Artistic Director",
+        "names": "William Glenesk"
+      },
+      {
+        "role": "Producer",
+        "names": "Manfred Bormann"
+      },
+      {
+        "role": "Stage Manager",
+        "names": "Cheryl Mitchell"
+      },
+      {
+        "role": "Sets",
+        "names": "Gregory Downer"
+      },
+      {
+        "role": "Costumes",
+        "names": "Jerry Thomas"
+      },
+      {
+        "role": "Lights",
+        "names": "Sami Uckan"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
+  },
+  {
+    "id": "street-jesus-1974",
+    "year": 1974,
+    "title": "Street Jesus",
+    "company": "village-church-arts-ministry",
+    "playwright": "Peter Copani",
+    "director": "Peter Copani",
+    "cast": [],
+    "credits": [
+      {
+        "role": "Playwright",
+        "names": "Peter Copani"
+      },
+      {
+        "role": "Director",
+        "names": "Peter Copani"
+      },
+      {
+        "role": "Artistic Director",
+        "names": "William Glenesk"
+      },
+      {
+        "role": "Music",
+        "names": "Chris Staudt, Peter Copani"
+      },
+      {
+        "role": "Presented by",
+        "names": "Village Church and the Peoples Performing Company"
+      }
+    ],
+    "notes": "",
+    "featured": false,
+    "image": null,
+    "description": null
   }
 ]

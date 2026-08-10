@@ -23,15 +23,35 @@ const people = defineCollection({
   }),
 });
 
+// The three producing organizations the source list distinguishes between.
+export const COMPANIES = {
+  'greenwich-mews-theatre': 'Greenwich Mews Theatre',
+  'greenwich-mews-spanish-theatre': 'Greenwich Mews Spanish Theatre',
+  'village-church-arts-ministry': 'Arts Ministry of the Village Church',
+} as const;
+
 const productions = defineCollection({
   loader: file('src/data/productions.json'),
   schema: z.object({
     id: z.string().regex(slugPattern),
     year: z.number().int(),
     title: z.string().min(1),
+    company: z.enum(
+      Object.keys(COMPANIES) as [keyof typeof COMPANIES, ...(keyof typeof COMPANIES)[]]
+    ),
     playwright: z.string().min(1),
     director: z.string().min(1),
     cast: z.array(z.string()),
+    // Every remaining credit line from the source list, in printed order —
+    // producers, designers, stage management, music, translation, and so on.
+    credits: z
+      .array(
+        z.object({
+          role: z.string().min(1),
+          names: z.string().min(1),
+        })
+      )
+      .min(1),
     notes: z.string(),
     featured: z.boolean(),
     image: z.string().nullable(),

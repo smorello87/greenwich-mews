@@ -1,19 +1,28 @@
 ---
-interface Production {
-  year: number;
-  title: string;
-  playwright: string;
-  director: string;
-  cast: string[];
-  notes: string;
-  featured: boolean;
-}
+import type { ProductionPayload } from '../lib/catalog';
 
 interface Props {
-  productions: Production[];
+  productions: ProductionPayload[];
+  featuredIds: string[];
 }
 
-const { productions } = Astro.props;
+const { productions, featuredIds } = Astro.props;
+const featured = new Set(featuredIds);
+
+// Rendered columns are Season / Title / Playwright / Director, but search runs
+// against everything in the record — cast, full credits, company, and notes
+// included — so a designer or stage manager is findable from the table.
+const searchText = (prod: ProductionPayload) =>
+  [
+    prod.year,
+    prod.title,
+    prod.company,
+    prod.notes,
+    ...prod.credits.map((c) => `${c.role} ${c.names}`),
+    ...prod.cast,
+  ]
+    .join(' ')
+    .toLowerCase();
 ---
 
 <div class="table-wrapper">
@@ -24,7 +33,7 @@ const { productions } = Astro.props;
         type="search"
         id="production-search"
         class="table-search__input"
-        placeholder="Search by title, playwright, director, or cast..."
+        placeholder="Search title, playwright, director, cast, designers..."
       />
       <svg class="table-search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="11" cy="11" r="8"></circle>
@@ -41,8 +50,8 @@ const { productions } = Astro.props;
     <table class="productions-table" id="productions-table">
       <thead>
         <tr>
-          <th class="sortable" data-sort="year">
-            Year
+          <th class="sortable" data-sort="season">
+            Season
             <span class="sort-icon">↕</span>
           </th>
           <th class="sortable" data-sort="title">
@@ -57,27 +66,36 @@ const { productions } = Astro.props;
             Director
             <span class="sort-icon">↕</span>
           </th>
-          <th>Cast</th>
-          <th>Notes</th>
+          <th><span class="visually-hidden">Details</span></th>
         </tr>
       </thead>
       <tbody>
         {productions.map((prod) => (
-          <tr class:list={[{ 'featured': prod.featured }]} data-searchable={`${prod.year} ${prod.title} ${prod.playwright} ${prod.director} ${prod.cast.join(' ')} ${prod.notes}`.toLowerCase()}>
-            <td class="cell-year">{prod.year}</td>
-            <td class="cell-title">
+          <tr
+            class:list={[{ featured: featured.has(prod.id) }]}
+            data-production-id={prod.id}
+            data-searchable={searchText(prod)}
+          >
+            <td class="cell-season" data-value={prod.year}>{prod.year}</td>
+            <td class="cell-title" data-value={prod.title}>
               {prod.title}
-              {prod.featured && <span class="featured-badge" title="Featured production">★</span>}
+              {featured.has(prod.id) && <span class="featured-badge" title="Featured production">★</span>}
             </td>
-            <td>{prod.playwright}</td>
-            <td>{prod.director}</td>
-            <td class="cell-cast">{prod.cast.join(', ')}</td>
-            <td class="cell-notes">{prod.notes}</td>
+            <td class="cell-playwright" data-value={prod.playwright}>{prod.playwright}</td>
+            <td class="cell-director" data-value={prod.director}>{prod.director}</td>
+            <td class="cell-info">
+              <button type="button" class="info-link" data-production-id={prod.id} aria-haspopup="dialog">
+                Full Info
+                <span class="visually-hidden"> for {prod.title} ({prod.year})</span>
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
     </table>
   </div>
+
+  <p class="table-empty" id="table-empty" hidden>No productions match that search.</p>
 
   <div class="table-legend">
     <span class="featured-badge">★</span> Featured productions have additional information in the timeline below
@@ -104,7 +122,7 @@ const { productions } = Astro.props;
   .table-search {
     position: relative;
     flex: 1;
-    max-width: 400px;
+    max-width: 420px;
   }
 
   .table-search__input {
@@ -220,11 +238,12 @@ const { productions } = Astro.props;
     background: rgba(184, 146, 58, 0.15);
   }
 
-  .productions-table tbody tr.hidden {
+  /* Scoped `display` rules above must not beat the hidden attribute. */
+  .productions-table tbody tr[hidden] {
     display: none;
   }
 
-  .cell-year {
+  .cell-season {
     font-family: var(--font-mono);
     color: var(--color-faded-blue);
     white-space: nowrap;
@@ -235,17 +254,29 @@ const { productions } = Astro.props;
     color: var(--color-espresso);
   }
 
-  .cell-cast {
-    font-size: 0.875rem;
-    color: var(--color-tobacco);
-    max-width: 200px;
+  .cell-info {
+    text-align: right;
+    white-space: nowrap;
   }
 
-  .cell-notes {
+  .info-link {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--color-tobacco);
-    font-style: italic;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-rust);
+    background: none;
+    border: 1px solid var(--color-sepia);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .info-link:hover,
+  .info-link:focus-visible {
+    background: var(--color-espresso);
+    border-color: var(--color-espresso);
+    color: var(--color-cream);
   }
 
   .featured-badge {
@@ -253,6 +284,18 @@ const { productions } = Astro.props;
     color: var(--color-aged-gold);
     margin-left: 0.5em;
     font-size: 0.875em;
+  }
+
+  .table-empty {
+    padding: var(--space-md);
+    text-align: center;
+    font-style: italic;
+    color: var(--color-tobacco);
+    margin: 0;
+  }
+
+  .table-empty[hidden] {
+    display: none;
   }
 
   .table-legend {
@@ -283,7 +326,10 @@ const { productions } = Astro.props;
       font-size: 0.8125rem;
     }
 
-    .cell-cast {
+    .cell-playwright,
+    .cell-director,
+    .productions-table th:nth-child(3),
+    .productions-table th:nth-child(4) {
       display: none;
     }
   }
@@ -291,82 +337,74 @@ const { productions } = Astro.props;
 
 <script>
   const searchInput = document.getElementById('production-search') as HTMLInputElement;
-  const table = document.getElementById('productions-table');
-  const resultCount = document.getElementById('result-count');
-  const rows = table?.querySelectorAll('tbody tr');
+  const table = document.getElementById('productions-table')!;
+  const tbody = table.querySelector('tbody')!;
+  const resultCount = document.getElementById('result-count')!;
+  const emptyEl = document.getElementById('table-empty')!;
+  const rows = Array.from(tbody.querySelectorAll<HTMLTableRowElement>('tr'));
 
-  // Search functionality
-  searchInput?.addEventListener('input', (e) => {
-    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
-    let visibleCount = 0;
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    let visible = 0;
 
-    rows?.forEach(row => {
-      const searchable = row.getAttribute('data-searchable') || '';
-      const matches = query === '' || searchable.includes(query);
+    for (const row of rows) {
+      const match = !query || (row.dataset.searchable ?? '').includes(query);
+      row.hidden = !match;
+      if (match) visible++;
+    }
 
-      row.classList.toggle('hidden', !matches);
-      if (matches) visibleCount++;
-    });
-
-    if (resultCount) resultCount.textContent = String(visibleCount);
+    resultCount.textContent = String(visible);
+    emptyEl.hidden = visible > 0;
   });
 
-  // Sort functionality
-  const sortableHeaders = table?.querySelectorAll('th.sortable');
-  let currentSort = { column: '', direction: 'asc' };
+  // Column index of each sortable header, so sorting reads the right cell.
+  const SORT_COLUMN: Record<string, number> = {
+    season: 0,
+    title: 1,
+    playwright: 2,
+    director: 3,
+  };
 
-  sortableHeaders?.forEach(header => {
+  const sortableHeaders = Array.from(table.querySelectorAll<HTMLElement>('th.sortable'));
+  let currentSort = { column: '', direction: 'asc' as 'asc' | 'desc' };
+
+  for (const header of sortableHeaders) {
     header.addEventListener('click', () => {
-      const column = header.getAttribute('data-sort') || '';
+      const column = header.dataset.sort ?? '';
+      if (!(column in SORT_COLUMN)) return;
 
-      // Toggle direction if same column
       if (currentSort.column === column) {
         currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
       } else {
-        currentSort.column = column;
-        currentSort.direction = 'asc';
+        currentSort = { column, direction: 'asc' };
       }
 
-      // Update header classes
-      sortableHeaders.forEach(h => {
+      for (const h of sortableHeaders) {
         h.classList.remove('sorted', 'sorted-asc', 'sorted-desc');
-      });
+      }
       header.classList.add('sorted', `sorted-${currentSort.direction}`);
 
-      // Sort rows
-      const tbody = table?.querySelector('tbody');
-      const rowsArray = Array.from(rows || []);
+      const index = SORT_COLUMN[column];
+      // data-value holds the bare field, without the featured star in the title.
+      const value = (row: HTMLTableRowElement) =>
+        row.cells[index]?.dataset.value ?? '';
 
-      rowsArray.sort((a, b) => {
-        let aVal = '';
-        let bVal = '';
-
-        switch(column) {
-          case 'year':
-            aVal = a.querySelector('.cell-year')?.textContent || '';
-            bVal = b.querySelector('.cell-year')?.textContent || '';
-            return currentSort.direction === 'asc'
-              ? parseInt(aVal) - parseInt(bVal)
-              : parseInt(bVal) - parseInt(aVal);
-          case 'title':
-            aVal = a.querySelector('.cell-title')?.textContent || '';
-            bVal = b.querySelector('.cell-title')?.textContent || '';
-            break;
-          case 'playwright':
-            aVal = a.querySelectorAll('td')[2]?.textContent || '';
-            bVal = b.querySelectorAll('td')[2]?.textContent || '';
-            break;
-          case 'director':
-            aVal = a.querySelectorAll('td')[3]?.textContent || '';
-            bVal = b.querySelectorAll('td')[3]?.textContent || '';
-            break;
-        }
-
-        const comparison = aVal.localeCompare(bVal);
+      const sorted = [...rows].sort((a, b) => {
+        const comparison =
+          column === 'season'
+            ? parseInt(value(a), 10) - parseInt(value(b), 10)
+            : value(a).localeCompare(value(b));
         return currentSort.direction === 'asc' ? comparison : -comparison;
       });
 
-      rowsArray.forEach(row => tbody?.appendChild(row));
+      for (const row of sorted) tbody.appendChild(row);
     });
-  });
+  }
+
+  for (const button of table.querySelectorAll<HTMLElement>('.info-link')) {
+    button.addEventListener('click', () => {
+      const production = (window as any).productionsById?.[button.dataset.productionId!];
+      if (production) window.openProductionModal(production);
+    });
+  }
 </script>

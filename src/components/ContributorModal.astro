@@ -1,0 +1,265 @@
+---
+// Shows one person's work across the productions list. Populated via JS:
+// window.openContributorModal(contributor) — see getContributorPayloads in
+// src/lib/catalog.ts. Stacks above the production modal.
+import { withBase } from '../lib/url';
+
+const peopleHref = withBase('/people');
+---
+
+<div class="modal-backdrop contributor-modal-backdrop" id="contributor-modal-backdrop" aria-hidden="true">
+  <div
+    class="modal contributor-modal"
+    id="contributor-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="contributor-modal-title"
+  >
+    <button class="modal__close" id="contributor-modal-close" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="contributor-modal__content">
+      <header class="contributor-modal__header">
+        <span class="contributor-modal__eyebrow annotation">Also worked on</span>
+        <h2 class="contributor-modal__title" id="contributor-modal-title"></h2>
+        <p class="contributor-modal__summary" id="contributor-modal-summary"></p>
+        <a class="contributor-modal__profile" id="contributor-modal-profile" href={peopleHref} hidden>
+          Read their profile
+        </a>
+      </header>
+
+      <ul class="contributor-modal__list" id="contributor-modal-list"></ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .contributor-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2100; /* above the production modal so it can stack on top */
+    background: rgba(26, 20, 16, 0.9);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    overflow-y: auto;
+  }
+
+  .contributor-modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .contributor-modal {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    max-height: 90vh;
+    background: var(--color-cream);
+    overflow-y: auto;
+    transform: translateY(20px) scale(0.98);
+    transition: transform var(--transition-medium);
+  }
+
+  .contributor-modal-backdrop.open .contributor-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .contributor-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-aged-gold), var(--color-rust));
+  }
+
+  .modal__close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-cream);
+    border: 1px solid var(--color-sepia);
+    color: var(--color-tobacco);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+  }
+
+  .modal__close:hover {
+    background: var(--color-espresso);
+    border-color: var(--color-espresso);
+    color: var(--color-cream);
+  }
+
+  .contributor-modal__content {
+    padding: var(--space-lg);
+  }
+
+  .contributor-modal__header {
+    padding-right: 3rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .contributor-modal__eyebrow {
+    display: block;
+    color: var(--color-faded-blue);
+  }
+
+  .contributor-modal__title {
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    margin: 0.15em 0 0.35em;
+  }
+
+  .contributor-modal__summary {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    margin: 0;
+  }
+
+  .contributor-modal__profile {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    font-size: 0.9375rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contributor-modal__profile[hidden] {
+    display: none;
+  }
+
+  .contributor-modal__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-sepia);
+  }
+
+  /* Rows are built in JS, so they never carry Astro's scope attribute. */
+  :global(.contributor-appearance) {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--color-parchment);
+    padding: var(--space-xs) 0;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    transition: background var(--transition-fast);
+  }
+
+  :global(.contributor-appearance:hover),
+  :global(.contributor-appearance:focus-visible) {
+    background: var(--color-parchment);
+  }
+
+  :global(.contributor-appearance__year) {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-faded-blue);
+    margin-right: 0.75em;
+  }
+
+  :global(.contributor-appearance__title) {
+    font-weight: 600;
+    color: var(--color-espresso);
+  }
+
+  :global(.contributor-appearance__roles) {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-tobacco);
+    margin-top: 0.25em;
+  }
+
+  @media (max-width: 700px) {
+    .contributor-modal__content {
+      padding: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  import { createModalController } from '../scripts/modal-controller';
+
+  const backdrop = document.getElementById('contributor-modal-backdrop')!;
+  const modal = document.getElementById('contributor-modal')!;
+  const closeBtn = document.getElementById('contributor-modal-close')!;
+  const controller = createModalController(backdrop, modal);
+
+  closeBtn.addEventListener('click', () => controller.close());
+
+  window.openContributorModal = function (contributor: any) {
+    document.getElementById('contributor-modal-title')!.textContent = contributor.name;
+
+    const years = contributor.appearances.map((a: any) => a.year);
+    const span =
+      years[0] === years[years.length - 1]
+        ? `${years[0]}`
+        : `${years[0]}–${years[years.length - 1]}`;
+    document.getElementById('contributor-modal-summary')!.textContent =
+      `${contributor.appearances.length} productions · ${span}`;
+
+    const profile = document.getElementById('contributor-modal-profile')!;
+    profile.hidden = !contributor.profileId;
+
+    const list = document.getElementById('contributor-modal-list')!;
+    list.textContent = '';
+    for (const appearance of contributor.appearances) {
+      const li = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'contributor-appearance';
+
+      const year = document.createElement('span');
+      year.className = 'contributor-appearance__year';
+      year.textContent = String(appearance.year);
+
+      const title = document.createElement('span');
+      title.className = 'contributor-appearance__title';
+      title.textContent = appearance.title;
+
+      const roles = document.createElement('span');
+      roles.className = 'contributor-appearance__roles';
+      roles.textContent = appearance.roles.join(' · ');
+
+      button.append(year, title, roles);
+      button.addEventListener('click', () => {
+        const production = (window as any).productionsById?.[appearance.productionId];
+        controller.close();
+        // The production modal is already open underneath, so this repopulates
+        // it in place rather than stacking a second copy.
+        if (production) window.openProductionModal(production);
+      });
+
+      li.appendChild(button);
+      list.appendChild(li);
+    }
+
+    controller.open(closeBtn as HTMLElement);
+  };
+</script>

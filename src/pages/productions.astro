@@ -2,14 +2,21 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductionTable from '../components/ProductionTable.astro';
+import ProductionModal from '../components/ProductionModal.astro';
+import ContributorModal from '../components/ContributorModal.astro';
 import TimelineItem from '../components/TimelineItem.astro';
+import { getProductionPayloads, getLinkableContributors } from '../lib/catalog';
 import { itemImage } from '../lib/images';
 import { withBase } from '../lib/url';
 
+const productionPayloads = await getProductionPayloads();
+const contributors = await getLinkableContributors();
 const productionsData = (await getCollection('productions')).map((e) => e.data);
+const featuredIds = productionsData.filter((p) => p.featured).map((p) => p.id);
 const featuredProductions = await Promise.all(
   productionsData
     .filter(p => p.featured && p.image && p.description)
+    .sort((a, b) => a.year - b.year)
     .map(async (p) => ({ ...p, imageMeta: await itemImage(p.image!) }))
 );
 ---
@@ -30,13 +37,17 @@ const featuredProductions = await Promise.all(
     <div class="container container--narrow">
       <div class="intro__content fade-in">
         <p class="intro__lead">
-          The Greenwich Mews Theater produced over 45 plays during its two-decade run, providing
-          a stage for some of the most important voices in American drama.
+          Across two decades the Greenwich Mews gave a stage to some of the most important
+          voices in American drama—and, later, to its Spanish-language company and to the
+          Arts Ministry of the Village Church.
         </p>
         <p>
-          This list is adapted from the book's appendix. It documents all known productions and
-          the artists who brought them to life—revealing a remarkable network that connected the
-          Civil Rights movement, the Harlem Renaissance's legacy, and the emerging Black Arts Movement.
+          This selected list is adapted from the book's appendix. Each entry carries the full
+          credits as they were printed—playwright, director, producers, designers, stage
+          management, and cast—revealing a remarkable network that connected the Civil Rights
+          movement, the Harlem Renaissance's legacy, and the emerging Black Arts Movement.
+          Search runs across every one of those fields; select <em>Full Info</em> on any row
+          to see the complete record.
         </p>
       </div>
     </div>
@@ -49,7 +60,7 @@ const featuredProductions = await Promise.all(
         <span class="section-title__line"></span>
       </h2>
       <div class="fade-in">
-        <ProductionTable productions={productionsData} />
+        <ProductionTable productions={productionPayloads} featuredIds={featuredIds} />
       </div>
     </div>
   </section>
@@ -89,7 +100,15 @@ const featuredProductions = await Promise.all(
       </div>
     </div>
   </section>
+
+  <ProductionModal />
+  <ContributorModal />
 </BaseLayout>
+
+<script define:vars={{ productionPayloads, contributors }}>
+  window.productionsById = Object.fromEntries(productionPayloads.map((p) => [p.id, p]));
+  window.productionContributors = contributors;
+</script>
 
 <style>
   /* Page Hero */
