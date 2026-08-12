@@ -90,7 +90,7 @@ TITLE_FIXES = {
 # "Playwright" line. The original credit line is kept in `credits`.
 PLAYWRIGHT_FALLBACK = {
     "The Student Prince": "Dorothy Donnelly (book & lyrics)",
-    "The Mikado": "William Schwenck Gilbert (libretto)",
+    "The Mikado": "W.S. Gilbert (libretto)",
     "The World of My America": "Paulene Myers (adapted & arranged)",
     "Carricknabauna": "Padraic Colum, Basil Burwell (adapted)",
 }
@@ -98,27 +98,38 @@ PLAYWRIGHT_FALLBACK = {
 # One spelling per person. Left side is what the source prints somewhere; right
 # side is the form used everywhere. Each entry is either an outright typo or a
 # person the source bills inconsistently across productions — collapsing them
-# is what makes a name findable from the search box. Genuine coin-flips
-# (Corwin/Corrin, Ballin/Bailin) are deliberately NOT here; see the README.
+# is what makes a name findable from the search box. Names the author could not
+# resolve (Joe Liberman/Lieberman, the James Clarks) are deliberately NOT here;
+# see the README.
 NAME_FIXES = {
     # Typos
     "MacGregor Gibbsss": "MacGregor Gibbs",
     "Archie L. Greshan": "Archie L. Gresham",
     "Antoinnette": "Antoinette",
-    "Joe Liberman": "Joe Lieberman",
     "Sally Brickhead": "Sally Birckhead",
     "Maurice Schadad": "Maurice Schaded",
-    # Inconsistent billing of one person
-    "Antoinette Kray": 'Antoinette "Toni" Kray',
+    # The source spells this composer both ways on consecutive credit lines of
+    # Carricknabauna; the author confirms Bailin. The two Music lines then
+    # collapse into one.
+    "Harriet Ballin": "Harriet Bailin",
+    # Inconsistent billing of one person. Preferred spellings confirmed by the
+    # author except where noted.
+    'Antoinette "Toni" Kray': "Antoinette Kray",
     "Ann Fielding": "Anne Fielding",
-    "James McMahon": "James B. McMahon",
     "Thomas Vasiloff": "Thomas S. Vasiloff",
     "Fran Drucker": "Frances Drucker",
+    # He changed his stage name repeatedly; one form keeps him recognisable.
     "Robert Graham Brown": "R. Graham Brown",
-    "James Gore": "Jim Gore",
+    "Jim Gore": "James Gore",
     "Dave Lucas": "David Lucas",
     "LD Clements": "L.D. Clements",
     "Manolo De Orellana": "Manolo de Orellana",
+    "William Schwenck Gilbert": "W.S. Gilbert",
+    # Father and son, billed as one word apart. Hyphenated to match the 1955
+    # spelling; the "Jr." keeps them distinct.
+    "Austin Briggs Hall Jr.": "Austin Briggs-Hall Jr.",
+    # Not yet confirmed by the author — see the README.
+    "James McMahon": "James B. McMahon",
     # Accents the source drops in one entry but not others
     "Gilberto Zaldivar": "Gilberto Zaldívar",
     "Rene Marqués": "René Marqués",
@@ -136,12 +147,6 @@ NAME_FIXES = {
     "and the Hugh Porter Gospel Singers": "The Hugh Porter Gospel Singers",
     "Cruce de Vias": "Cruce de Vías",
 }
-
-# Cast entries the comma split can't handle: a name carrying a trailing period
-# from the end of the source line, or a triple bill cast grouped by play.
-# The source prints this composer twice, spelled two ways, on consecutive
-# credit lines. Keeping the first; the second is almost certainly a typo.
-DROP_CREDITS = {("Carricknabauna", "Music", "Harriet Bailin")}
 
 # Corrections applied after role canonicalisation, keyed by (title, role).
 # The source credits Gilbert as a composer of The Mikado; Sullivan wrote the
@@ -326,8 +331,6 @@ def main():
                         if n.endswith(".") and not ABBREV_END.search(n):
                             n = n[:-1]
                         cast.append(n)
-                continue
-            if (title, c["role"], names) in DROP_CREDITS:
                 continue
             for role in canonical_roles(c["role"]):
                 value = CREDIT_FIXES.get((title, role), names)
