@@ -18,6 +18,31 @@ npm run preview  # Preview production build locally
 
 Restart the dev server after editing `src/content.config.ts` — content-collection changes are not hot-reloaded.
 
+## Pulling the author's updates
+
+**Hillary Miller is the author.** "Check for Hillary's updates", "pull her updates", "she's added new images" and the like all mean this one procedure. She adds material to her Google Sheet and Dropbox folder incrementally and expects the site to catch up; nothing about it is hand-work.
+
+```bash
+python3 scripts/sync-materials/sync.py --then-build   # sync, convert, re-import
+npm run build                                          # validate
+```
+
+That pulls her spreadsheet and any new Dropbox file into the git-ignored `ignore/`, converts new masters into `src/assets/items/`, regenerates `src/data/items.json`, and prints a per-row report of what each record is still missing.
+
+Then:
+
+1. **Read the report.** It lists exactly what each row lacks (rights status, date, credit line, image file, production link). That list is the answer to "what does she still need to give us" — regenerate it any time with `python3 scripts/import-items/build.py --report`.
+2. **Look at what changed** in `src/data/items.json` and `src/data/productions.json` before committing; the importer also sets production images and the `featured` flag.
+3. **Commit and push.** The site deploys from `main` via GitHub Actions.
+
+Things that will bite you:
+
+- **Never hand-edit `src/data/items.json`** — it is generated, and the next sync overwrites it. Fix the importer, or the spreadsheet, instead.
+- **Use `--sheet-only`** when you just need her latest spreadsheet. A full sync downloads the entire Dropbox folder (~2.7 GB and growing) because Dropbox only serves a shared folder as one zip; the extract is incremental, the download is not. `--dry-run` reports what would change without touching anything.
+- **The sync never deletes local files.** Files that exist only on disk are reported and left alone, so material she removes upstream cannot silently vanish from a published catalog. Remove such a file by hand, deliberately.
+- **If the export returns HTML**, her Google Sheet's sharing has been tightened back from "anyone with the link can view". The script stops with that message rather than overwriting a good CSV with a sign-in page.
+- **Unresolved cross-references are left unlinked on purpose**, never guessed — see `scripts/import-items/README.md` for the current list of open questions for her.
+
 ## Deployment
 
 The site publishes to GitHub Pages via `.github/workflows/deploy.yml`, served from a
@@ -120,7 +145,7 @@ Keep the author's `Fig` numbers in filenames (`fig01-village-church-1951.jpg`) s
 **Rights gate:** that spreadsheet has a `Right obtained?` column, and many rows are blank, marked `in progress`, or carry a fee (`web only - $75`, `$375`). Publishing this site publishes the image. **Do not add an image to `src/assets/` until its row shows rights are cleared for web use**, and carry the `Credit Line` value into the item's `source`/`rights` fields verbatim.
 
 ### Import Scripts
-`scripts/sync-materials/` pulls the author's latest work into `ignore/` — her permissions spreadsheet from Google Sheets and any new file from the shared Dropbox folder. **This is the entry point when asked to "pull her updates"**: `python3 scripts/sync-materials/sync.py --then-build` syncs, converts new masters, and regenerates the catalog in one pass. It never deletes local files. Its README covers the access requirements and the one real cost (Dropbox serves the folder only as a single ~2.7 GB zip, so the download is not incremental even though the extract is).
+`scripts/sync-materials/` pulls the author's latest spreadsheet and Dropbox files into `ignore/`. See **Pulling the author's updates** above for the procedure; its README covers access requirements and flags.
 
 `scripts/import-items/` regenerates `src/data/items.json` (and attaches production images) from the author's permissions spreadsheet and her folder of archival masters, both in the git-ignored `ignore/`. Run `convert_images.py` then `build.py --report`; the report prints exactly what each row is still missing. She adds material incrementally, so re-run both rather than hand-editing the JSON. Its README records the editorial rules and the open questions left for her.
 
