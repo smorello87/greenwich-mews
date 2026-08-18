@@ -102,9 +102,12 @@ Regenerate this list any time with `build.py --report`.
   shot), so the altar photographs have neither a number nor a file. The second
   row is skipped and reported.
 - **`Folder12` is one row for four scans** — two drawings, each shot front and
-  back. The backs are blank versos carrying the 1946 approval stamp, so only
-  the fronts are imported, as `folder12a` (cyanotype) and `folder12b` (pencil
-  original). The row wants splitting.
+  back. Only the fronts become catalog items, `folder12a` (cyanotype) and
+  `folder12b` (pencil original); the versos are converted as
+  `folder12a-back` / `folder12b-back` and used by The Space page, which shows
+  each sheet as a card you can turn over. They carry no drawing but are not
+  blank: the Department of Buildings approval stamps and the block/lot
+  annotations are on them. The row still wants splitting.
 - **`Jericho-Jim Crow` ran in both 1964 and 1968**, so `Fig36`/`Fig37` cannot be
   linked to a production without a year.
 - **`Holy Moses` (`Fig46`) is not in the appendix at all** — either the

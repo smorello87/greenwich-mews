@@ -36,12 +36,16 @@ QUALITY = 82
 
 FIG_RE = re.compile(r"^fig\s*0*(\d+)", re.IGNORECASE)
 
-# The Folder 12 plans are two drawings, each scanned front and back. The backs
-# are blank versos carrying only the 1946 approval stamp, so only the fronts
-# become assets.
+# The Folder 12 plans are two drawings, each scanned front and back. The versos
+# carry no drawing but are not empty: they hold the Department of Housing and
+# Buildings approval stamps and the block/lot annotations, which is why The
+# Space page shows each sheet as a card you can turn over. Only the fronts
+# become catalog items; the backs are assets referenced by that page.
 PLANS = {
     "REC0074_0609_065_0001_front.tif": "folder12a",
+    "REC0074_0609_065_0001_back.tif": "folder12a-back",
     "REC0074_0609_065_0002_front.tif": "folder12b",
+    "REC0074_0609_065_0002_back.tif": "folder12b-back",
 }
 
 

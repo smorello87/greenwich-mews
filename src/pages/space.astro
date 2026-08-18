@@ -1,10 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { narrativeImage } from '../lib/images';
+import PlanCard from '../components/PlanCard.astro';
+import { narrativeImage, itemImage } from '../lib/images';
 import { withBase } from '../lib/url';
 
 const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
+
+// The two Municipal Archives sheets, each scanned front and back.
+const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
+  itemImage('folder12a.jpg'),
+  itemImage('folder12a-back.jpg'),
+  itemImage('folder12b.jpg'),
+  itemImage('folder12b-back.jpg'),
+]);
 ---
 
 <BaseLayout
@@ -96,7 +105,48 @@ const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
     </div>
   </section>
 
-  <section class="venue venue--alt section">
+  <section class="plans venue--alt section">
+    <div class="container">
+      <h2 class="section-heading fade-in">The Plans</h2>
+
+      <p class="plans__lede fade-in">
+        Two sheets survive in the Municipal Archives, filed with the Department of Buildings in
+        1946 — a seating diagram for the basement auditorium, drawn in pencil and printed as a
+        cyanotype. Turn either sheet over for the approval stamps on its back.
+      </p>
+
+      <div class="plans__grid fade-in">
+        <PlanCard
+          id="plan-blueprint"
+          title="The cyanotype print"
+          front={planAFront}
+          back={planABack}
+          frontAlt="Cyanotype blueprint of the seating diagram for the basement auditorium, white lines on deep blue, showing rows of seats, the stage platform, dressing rooms and a choir room."
+          backAlt="The back of the blueprint sheet: blank paper carrying a Department of Housing and Buildings approval stamp dated November 1946 and pencilled block and lot numbers."
+          caption="Seating diagram of the basement auditorium, printed as a blueprint. The rows of seats, the platform, the dressing rooms and the outer courts on West 13th Street are all laid out."
+          backCaption="The verso: a Borough of Manhattan approval stamp dated 15 November 1946, and the block and lot renumbered by hand to 609/65."
+        />
+        <PlanCard
+          id="plan-drawing"
+          title="The architect's drawing"
+          front={planBFront}
+          back={planBBack}
+          frontAlt="The original pencil drawing on vellum of the same seating diagram, with a section drawing above it, a plot plan to the right, and a title block giving the seat count."
+          backAlt="The back of the vellum sheet, carrying approval stamps and signatures that read in mirror image through the translucent paper."
+          caption="The original drawing on vellum, carrying far more than the print: a section through the room, a plot plan of the lot, and a title block recording 216 fixed seats and 24 for personnel — 240 in all."
+          backCaption="The verso, stamped and signed. The sheet is translucent, so the marks read in mirror image through the paper."
+        />
+      </div>
+
+      <p class="plans__credit fade-in">
+        Map of Basement, 145 W. 13th Street, Ralph H. Segal, Architect, March 22, 1946–April 10,
+        1946. Department of Buildings architectural drawings and plans of Lower Manhattan, circa
+        1866–1978; REC 0074; Municipal Archives, City of New York.
+      </p>
+    </div>
+  </section>
+
+  <section class="venue section">
     <div class="container container--narrow">
       <h2 class="section-heading fade-in">1951: The Greenwich Mews</h2>
 
@@ -113,7 +163,7 @@ const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
     </div>
   </section>
 
-  <section class="venue section">
+  <section class="venue venue--alt section">
     <div class="container container--narrow">
       <h2 class="section-heading fade-in">Afterward</h2>
 
@@ -235,6 +285,36 @@ const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
     color: var(--color-tobacco);
     margin-top: var(--space-sm);
     max-width: 60ch;
+  }
+
+  /* Plans */
+  .plans__lede {
+    max-width: 60ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .plans__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .plans__credit {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.7;
+    color: var(--color-tobacco);
+    max-width: 70ch;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-sepia);
+  }
+
+  @media (max-width: 900px) {
+    .plans__grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Venue prose */
