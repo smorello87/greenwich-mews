@@ -2,11 +2,13 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ItemModal from '../components/ItemModal.astro';
-import { getItemPayloads, tagLabel } from '../lib/catalog';
+import ContributorModal from '../components/ContributorModal.astro';
+import { getItemPayloads, tagLabel, getLinkableContributors } from '../lib/catalog';
 import { itemImage } from '../lib/images';
 import { getCollection } from 'astro:content';
 
 const itemPayloads = await getItemPayloads();
+const contributors = await getLinkableContributors();
 const itemEntries = await getCollection('items');
 // Items without a scan yet resolve to null and render an empty frame.
 const imageById = new Map(
@@ -143,10 +145,13 @@ const searchText = (item: (typeof itemPayloads)[number]) =>
   </section>
 
   <ItemModal />
+  <ContributorModal />
 </BaseLayout>
 
-<script define:vars={{ itemPayloads }}>
+<script define:vars={{ itemPayloads, contributors }}>
   window.archiveItems = Object.fromEntries(itemPayloads.map((i) => [i.id, i]));
+  // Lets the item modal turn a contributor's name into a link to their work.
+  window.productionContributors = contributors;
 </script>
 
 <script>

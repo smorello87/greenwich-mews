@@ -431,3 +431,30 @@ a:hover {
 .empty-frame[hidden] {
   display: none;
 }
+
+/* ---------------------------------------------------------------------------
+   Name link
+
+   A person's name rendered as a button that opens the contributor modal.
+   Built at runtime by ProductionModal and ItemModal, so — like .empty-frame —
+   it cannot live in a component's scoped styles (see CLAUDE.md).
+--------------------------------------------------------------------------- */
+.name-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-sepia);
+}
+
+.name-link:hover,
+.name-link:focus-visible {
+  color: var(--color-rust);
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+}

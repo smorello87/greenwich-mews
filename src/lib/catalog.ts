@@ -21,6 +21,8 @@ export interface ItemPayload {
   thumbSrc: string | null;
   fullSrc: string | null;
   people: { id: string; name: string }[];
+  /** Names linkable via the contributor index rather than a full profile. */
+  contributors: string[];
   productions: { id: string; title: string; year: number }[];
 }
 
@@ -107,6 +109,7 @@ export async function getItemPayloads(): Promise<ItemPayload[]> {
           id,
           name: personById.get(id)!.name,
         })),
+        contributors: entry.data.contributors,
         productions: entry.data.productions.map((id) => ({
           id,
           title: productionById.get(id)!.title,

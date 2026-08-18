@@ -64,7 +64,7 @@
       }
     ],
     "notes": "",
-    "featured": false,
+    "featured": true,
     "image": "fig17.jpg",
     "description": null
   },
@@ -234,7 +234,7 @@
       }
     ],
     "notes": "",
-    "featured": false,
+    "featured": true,
     "image": "fig15.jpg",
     "description": null
   },
@@ -881,7 +881,7 @@
       }
     ],
     "notes": "",
-    "featured": false,
+    "featured": true,
     "image": "fig20.jpg",
     "description": null
   },
@@ -919,7 +919,7 @@
       }
     ],
     "notes": "",
-    "featured": false,
+    "featured": true,
     "image": "fig39.jpg",
     "description": null
   },
@@ -1131,7 +1131,7 @@
       }
     ],
     "notes": "",
-    "featured": false,
+    "featured": true,
     "image": "fig08.jpg",
     "description": null
   },
@@ -1411,7 +1411,7 @@
       }
     ],
     "notes": "",
-    "featured": false,
+    "featured": true,
     "image": "fig45.jpg",
     "description": null
   },
@@ -1513,7 +1513,7 @@
       }
     ],
     "notes": "",
-    "featured": true,
+    "featured": false,
     "image": null,
     "description": "William Saroyan's parable of a company of outcasts squatting in a condemned theatre, starring Geraldine Fitzgerald, with Joanna Miles and Anthony Zerbe."
   },
@@ -1828,7 +1828,7 @@
       }
     ],
     "notes": "",
-    "featured": true,
+    "featured": false,
     "image": null,
     "description": "William Hairston's drama, designed by Ming Cho Lee, with a cast that included Roger Robinson and Clarence Williams III."
   },
@@ -1883,7 +1883,7 @@
       }
     ],
     "notes": "",
-    "featured": true,
+    "featured": false,
     "image": null,
     "description": "Langston Hughes's gospel song-play on the history of the freedom struggle, co-directed by Alvin Ailey and William Hairston with the Hugh Porter Gospel Singers."
   },
@@ -2242,7 +2242,7 @@
       }
     ],
     "notes": "Double bill",
-    "featured": true,
+    "featured": false,
     "image": null,
     "description": "Wole Soyinka's double bill, directed by Cynthia Belgrave, with Mary Alice, Roger Robinson and Harold Scott."
   },

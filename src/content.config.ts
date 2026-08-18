@@ -89,6 +89,10 @@ const items = defineCollection({
         message: `Unknown person id "${id}" — must match an id in people.json`,
       }))
     ),
+    // Names that appear in the productions appendix but have no profile of
+    // their own. Stored as the name exactly as printed, which is what the
+    // contributor index is keyed by.
+    contributors: z.array(z.string().min(1)),
     productions: z.array(
       z.string().refine((id) => productionIds.has(id), (id) => ({
         message: `Unknown production id "${id}" — must match an id in productions.json`,

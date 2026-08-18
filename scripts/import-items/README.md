@@ -78,10 +78,20 @@ Production titles that do not match the book's appendix verbatim are mapped in
 Anything genuinely ambiguous is listed in `NEEDS_AUTHOR` and left **unlinked**
 rather than guessed — see below.
 
+People resolve three ways, in descending order of richness: a full profile in
+`people.json`; failing that, the **contributor index** built from the appendix's
+cast and credit lines, which can show every production a person worked on
+without anyone writing a biography; and only a name in neither place is
+recorded as missing. All seven names without profiles resolve via the second
+route.
+
 Where an item links to a production, the first such item also becomes that
-production's `image`, which is how the productions timeline gets real
-photographs. `scripts/import-productions/build.py` therefore leaves `image`
-null; do not reintroduce a placeholder there.
+production's `image`, and `featured` follows: a production is featured on the
+timeline exactly when a real photograph exists for it. That replaced a
+hand-kept list which predated the archival images, and which both hid six
+productions that now have one and featured four that rendered empty.
+`scripts/import-productions/build.py` therefore leaves `image` null and
+`featured` false; do not reintroduce a placeholder there.
 
 ## Known data issues, for the author
 
@@ -101,13 +111,18 @@ Regenerate this list any time with `build.py --report`.
   production is missing from it or the figure is labelled with a working title.
 - **Seven numbered rows have no master yet**: Fig3, Fig4, Fig27, Fig28, Fig36,
   Fig37, Fig42.
-- **Seven names have no profile** in `people.json`, so those items cannot link
-  to a person: Fran Bennett, R. Graham Brown, Diana Sands, Alvin Ailey,
-  Gilberto Zaldívar, Adrian Hall, William Glenesk.
+- **Seven names have no profile** in `people.json` — Fran Bennett, R. Graham
+  Brown, Diana Sands, Alvin Ailey, Gilberto Zaldívar, Adrian Hall, William
+  Glenesk. They are *not* unlinked: each appears in the productions appendix,
+  so `build.py` links them through the contributor index instead, and the item
+  modal opens their list of productions. A full profile would add biography and
+  dates, but nothing is broken without one.
 
 ## What the catalog is still missing
 
-As of the first full import — 47 items, 40 with a scan, 5 complete:
+As of the first full import — 47 items, 40 with a scan, 5 complete. Every
+person named in the spreadsheet now resolves, either to a profile or to the
+contributor index, so nothing is left dangling:
 
 | Missing | Rows |
 |---|---|
@@ -115,5 +130,4 @@ As of the first full import — 47 items, 40 with a scan, 5 complete:
 | date | 31 |
 | credit line | 19 |
 | image file | 7 |
-| person profile | 7 |
 | production link | 3 |

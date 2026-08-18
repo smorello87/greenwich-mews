@@ -45,6 +45,10 @@
             <dt>Related People</dt>
             <dd id="item-modal-people"></dd>
           </div>
+          <div class="item-modal__detail" id="item-modal-contributors-row" hidden>
+            <dt>Also in the Catalog</dt>
+            <dd id="item-modal-contributors"></dd>
+          </div>
           <div class="item-modal__detail" id="item-modal-productions-row" hidden>
             <dt>Related Productions</dt>
             <dd id="item-modal-productions"></dd>
@@ -354,6 +358,29 @@
       'item-modal-people',
       item.people.map((p: any) => ({ href: withBase('/people'), label: p.name }))
     );
+    // Names with no profile of their own, but which the productions appendix
+    // knows. Clicking opens the contributor modal, which lists every
+    // production they worked on. Guarded because that modal is only mounted on
+    // pages that carry the contributor payload.
+    const contribRow = document.getElementById('item-modal-contributors-row')!;
+    const contribCell = document.getElementById('item-modal-contributors')!;
+    contribCell.textContent = '';
+    contribRow.hidden = item.contributors.length === 0;
+    item.contributors.forEach((name: string, i: number) => {
+      if (i > 0) contribCell.appendChild(document.createTextNode(', '));
+      const lookup = (window as any).productionContributors?.[name];
+      if (lookup && typeof (window as any).openContributorModal === 'function') {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'name-link';
+        btn.textContent = name;
+        btn.addEventListener('click', () => (window as any).openContributorModal(lookup));
+        contribCell.appendChild(btn);
+      } else {
+        contribCell.appendChild(document.createTextNode(name));
+      }
+    });
+
     fillLinks(
       'item-modal-productions-row',
       'item-modal-productions',

@@ -4,11 +4,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PersonCard from '../components/PersonCard.astro';
 import PersonModal from '../components/PersonModal.astro';
 import ItemModal from '../components/ItemModal.astro';
-import { getPersonPayloads } from '../lib/catalog';
+import ContributorModal from '../components/ContributorModal.astro';
+import { getPersonPayloads, getLinkableContributors } from '../lib/catalog';
 import { personImage } from '../lib/images';
 import { withBase } from '../lib/url';
 
 const personPayloads = await getPersonPayloads();
+const contributors = await getLinkableContributors();
 const people = await getCollection('people');
 const thumbnailById = new Map(
   await Promise.all(
@@ -88,9 +90,12 @@ const thumbnailById = new Map(
 
   <PersonModal />
   <ItemModal />
+  <ContributorModal />
 </BaseLayout>
 
-<script define:vars={{ personPayloads }}>
+<script define:vars={{ personPayloads, contributors }}>
+  // Lets the item modal turn a contributor's name into a link to their work.
+  window.productionContributors = contributors;
   // Store people data for modal access
   window.peopleData = personPayloads;
 

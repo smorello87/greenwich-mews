@@ -13,6 +13,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": []
   },
@@ -30,6 +31,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "credit line"
@@ -49,6 +51,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "image file",
@@ -70,6 +73,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "image file"
@@ -89,6 +93,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date",
@@ -109,6 +114,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date",
@@ -129,6 +135,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date",
@@ -150,6 +157,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-courageous-one-1958"
     ],
@@ -170,6 +178,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "rights status"
@@ -190,6 +199,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date",
@@ -210,6 +220,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "rights status"
@@ -231,6 +242,7 @@
     "people": [
       "stella-holt"
     ],
+    "contributors": [],
     "productions": [],
     "needs": [
       "rights status"
@@ -250,6 +262,7 @@
       "origins"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date"
@@ -269,6 +282,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "monday-s-heroes-1953"
     ],
@@ -291,6 +305,7 @@
     "people": [
       "langston-hughes"
     ],
+    "contributors": [],
     "productions": [],
     "needs": []
   },
@@ -308,6 +323,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-decision-1951"
     ],
@@ -327,6 +343,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-decision-1951"
     ],
@@ -349,9 +366,11 @@
       "person"
     ],
     "people": [],
+    "contributors": [
+      "Fran Bennett"
+    ],
     "productions": [],
     "needs": [
-      "profile for Fran Bennett",
       "date"
     ]
   },
@@ -369,6 +388,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "me-candido-1956"
     ],
@@ -391,6 +411,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "in-splendid-error-1954"
     ],
@@ -413,6 +434,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "a-land-beyond-the-river-1957"
     ],
@@ -435,6 +457,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "a-land-beyond-the-river-1957"
     ],
@@ -457,6 +480,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "trouble-in-mind-1955"
     ],
@@ -481,6 +505,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "trouble-in-mind-1955"
     ],
@@ -508,6 +533,7 @@
       "langston-hughes",
       "stella-holt"
     ],
+    "contributors": [],
     "productions": [],
     "needs": [
       "image file",
@@ -528,6 +554,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "life-is-a-dream-la-vida-es-sueno-1971"
     ],
@@ -552,9 +579,11 @@
       "portrait"
     ],
     "people": [],
+    "contributors": [
+      "R. Graham Brown"
+    ],
     "productions": [],
     "needs": [
-      "profile for R. Graham Brown",
       "date",
       "rights status"
     ]
@@ -574,9 +603,11 @@
       "portrait"
     ],
     "people": [],
+    "contributors": [
+      "Diana Sands"
+    ],
     "productions": [],
     "needs": [
-      "profile for Diana Sands",
       "credit line",
       "rights status"
     ]
@@ -596,9 +627,11 @@
       "portrait"
     ],
     "people": [],
+    "contributors": [
+      "Alvin Ailey"
+    ],
     "productions": [],
     "needs": [
-      "profile for Alvin Ailey",
       "credit line",
       "rights status"
     ]
@@ -618,9 +651,11 @@
       "portrait"
     ],
     "people": [],
+    "contributors": [
+      "Gilberto Zaldívar"
+    ],
     "productions": [],
     "needs": [
-      "profile for Gilberto Zaldívar",
       "date",
       "credit line",
       "rights status"
@@ -643,6 +678,7 @@
     "people": [
       "alice-childress"
     ],
+    "contributors": [],
     "productions": [],
     "needs": [
       "rights status"
@@ -663,6 +699,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-prodigal-son-1965"
     ],
@@ -685,6 +722,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "a-land-beyond-the-river-1957"
     ],
@@ -709,6 +747,7 @@
       "program"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "production link (ran in both 1964 and 1968 - which production?)",
@@ -732,6 +771,7 @@
       "program"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "production link (ran in both 1964 and 1968 - which production?)",
@@ -756,6 +796,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "me-candido-1956"
     ],
@@ -780,6 +821,7 @@
       "program"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-beaver-coat-1956"
     ],
@@ -804,9 +846,11 @@
       "portrait"
     ],
     "people": [],
+    "contributors": [
+      "Adrian Hall"
+    ],
     "productions": [],
     "needs": [
-      "profile for Adrian Hall",
       "date",
       "credit line",
       "rights status"
@@ -826,9 +870,11 @@
       "person"
     ],
     "people": [],
+    "contributors": [
+      "William Glenesk"
+    ],
     "productions": [],
     "needs": [
-      "profile for William Glenesk",
       "date",
       "rights status"
     ]
@@ -847,6 +893,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "image file",
@@ -870,6 +917,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "yerma-1971"
     ],
@@ -893,6 +941,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-prodigal-son-1965"
     ],
@@ -917,6 +966,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "donogoo-1961"
     ],
@@ -940,6 +990,7 @@
       "production"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "production link (no production of this name in the appendix)",
@@ -963,6 +1014,7 @@
       "program"
     ],
     "people": [],
+    "contributors": [],
     "productions": [
       "the-oxcart-la-carreta-1967"
     ],
@@ -987,6 +1039,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date",
@@ -1008,6 +1061,7 @@
       "space"
     ],
     "people": [],
+    "contributors": [],
     "productions": [],
     "needs": [
       "date",

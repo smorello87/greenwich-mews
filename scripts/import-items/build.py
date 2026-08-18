@@ -107,6 +107,34 @@ def short_title(caption: str, fallback: str) -> str:
     return text or fallback
 
 
+# A credit value can name several people and can hang a clause off the end.
+# Mirrors splitNames() in src/lib/catalog.ts — keep the two in step.
+NAME_SEPARATOR = re.compile(r",\s*(?![^(]*\))|\s+in association with\s+", re.I)
+
+
+def contributor_index(productions: list[dict]) -> dict[str, tuple[str, int]]:
+    """Every name in the appendix -> (name as printed, number of productions).
+
+    The site already indexes these for the productions page. Reusing it here
+    means an item can point at a person who has no profile of their own: the
+    appendix knows Diana Sands appeared in three productions even though
+    people.json has never heard of her.
+    """
+    counts: dict[str, tuple[str, set[str]]] = {}
+    for prod in productions:
+        names = list(prod["cast"])
+        for credit in prod["credits"]:
+            names += [n.strip() for n in NAME_SEPARATOR.split(credit["names"]) if n.strip()]
+        for name in names:
+            key = norm(name)
+            if not key:
+                continue
+            printed, seen = counts.get(key, (name, set()))
+            seen.add(prod["id"])
+            counts[key] = (printed, seen)
+    return {k: (printed, len(seen)) for k, (printed, seen) in counts.items()}
+
+
 def main() -> int:
     if not CSV_PATH.exists():
         print(f"spreadsheet not found: {CSV_PATH}", file=sys.stderr)
@@ -115,6 +143,7 @@ def main() -> int:
     people = json.loads(PEOPLE_PATH.read_text())
     productions = json.loads(PRODUCTIONS_PATH.read_text())
     people_by_name = {norm(p["name"]): p["id"] for p in people}
+    contributors = contributor_index(productions)
     productions_by_title: dict[str, list[str]] = {}
     for prod in productions:
         productions_by_title.setdefault(norm(prod["title"]), []).append(prod["id"])
@@ -153,6 +182,7 @@ def main() -> int:
             needs: list[str] = []
             tags: list[str] = []
             linked_people: list[str] = []
+            linked_contributors: list[str] = []
             linked_productions: list[str] = []
 
             # --- category -> tags, people, productions -------------------
@@ -163,12 +193,26 @@ def main() -> int:
             last_was_person = False
 
             def add_person(name: str) -> None:
+                """Link a name three ways, in descending order of richness.
+
+                A full profile in people.json wins. Failing that, if the name
+                appears in the productions appendix at all, link it to the
+                contributor index — that gives the reader every production the
+                person worked on without anyone having to write a biography.
+                Only a name in neither place is recorded as missing.
+                """
                 name = name.strip()
                 if not name:
                     return
                 found = people_by_name.get(norm(name))
                 if found:
                     linked_people.append(found)
+                    return
+                match = contributors.get(norm(name))
+                if match and match[1] > 1:
+                    # >1 production is the site's threshold for a linkable
+                    # contributor, so a click always leads somewhere.
+                    linked_contributors.append(match[0])
                 else:
                     needs.append(f"profile for {name}")
 
@@ -262,6 +306,7 @@ def main() -> int:
                 "rights": rights,
                 "tags": sorted(set(tags)),
                 "people": sorted(set(linked_people)),
+                "contributors": sorted(set(linked_contributors)),
                 "productions": sorted(set(linked_productions)),
                 "needs": needs,
             })
@@ -285,11 +330,18 @@ def main() -> int:
         for pid in item["productions"]:
             by_production.setdefault(pid, item["image"])
 
+    # `featured` drives the productions timeline. Let it follow the evidence:
+    # a production is featured when a real photograph exists for it. The old
+    # hand-kept list predates the archival images, so it both hid six
+    # productions that now have one and featured four that render empty.
     changed = 0
     for prod in productions:
         wanted = by_production.get(prod["id"])
         if prod.get("image") != wanted:
             prod["image"] = wanted
+            changed += 1
+        if prod.get("featured") != (wanted is not None):
+            prod["featured"] = wanted is not None
             changed += 1
     PRODUCTIONS_PATH.write_text(json.dumps(productions, indent=2, ensure_ascii=False) + "\n")
 
