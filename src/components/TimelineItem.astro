@@ -6,7 +6,8 @@ interface Props {
   year: number;
   title: string;
   image: ImageMetadata;
-  description: string;
+  /** Editorial blurb; optional, since most productions have no write-up yet. */
+  description?: string | null;
   notes?: string;
   index: number;
 }
@@ -27,7 +28,7 @@ const isEven = index % 2 === 0;
     <div class="timeline-item__content">
       <h3 class="timeline-item__title">{title}</h3>
       {notes && <span class="timeline-item__notes">{notes}</span>}
-      <p class="timeline-item__desc">{description}</p>
+      {description && <p class="timeline-item__desc">{description}</p>}
     </div>
   </div>
 </div>

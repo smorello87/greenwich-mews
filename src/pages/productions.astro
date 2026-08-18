@@ -15,7 +15,9 @@ const productionsData = (await getCollection('productions')).map((e) => e.data);
 const featuredIds = productionsData.filter((p) => p.featured).map((p) => p.id);
 const featuredProductions = await Promise.all(
   productionsData
-    .filter(p => p.featured && p.image && p.description)
+    // A description is editorial prose most productions do not have yet;
+    // requiring one hid half the productions that have a real photograph.
+    .filter(p => p.featured && p.image)
     .sort((a, b) => a.year - b.year)
     .map(async (p) => ({ ...p, imageMeta: await itemImage(p.image!) }))
 );
