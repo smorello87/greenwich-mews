@@ -3,20 +3,39 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
-  id: string;
+  /** Set for someone with a people.json profile; opens the person modal. */
+  id?: string;
+  /** Set instead for a name known only from the productions appendix;
+      opens the contributor modal. Exactly one of the two is given. */
+  contributorName?: string;
   name: string;
   role: string;
   years: string;
   thumbnail: ImageMetadata | null;
   documentCount: number;
+  /** Label under the count — "document" for profiles, "production" for
+      contributors, since that is what a click actually shows them. */
+  countNoun?: string;
+  actionLabel?: string;
 }
 
-const { id, name, role, years, thumbnail, documentCount } = Astro.props;
+const {
+  id,
+  contributorName,
+  name,
+  role,
+  years,
+  thumbnail,
+  documentCount,
+  countNoun = 'document',
+  actionLabel = 'View Documents',
+} = Astro.props;
 ---
 
 <button
   class="person-card"
   data-person-id={id}
+  data-contributor-name={contributorName}
   aria-haspopup="dialog"
 >
   <div class="person-card__image-wrap">
@@ -26,7 +45,7 @@ const { id, name, role, years, thumbnail, documentCount } = Astro.props;
       <span class="empty-frame">No portrait yet</span>
     )}
     <div class="person-card__overlay">
-      <span class="person-card__view">View Documents</span>
+      <span class="person-card__view">{actionLabel}</span>
     </div>
   </div>
 
@@ -35,7 +54,7 @@ const { id, name, role, years, thumbnail, documentCount } = Astro.props;
     <p class="person-card__role">{role}</p>
     <div class="person-card__meta">
       <span class="person-card__years">{years}</span>
-      <span class="person-card__docs">{documentCount} document{documentCount !== 1 ? 's' : ''}</span>
+      <span class="person-card__docs">{documentCount} {countNoun}{documentCount !== 1 ? 's' : ''}</span>
     </div>
   </div>
 

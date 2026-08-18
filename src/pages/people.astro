@@ -5,19 +5,65 @@ import PersonCard from '../components/PersonCard.astro';
 import PersonModal from '../components/PersonModal.astro';
 import ItemModal from '../components/ItemModal.astro';
 import ContributorModal from '../components/ContributorModal.astro';
-import { getPersonPayloads, getLinkableContributors } from '../lib/catalog';
-import { personImage } from '../lib/images';
+import { getPersonPayloads, getLinkableContributors, getItemPayloads } from '../lib/catalog';
+import { personImage, itemImage } from '../lib/images';
 import { withBase } from '../lib/url';
 
 const personPayloads = await getPersonPayloads();
 const contributors = await getLinkableContributors();
 const people = await getCollection('people');
+const items = await getCollection('items');
+
+// The catalog holds real portraits for ten people. Use them: a profile falls
+// back to its own portrait photograph from the archive, and anyone with a
+// portrait but no profile gets a card of their own rather than being invisible
+// here while appearing in the Archive.
+const portraitItems = items.filter((e) => e.data.image);
+
+const portraitByPerson = new Map<string, string>();
+const portraitByContributor = new Map<string, string>();
+for (const entry of portraitItems) {
+  const preferred = entry.data.tags.includes('portrait');
+  for (const id of entry.data.people) {
+    if (preferred || !portraitByPerson.has(id)) portraitByPerson.set(id, entry.data.image!);
+  }
+  for (const name of entry.data.contributors) {
+    if (preferred || !portraitByContributor.has(name)) {
+      portraitByContributor.set(name, entry.data.image!);
+    }
+  }
+}
+
 const thumbnailById = new Map(
   await Promise.all(
-    people.map(
-      async (p) => [p.data.id, p.data.thumbnail ? await personImage(p.data.thumbnail) : null] as const
-    )
+    people.map(async (p) => {
+      const fromArchive = portraitByPerson.get(p.data.id);
+      if (fromArchive) return [p.data.id, await itemImage(fromArchive)] as const;
+      return [p.data.id, p.data.thumbnail ? await personImage(p.data.thumbnail) : null] as const;
+    })
   )
+);
+
+// Everyone the archive pictures who has no profile of their own.
+const itemPayloads = await getItemPayloads();
+const contributorCards = await Promise.all(
+  [...portraitByContributor.entries()]
+    .filter(([name]) => contributors[name])
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(async ([name, image]) => {
+      const record = contributors[name];
+      const years = record.appearances.map((a) => a.year);
+      const span = years.length
+        ? `${Math.min(...years)}–${Math.max(...years)}`
+        : '';
+      return {
+        name,
+        thumbnail: await itemImage(image),
+        productionCount: record.appearances.length,
+        years: span,
+        itemCount: itemPayloads.filter((i) => i.contributors.includes(name)).length,
+      };
+    })
 );
 ---
 
@@ -69,6 +115,34 @@ const thumbnailById = new Map(
     </div>
   </section>
 
+  {contributorCards.length > 0 && (
+    <section class="people people--contributors section">
+      <div class="container">
+        <h2 class="people__heading fade-in">Pictured in the Archive</h2>
+        <p class="people__lede fade-in">
+          The catalog holds photographs of these people, but they have no profile of their own yet.
+          Each card opens the productions they worked on.
+        </p>
+        <div class="people__grid stagger">
+          {contributorCards.map((person) => (
+            <div class="fade-in">
+              <PersonCard
+                contributorName={person.name}
+                name={person.name}
+                role="In the productions list"
+                years={person.years}
+                thumbnail={person.thumbnail}
+                documentCount={person.productionCount}
+                countNoun="production"
+                actionLabel="View Productions"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="archive-note section">
     <div class="container container--narrow">
       <div class="archive-note__inner fade-in">
@@ -103,10 +177,15 @@ const thumbnailById = new Map(
   document.querySelectorAll('.person-card').forEach(card => {
     card.addEventListener('click', () => {
       const personId = card.dataset.personId;
-      const person = window.peopleData.find(p => p.id === personId);
-      if (person && window.openPersonModal) {
-        window.openPersonModal(person);
+      if (personId) {
+        const person = window.peopleData.find(p => p.id === personId);
+        if (person && window.openPersonModal) window.openPersonModal(person);
+        return;
       }
+      // Cards for people with no profile open their work instead.
+      const contributorName = card.dataset.contributorName;
+      const record = contributorName && window.productionContributors[contributorName];
+      if (record && window.openContributorModal) window.openContributorModal(record);
     });
   });
 </script>
