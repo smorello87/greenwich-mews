@@ -8,9 +8,12 @@ import { getCollection } from 'astro:content';
 
 const itemPayloads = await getItemPayloads();
 const itemEntries = await getCollection('items');
+// Items without a scan yet resolve to null and render an empty frame.
 const imageById = new Map(
   await Promise.all(
-    itemEntries.map(async (e) => [e.data.id, await itemImage(e.data.image)] as const)
+    itemEntries.map(
+      async (e) => [e.data.id, e.data.image ? await itemImage(e.data.image) : null] as const
+    )
   )
 );
 
@@ -26,8 +29,10 @@ const tags = [...tagCounts.entries()]
 
 const searchText = (item: (typeof itemPayloads)[number]) =>
   [
+    item.figId,
     item.title,
     item.caption,
+    item.creator,
     item.date,
     ...item.tags.map((t) => t.label),
     ...item.people.map((p) => p.name),
@@ -90,11 +95,21 @@ const searchText = (item: (typeof itemPayloads)[number]) =>
             aria-haspopup="dialog"
           >
             <span class="archive-card__image">
-              <Image src={imageById.get(item.id)!} alt={item.title} width={480} loading="lazy" />
+              {imageById.get(item.id) ? (
+                <Image src={imageById.get(item.id)!} alt={item.title} width={480} loading="lazy" />
+              ) : (
+                <span class="empty-frame">No scan yet</span>
+              )}
             </span>
             <span class="archive-card__body">
+              <span class="archive-card__meta">
+                <span class="archive-card__fig">{item.figId}</span>
+                {item.needs.length > 0 && (
+                  <span class="archive-card__needs">Incomplete</span>
+                )}
+              </span>
               <span class="archive-card__title">{item.title}</span>
-              <span class="archive-card__date">{item.date}</span>
+              <span class="archive-card__date">{item.date || 'Date not recorded'}</span>
               <span class="archive-card__tags">
                 {item.tags.map((tag) => (
                   <span class="tag-chip">{tag.label}</span>
@@ -386,6 +401,33 @@ const searchText = (item: (typeof itemPayloads)[number]) =>
   .archive-card__body {
     display: block;
     padding: 0 4px 4px;
+  }
+
+  .archive-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.35em;
+  }
+
+  .archive-card__fig {
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-tobacco);
+    border: 1px solid var(--color-sepia);
+    padding: 0.1em 0.4em;
+  }
+
+  .archive-card__needs {
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-rust);
+    border: 1px solid var(--color-rust);
+    padding: 0.1em 0.4em;
   }
 
   .archive-card__title {

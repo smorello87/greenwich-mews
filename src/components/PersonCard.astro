@@ -7,7 +7,7 @@ interface Props {
   name: string;
   role: string;
   years: string;
-  thumbnail: ImageMetadata;
+  thumbnail: ImageMetadata | null;
   documentCount: number;
 }
 
@@ -20,7 +20,11 @@ const { id, name, role, years, thumbnail, documentCount } = Astro.props;
   aria-haspopup="dialog"
 >
   <div class="person-card__image-wrap">
-    <Image src={thumbnail} alt={name} class="person-card__image" width={480} height={480} loading="lazy" />
+    {thumbnail ? (
+      <Image src={thumbnail} alt={name} class="person-card__image" width={480} height={480} loading="lazy" />
+    ) : (
+      <span class="empty-frame">No portrait yet</span>
+    )}
     <div class="person-card__overlay">
       <span class="person-card__view">View Documents</span>
     </div>

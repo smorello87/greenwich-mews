@@ -365,7 +365,11 @@ def main():
             ],
             "notes": note,
             "featured": pid in FEATURED,
-            "image": "production-1.png" if pid in FEATURED else None,
+            # Left null here on purpose. Production images are attached by
+            # scripts/import-items/build.py, which knows which of the author's
+            # figures actually depict which production. (This used to point at
+            # an AI-generated placeholder.)
+            "image": None,
             "description": FEATURED.get(pid),
         })
 

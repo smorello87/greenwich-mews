@@ -12,7 +12,9 @@ const personPayloads = await getPersonPayloads();
 const people = await getCollection('people');
 const thumbnailById = new Map(
   await Promise.all(
-    people.map(async (p) => [p.data.id, await personImage(p.data.thumbnail)] as const)
+    people.map(
+      async (p) => [p.data.id, p.data.thumbnail ? await personImage(p.data.thumbnail) : null] as const
+    )
   )
 );
 ---
@@ -56,7 +58,7 @@ const thumbnailById = new Map(
               name={person.name}
               role={person.role}
               years={person.years}
-              thumbnail={thumbnailById.get(person.id)!}
+              thumbnail={thumbnailById.get(person.id) ?? null}
               documentCount={person.items.length}
             />
           </div>

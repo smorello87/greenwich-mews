@@ -16,6 +16,7 @@
       <div class="modal__header">
         <div class="modal__portrait">
           <img src="" alt="" id="modal-portrait" />
+          <span class="empty-frame" id="modal-portrait-empty" hidden>No portrait yet</span>
         </div>
         <div class="modal__info">
           <span class="modal__years annotation" id="modal-years"></span>
@@ -277,11 +278,19 @@
 
     const figure = document.createElement('div');
     figure.className = 'doc-card__image';
-    const img = document.createElement('img');
-    img.src = item.thumbSrc;
-    img.alt = item.title;
-    img.loading = 'lazy';
-    figure.appendChild(img);
+    // Items with no scan yet get an empty frame instead of a broken image.
+    if (item.thumbSrc) {
+      const img = document.createElement('img');
+      img.src = item.thumbSrc;
+      img.alt = item.title;
+      img.loading = 'lazy';
+      figure.appendChild(img);
+    } else {
+      const blank = document.createElement('span');
+      blank.className = 'empty-frame';
+      blank.textContent = 'No scan yet';
+      figure.appendChild(blank);
+    }
 
     const title = document.createElement('p');
     title.className = 'doc-card__title';
@@ -307,8 +316,18 @@
 
   window.openPersonModal = function (person: any) {
     const portrait = document.getElementById('modal-portrait') as HTMLImageElement;
-    portrait.src = person.portraitSrc;
-    portrait.alt = person.name;
+    const portraitEmpty = document.getElementById('modal-portrait-empty')!;
+    if (person.portraitSrc) {
+      portrait.src = person.portraitSrc;
+      portrait.alt = person.name;
+      portrait.hidden = false;
+      portraitEmpty.hidden = true;
+    } else {
+      portrait.removeAttribute('src');
+      portrait.alt = '';
+      portrait.hidden = true;
+      portraitEmpty.hidden = false;
+    }
 
     document.getElementById('modal-years')!.textContent = person.years;
     document.getElementById('modal-title')!.textContent = person.name;

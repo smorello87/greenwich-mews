@@ -6,15 +6,20 @@ import { COMPANIES } from '../content.config';
 // Client-side payload shapes shared by the archive page and the modals.
 export interface ItemPayload {
   id: string;
+  figId: string;
   title: string;
   caption: string;
+  creator: string;
   date: string;
   source: string;
   rights: string;
+  /** What this record is still missing; empty when the row is complete. */
+  needs: string[];
   tags: { slug: string; label: string }[];
   sortYear: number;
-  thumbSrc: string;
-  fullSrc: string;
+  /** Null when no scan exists yet — the card renders an empty frame. */
+  thumbSrc: string | null;
+  fullSrc: string | null;
   people: { id: string; name: string }[];
   productions: { id: string; title: string; year: number }[];
 }
@@ -51,7 +56,8 @@ export interface PersonPayload {
   role: string;
   years: string;
   bio: string;
-  portraitSrc: string;
+  /** Null when no portrait exists yet — the modal renders an empty frame. */
+  portraitSrc: string | null;
   items: ItemPayload[];
 }
 
@@ -74,22 +80,29 @@ export async function getItemPayloads(): Promise<ItemPayload[]> {
 
   const payloads = await Promise.all(
     items.map(async (entry) => {
-      const meta = await itemImage(entry.data.image);
-      const [thumb, full] = await Promise.all([
-        getImage({ src: meta, width: 480, format: 'webp' }),
-        getImage({ src: meta, width: 1000, format: 'webp' }),
-      ]);
+      // An item with no scan yet still gets a card; the image slots stay null
+      // and the page renders an empty frame in place of a picture.
+      const meta = entry.data.image ? await itemImage(entry.data.image) : null;
+      const [thumb, full] = meta
+        ? await Promise.all([
+            getImage({ src: meta, width: 480, format: 'webp' }),
+            getImage({ src: meta, width: 1000, format: 'webp' }),
+          ])
+        : [null, null];
       return {
         id: entry.data.id,
+        figId: entry.data.figId,
         title: entry.data.title,
         caption: entry.data.caption,
+        creator: entry.data.creator,
         date: entry.data.date,
         source: entry.data.source,
         rights: entry.data.rights,
+        needs: entry.data.needs,
         tags: entry.data.tags.map((t) => ({ slug: t, label: tagLabel(t) })),
         sortYear: parseInt(entry.data.date.replace(/\D+/g, ''), 10) || 9999,
-        thumbSrc: thumb.src,
-        fullSrc: full.src,
+        thumbSrc: thumb?.src ?? null,
+        fullSrc: full?.src ?? null,
         people: entry.data.people.map((id) => ({
           id,
           name: personById.get(id)!.name,
@@ -222,18 +235,21 @@ export async function getPersonPayloads(): Promise<PersonPayload[]> {
   ]);
   return Promise.all(
     people.map(async (entry) => {
-      const portrait = await getImage({
-        src: await personImage(entry.data.portrait),
-        width: 480,
-        format: 'webp',
-      });
+      // Null until a real portrait is cleared for this person.
+      const portrait = entry.data.portrait
+        ? await getImage({
+            src: await personImage(entry.data.portrait),
+            width: 480,
+            format: 'webp',
+          })
+        : null;
       return {
         id: entry.data.id,
         name: entry.data.name,
         role: entry.data.role,
         years: entry.data.years,
         bio: entry.data.bio,
-        portraitSrc: portrait.src,
+        portraitSrc: portrait?.src ?? null,
         items: itemPayloads.filter((i) =>
           i.people.some((p) => p.id === entry.data.id)
         ),

@@ -1,122 +1,1017 @@
 [
   {
-    "id": "hughes-fbi-report-1953",
-    "title": "FBI Surveillance Report",
-    "image": "document-fbi.png",
-    "caption": "FBI field report documenting Hughes's involvement with the Greenwich Mews Theater and alleged Communist Party connections.",
-    "date": "1953",
-    "source": "National Archives, FBI Records",
-    "rights": "Public Domain",
-    "tags": ["fbi-file"],
-    "people": ["langston-hughes"],
-    "productions": []
+    "id": "fig01",
+    "figId": "Fig1",
+    "title": "The Village Presbyterian Church exterior, c. 1951",
+    "image": "fig01.jpg",
+    "caption": "The Village Presbyterian Church exterior, c. 1951",
+    "creator": "Carl G. Karsch for Presbyterian Life",
+    "date": "1951",
+    "source": "Courtesy Presbyterian Historical Society",
+    "rights": "Yes",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": []
   },
   {
-    "id": "simply-heavenly-playbill-1957",
-    "title": "Simply Heavenly Playbill",
-    "image": "document-playbill.png",
-    "caption": "Original playbill from the 1957 production of Simply Heavenly, one of Hughes's most popular musical plays.",
-    "date": "1957",
-    "source": "New York Public Library for the Performing Arts",
-    "rights": "Used with permission",
-    "tags": ["playbill"],
-    "people": ["langston-hughes"],
-    "productions": []
+    "id": "fig02",
+    "figId": "Fig2",
+    "title": "The Village Presbyterian Church exterior, c. 1964",
+    "image": "fig02.jpg",
+    "caption": "The Village Presbyterian Church exterior, c. 1964",
+    "creator": "",
+    "date": "1964",
+    "source": "",
+    "rights": "Yes",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "credit line"
+    ]
   },
   {
-    "id": "holt-equity-letter-1955",
-    "title": "Letter to Actors' Equity",
-    "image": "document-letter.png",
-    "caption": "Correspondence regarding the theater's non-discriminatory hiring practices and Equity's response.",
-    "date": "1955",
-    "source": "Tamiment Library, NYU",
-    "rights": "Used with permission",
-    "tags": ["letter"],
-    "people": ["stella-holt"],
-    "productions": []
+    "id": "fig03",
+    "figId": "Fig3",
+    "title": "Street Map, 1940s - useful?",
+    "image": null,
+    "caption": "Street Map, 1940s - useful?",
+    "creator": "",
+    "date": "1940s",
+    "source": "Public",
+    "rights": "",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "image file",
+      "credit line",
+      "rights status"
+    ]
   },
   {
-    "id": "holt-fbi-file-1958",
-    "title": "FBI File Excerpt",
-    "image": "document-fbi.png",
-    "caption": "FBI surveillance document listing Holt's affiliations with civil rights and progressive organizations.",
+    "id": "fig04",
+    "figId": "Fig4",
+    "title": "Rev. Jesse Stitt and Rabbi Irving Block outside of the church. Photo by…",
+    "image": null,
+    "caption": "Rev. Jesse Stitt and Rabbi Irving Block outside of the church. Photo by Ben Ross.",
+    "creator": "Ben Ross",
+    "date": "1969 (estimated; published Nov 9, 1969 in Parade)",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
+    "rights": "Orphan; CJH does not have a contact; cannot locate an obituary (1916-2004)  identifying survivors, estate representative, or photographic agency representing his work.",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "image file"
+    ]
+  },
+  {
+    "id": "fig05",
+    "figId": "Fig5",
+    "title": "Rev. Stitt and Rabbi Block smiling in the church library",
+    "image": "fig05.jpg",
+    "caption": "Rev. Stitt and Rabbi Block smiling in the church library.",
+    "creator": "",
+    "date": "",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
+    "rights": "",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig06",
+    "figId": "Fig6",
+    "title": "The Covenant of Brotherhood established by Rev. Stitt and Rabbi Block",
+    "image": "fig06.jpg",
+    "caption": "The Covenant of Brotherhood established by Rev. Stitt and Rabbi Block",
+    "creator": "",
+    "date": "",
+    "source": "Courtesy Presbyterian Historical Society",
+    "rights": "",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig07",
+    "figId": "Fig7",
+    "title": "The Covenant of Brotherhood displayed outside of the church",
+    "image": "fig07.jpg",
+    "caption": "The Covenant of Brotherhood displayed outside of the church",
+    "creator": "",
+    "date": "",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
+    "rights": "",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig08",
+    "figId": "Fig8",
+    "title": "Unidentified actors on stage seen from the back of the theater in the…",
+    "image": "fig08.jpg",
+    "caption": "Unidentified actors on stage seen from the back of the theater in the Mews production of The Courageous One, 1958.",
+    "creator": "Avery Willard",
     "date": "1958",
-    "source": "National Archives, FBI Records",
-    "rights": "Public Domain",
-    "tags": ["fbi-file"],
-    "people": ["stella-holt"],
-    "productions": []
+    "source": "Photo by Avery Willard ©Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
+    "rights": "Yes",
+    "tags": [
+      "production",
+      "space"
+    ],
+    "people": [],
+    "productions": [
+      "the-courageous-one-1958"
+    ],
+    "needs": []
   },
   {
-    "id": "holt-backstage-1960",
-    "title": "Backstage at the Mews",
-    "image": "production-1.png",
-    "caption": "Stella Holt directing rehearsals at the Greenwich Mews Theater, circa 1960.",
-    "date": "c. 1960",
-    "source": "Private Collection",
-    "rights": "Used with permission",
-    "tags": ["photograph", "performance"],
-    "people": ["stella-holt"],
-    "productions": []
+    "id": "fig09",
+    "figId": "Fig9",
+    "title": "A flyer from a local public school event with the rabbi and pastor",
+    "image": "fig09.jpg",
+    "caption": "A flyer from a local public school event with the rabbi and pastor.",
+    "creator": "",
+    "date": "1961",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
+    "rights": "",
+    "tags": [
+      "flyer",
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "rights status"
+    ]
   },
   {
-    "id": "purlie-victorious-program-1960",
-    "title": "Purlie Victorious Program",
-    "image": "document-playbill.png",
-    "caption": "Program from an early staging discussion of Purlie Victorious at the Mews before its Broadway run.",
+    "id": "fig10",
+    "figId": "Fig10",
+    "title": "A flyer advertising an event with the rabbi and pastor",
+    "image": "fig10.jpg",
+    "caption": "A flyer advertising an event with the rabbi and pastor.",
+    "creator": "",
+    "date": "",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
+    "rights": "",
+    "tags": [
+      "flyer",
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig11",
+    "figId": "Fig11",
+    "title": "1940s Greenwich Mews Theatre interior",
+    "image": "fig11.jpg",
+    "caption": "1940s Greenwich Mews Theatre interior.",
+    "creator": "Alfred J. Balcombe",
+    "date": "1939-1949",
+    "source": "New School Archives and Digital Collections",
+    "rights": "",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig13",
+    "figId": "Fig13",
+    "title": "Stella Holt at desk with telephone and cigarette, 1960",
+    "image": "fig13.jpg",
+    "caption": "Stella Holt at desk with telephone and cigarette, 1960.",
+    "creator": "Avery Willard",
     "date": "1960",
-    "source": "Schomburg Center for Research in Black Culture",
-    "rights": "Used with permission",
-    "tags": ["program"],
-    "people": ["ossie-davis"],
-    "productions": []
+    "source": "Photo by Avery Willard ©Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
+    "rights": "",
+    "tags": [
+      "person"
+    ],
+    "people": [
+      "stella-holt"
+    ],
+    "productions": [],
+    "needs": [
+      "rights status"
+    ]
   },
   {
-    "id": "dee-production-still-1958",
-    "title": "Production Still",
-    "image": "production-2.png",
-    "caption": "Ruby Dee in performance at the Greenwich Mews Theater.",
-    "date": "c. 1958",
-    "source": "New York Public Library for the Performing Arts",
-    "rights": "Used with permission",
-    "tags": ["photograph", "performance"],
-    "people": ["ruby-dee"],
-    "productions": []
+    "id": "fig14",
+    "figId": "Fig14",
+    "title": "Charles A. Collins, ALP candidate for state Senate, executive secretary…",
+    "image": "fig14.jpg",
+    "caption": "Charles A. Collins, ALP candidate for state Senate, executive secretary of the CCUWS Stella dancer Paul Draper and the Rev. Ben Richardson present Draper a scroll of honor for his work on behalf of the CCUWS, c. 1945.",
+    "creator": "",
+    "date": "",
+    "source": "The photo appears courtesy of Long View Publishing Co., Inc. / People’s World / Communist Party, USA.",
+    "rights": "Yes",
+    "tags": [
+      "origins"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date"
+    ]
   },
   {
-    "id": "land-beyond-the-river-script-1957",
-    "title": "A Land Beyond the River Script",
-    "image": "document-letter.png",
-    "caption": "Title page from the original script of A Land Beyond the River, which premiered at the Mews in 1957.",
-    "date": "1957",
-    "source": "Schomburg Center for Research in Black Culture",
-    "rights": "Used with permission",
-    "tags": ["script"],
-    "people": ["loften-mitchell"],
-    "productions": ["a-land-beyond-the-river-1957"]
+    "id": "fig15",
+    "figId": "Fig15",
+    "title": "Hilda Haynes, Terry Carter, and unidentified actors in the Mews…",
+    "image": "fig15.jpg",
+    "caption": "Hilda Haynes, Terry Carter, and unidentified actors in the Mews production Monday's Heroes.",
+    "creator": "unknown",
+    "date": "1953",
+    "source": "Billy Rose Theatre Division, The New York Public Library.",
+    "rights": "orphan; NYPL does not have a photographer on file; could not find any record of who might have taken this image.",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "monday-s-heroes-1953"
+    ],
+    "needs": []
   },
   {
-    "id": "trouble-in-mind-poster-1955",
-    "title": "Trouble in Mind Poster",
-    "image": "document-playbill.png",
-    "caption": "Original promotional poster for Trouble in Mind, which won the first Obie Award for Best Original Play in 1956.",
-    "date": "1955",
-    "source": "New York Public Library for the Performing Arts",
-    "rights": "Used with permission",
-    "tags": ["poster"],
-    "people": ["alice-childress"],
-    "productions": ["trouble-in-mind-1955"]
-  },
-  {
-    "id": "childress-fbi-reference-1956",
-    "title": "FBI File Reference",
-    "image": "document-fbi.png",
-    "caption": "FBI cross-reference document mentioning Childress in connection with the Greenwich Mews Theater.",
-    "date": "1956",
-    "source": "National Archives, FBI Records",
+    "id": "fig16",
+    "figId": "Fig16",
+    "title": "Portrait of Langston Hughes, 1943",
+    "image": "fig16.jpg",
+    "caption": "Portrait of Langston Hughes, 1943.",
+    "creator": "Gordon Parks",
+    "date": "1943",
+    "source": "Portrait of Langston Hughes, Gordon Parks, Library of Congress, Prints & Photographs Division, Farm Security Administration/Office of War Information Black-and-White Negatives.",
     "rights": "Public Domain",
-    "tags": ["fbi-file"],
-    "people": ["alice-childress"],
-    "productions": []
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [
+      "langston-hughes"
+    ],
+    "productions": [],
+    "needs": []
+  },
+  {
+    "id": "fig17",
+    "figId": "Fig17",
+    "title": "Paulene Myers and Carl Lee in Edward Chodorov’s Decision",
+    "image": "fig17.jpg",
+    "caption": "Paulene Myers and Carl Lee in Edward Chodorov’s Decision.",
+    "creator": "Earl Sydnor",
+    "date": "1951",
+    "source": "Photograph by Earl Sydnor. Lloyd Richards Papers. James Weldon Johnson Collection in the Yale Collection of American Literature, Beinecke Rare Book and Manuscript Library.",
+    "rights": "orphan;",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "the-decision-1951"
+    ],
+    "needs": []
+  },
+  {
+    "id": "fig18",
+    "figId": "Fig18",
+    "title": "Carl Lee (right) and unknown actors in a scene from Chodorov's Decision",
+    "image": "fig18.jpg",
+    "caption": "Carl Lee (right) and unknown actors in a scene from Chodorov's Decision.",
+    "creator": "Earl Sydnor",
+    "date": "1951",
+    "source": "Yale Beinecke, From the Collection: Richards, Lloyd, Box 145, folder 1737",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "the-decision-1951"
+    ],
+    "needs": [
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig19",
+    "figId": "Fig19",
+    "title": "Actress Fran Bennett poses on a bench. Bennett played Ruby Waters in A…",
+    "image": "fig19.jpg",
+    "caption": "Actress Fran Bennett poses on a bench. Bennett played Ruby Waters in A Land Beyond the River.",
+    "creator": "",
+    "date": "",
+    "source": "Tiny Prince Collection, Newark Public Library",
+    "rights": "Yes, library owns collection",
+    "tags": [
+      "person"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for Fran Bennett",
+      "date"
+    ]
+  },
+  {
+    "id": "fig20",
+    "figId": "Fig20",
+    "title": "Geena Goodwin, Míriam Colón, José Perez, and unidentified actors…",
+    "image": "fig20.jpg",
+    "caption": "Geena Goodwin, Míriam Colón, José Perez, and unidentified actors portray the Perez family in the Mews production of Me, Candido!, 1956.",
+    "creator": "Avery Willard",
+    "date": "",
+    "source": "Credit Line: Photo by Avery Willard ©Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "me-candido-1956"
+    ],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig21",
+    "figId": "Fig21",
+    "title": "Alfred Sander and William Marshall in William Branch’s In Splendid…",
+    "image": "fig21.jpg",
+    "caption": "Alfred Sander and William Marshall in William Branch’s In Splendid Error, 1954",
+    "creator": "Van Williams",
+    "date": "",
+    "source": "New York Times/Redux Pictures",
+    "rights": "Yes",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "in-splendid-error-1954"
+    ],
+    "needs": [
+      "date",
+      "credit line"
+    ]
+  },
+  {
+    "id": "fig22",
+    "figId": "Fig22",
+    "title": "Jacqueline Barnes, Fran Bennett, Helen Martin, and Diana Sands in A…",
+    "image": "fig22.jpg",
+    "caption": "Jacqueline Barnes, Fran Bennett, Helen Martin, and Diana Sands in A Land Beyond the River.",
+    "creator": "Avery Willard",
+    "date": "",
+    "source": "Credit Line: Photo by Avery Willard ©Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "a-land-beyond-the-river-1957"
+    ],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig23",
+    "figId": "Fig23",
+    "title": "The cast of Loften Mitchell’s Land Beyond the River seated on the front…",
+    "image": "fig23.jpg",
+    "caption": "The cast of Loften Mitchell’s Land Beyond the River seated on the front steps of the Village Presbyterian Church, 1957",
+    "creator": "Avery Willard",
+    "date": "",
+    "source": "Credit Line: Photo by Avery Willard ©Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "a-land-beyond-the-river-1957"
+    ],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig24",
+    "figId": "Fig24",
+    "title": "Hilda Haynes, James McMahon, Stephanie Elliot, and Charles Bettis in…",
+    "image": "fig24.jpg",
+    "caption": "Hilda Haynes, James McMahon, Stephanie Elliot, and Charles Bettis in Alice Childress’s Trouble in Mind, 1955.",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "trouble-in-mind-1955"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig25",
+    "figId": "Fig25",
+    "title": "Trouble in Mind original playbill",
+    "image": "fig25.jpg",
+    "caption": "Trouble in Mind original playbill.",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "playbill",
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "trouble-in-mind-1955"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig27",
+    "figId": "Fig27",
+    "title": "Stella Holt and Langston Hughes Memorial Dedication Program, 1968",
+    "image": null,
+    "caption": "Stella Holt and Langston Hughes Memorial Dedication Program, 1968.",
+    "creator": "",
+    "date": "",
+    "source": "Billy Rose Theatre Division, The New York Public Library",
+    "rights": "Public Domain",
+    "tags": [
+      "person",
+      "program"
+    ],
+    "people": [
+      "langston-hughes",
+      "stella-holt"
+    ],
+    "productions": [],
+    "needs": [
+      "image file",
+      "date"
+    ]
+  },
+  {
+    "id": "fig28",
+    "figId": "Fig28",
+    "title": "Life is a Dream (La Vida es Sueño), 1971",
+    "image": null,
+    "caption": "Life is a Dream (La Vida es Sueño), 1971.",
+    "creator": "",
+    "date": "",
+    "source": "Courtesy of the Cuban Heritage Collection, University of Miami Libraries, Coral Gables, Florida",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "life-is-a-dream-la-vida-es-sueno-1971"
+    ],
+    "needs": [
+      "image file",
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig29",
+    "figId": "Fig29",
+    "title": "R. Graham Brown headshot",
+    "image": "fig29.jpg",
+    "caption": "R. Graham Brown headshot",
+    "creator": "",
+    "date": "",
+    "source": "Credit line: Lloyd Richards Papers. James Weldon Johnson Collection in the Yale Collection of American Literature, Beinecke Rare Book and Manuscript Library.",
+    "rights": "",
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for R. Graham Brown",
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig30",
+    "figId": "Fig30",
+    "title": "Portrait of Diana Sands",
+    "image": "fig30.jpg",
+    "caption": "Portrait of Diana Sands",
+    "creator": "Carl Van Vechten",
+    "date": "1963",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for Diana Sands",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig31",
+    "figId": "Fig31",
+    "title": "Portrait of Alvin Ailey",
+    "image": "fig31.jpg",
+    "caption": "Portrait of Alvin Ailey",
+    "creator": "Carl Van Vechten",
+    "date": "1955",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for Alvin Ailey",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig32",
+    "figId": "Fig32",
+    "title": "Portrait of Gilberto Zaldívar",
+    "image": "fig32.jpg",
+    "caption": "Portrait of Gilberto Zaldívar",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for Gilberto Zaldívar",
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig33",
+    "figId": "Fig33",
+    "title": "Portrait of Alice Childress",
+    "image": "fig33.jpg",
+    "caption": "Portrait of Alice Childress",
+    "creator": "George Karger",
+    "date": "1940-1950",
+    "source": "Credit Line: Billy Rose Theatre Division, The New York Public Library.",
+    "rights": "",
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [
+      "alice-childress"
+    ],
+    "productions": [],
+    "needs": [
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig34",
+    "figId": "Fig34",
+    "title": "Production showcard for Greenwich Mews Theatre’s productions of…",
+    "image": "fig34.jpg",
+    "caption": "Production showcard for Greenwich Mews Theatre’s productions of Langston Hughes’ The Prodigal Son and Bertolt Brecht’s The Exception and the Rule, New York, New York, September 3, 1965, Langston Hughes ephemera collection, Special Collections, University of Delaware Library.\" Langston Hughes ephemera collection, Special Collections, University of Delaware Library. Accessed 11 July 2026.",
+    "creator": "",
+    "date": "",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
+    "rights": "",
+    "tags": [
+      "poster",
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "the-prodigal-son-1965"
+    ],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig35",
+    "figId": "Fig35",
+    "title": "Rev. Joseph De Laine with playwright Loften Mitchell and director…",
+    "image": "fig35.jpg",
+    "caption": "Rev. Joseph De Laine with playwright Loften Mitchell and director Michael Howard, 1957",
+    "creator": "Avery Willard",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "a-land-beyond-the-river-1957"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig36",
+    "figId": "Fig36",
+    "title": "Jericho-Jim Crow Program",
+    "image": null,
+    "caption": "Jericho-Jim Crow Program",
+    "creator": "",
+    "date": "",
+    "source": "Billy Rose Theatre Division, The New York Public Library. \"Program for Jerico-Jim Crow\" The New York Public Library Digital Collections. 1964. https://digitalcollections.nypl.org/items/babf77e0-8e4b-013d-7034-0242ac110004",
+    "rights": "",
+    "tags": [
+      "production",
+      "program"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "production link (ran in both 1964 and 1968 - which production?)",
+      "image file",
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig37",
+    "figId": "Fig37",
+    "title": "Jericho-Jim Crow program (my photo) T-PRG",
+    "image": null,
+    "caption": "Jericho-Jim Crow program (my photo) T-PRG",
+    "creator": "",
+    "date": "",
+    "source": "unknown",
+    "rights": "",
+    "tags": [
+      "production",
+      "program"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "production link (ran in both 1964 and 1968 - which production?)",
+      "image file",
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig38",
+    "figId": "Fig38",
+    "title": "NY Herald Tribune Review",
+    "image": "fig38.jpg",
+    "caption": "NY Herald Tribune Review",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "clipping",
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "me-candido-1956"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig39",
+    "figId": "Fig39",
+    "title": "The Beaver Coat program ad",
+    "image": "fig39.jpg",
+    "caption": "The Beaver Coat program ad",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "production",
+      "program"
+    ],
+    "people": [],
+    "productions": [
+      "the-beaver-coat-1956"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig40",
+    "figId": "Fig40",
+    "title": "Portrait of Adrian Hall",
+    "image": "fig40.jpg",
+    "caption": "Portrait of Adrian Hall",
+    "creator": "Keith Jochim",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "person",
+      "portrait"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for Adrian Hall",
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig41",
+    "figId": "Fig41",
+    "title": "Rev. William Glenesk, 1965",
+    "image": "fig41.jpg",
+    "caption": "Rev. William Glenesk, 1965",
+    "creator": "Joseph Abeles",
+    "date": "",
+    "source": "Harry Ransom Center, The University of Texas at Austin.",
+    "rights": "",
+    "tags": [
+      "person"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "profile for William Glenesk",
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig42",
+    "figId": "Fig42",
+    "title": "The Village Presbyterian Church at 141 West 13th Street, ca. 1903",
+    "image": null,
+    "caption": "The Village Presbyterian Church at 141 West 13th Street, ca. 1903.",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "image file",
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig43",
+    "figId": "Fig43",
+    "title": "New York Times review of Lorca's Yerma",
+    "image": "fig43.jpg",
+    "caption": "New York Times review of Lorca's Yerma.",
+    "creator": "",
+    "date": "1971",
+    "source": "write to Schomburg re:",
+    "rights": "",
+    "tags": [
+      "clipping",
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "yerma-1971"
+    ],
+    "needs": [
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig44",
+    "figId": "Fig44",
+    "title": "Clipping: Celebrating the 100th performance of The Exception and the…",
+    "image": "fig44.jpg",
+    "caption": "Clipping: Celebrating the 100th performance of The Exception and the Rule and The Prodigal Son.",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "clipping",
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "the-prodigal-son-1965"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig45",
+    "figId": "Fig45",
+    "title": "Publicity Poster",
+    "image": "fig45.jpg",
+    "caption": "Publicity Poster",
+    "creator": "",
+    "date": "",
+    "source": "Billy Rose Theatre Division, The New York Public Library.",
+    "rights": "",
+    "tags": [
+      "poster",
+      "production"
+    ],
+    "people": [],
+    "productions": [
+      "donogoo-1961"
+    ],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig46",
+    "figId": "Fig46",
+    "title": "Publicity Poster",
+    "image": "fig46.jpg",
+    "caption": "Publicity Poster",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "poster",
+      "production"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "production link (no production of this name in the appendix)",
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "fig47",
+    "figId": "Fig47",
+    "title": "Program",
+    "image": "fig47.jpg",
+    "caption": "Program",
+    "creator": "",
+    "date": "",
+    "source": "",
+    "rights": "",
+    "tags": [
+      "production",
+      "program"
+    ],
+    "people": [],
+    "productions": [
+      "the-oxcart-la-carreta-1967"
+    ],
+    "needs": [
+      "date",
+      "credit line",
+      "rights status"
+    ]
+  },
+  {
+    "id": "folder12a",
+    "figId": "Folder12",
+    "title": "Building plans 141-145 W. 13 Street, Block 609, Lot 65 (blueprint)",
+    "image": "folder12a.jpg",
+    "caption": "Building plans 141-145 W. 13 Street, Block 609, Lot 65",
+    "creator": "",
+    "date": "",
+    "source": "Map of Basement, 145 W. 13th Street, Ralph H. Segal, Architect, March 22, 1946-April 10, 1946, Department of Buildings architectural drawings and plans of Lower Manhattan, circa 1866-1978; REC 0074; Municipal Archives, City of New York.",
+    "rights": "",
+    "tags": [
+      "plan",
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date",
+      "rights status"
+    ]
+  },
+  {
+    "id": "folder12b",
+    "figId": "Folder12",
+    "title": "Building plans 141-145 W. 13 Street, Block 609, Lot 65 (architect’s drawing)",
+    "image": "folder12b.jpg",
+    "caption": "Building plans 141-145 W. 13 Street, Block 609, Lot 65",
+    "creator": "",
+    "date": "",
+    "source": "Map of Basement, 145 W. 13th Street, Ralph H. Segal, Architect, March 22, 1946-April 10, 1946, Department of Buildings architectural drawings and plans of Lower Manhattan, circa 1866-1978; REC 0074; Municipal Archives, City of New York.",
+    "rights": "",
+    "tags": [
+      "plan",
+      "space"
+    ],
+    "people": [],
+    "productions": [],
+    "needs": [
+      "date",
+      "rights status"
+    ]
   }
 ]
