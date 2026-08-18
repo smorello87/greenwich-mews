@@ -19,6 +19,8 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+# AppleDouble sidecars, created on the exFAT volume this repo lives on
+._*
 
 # jetbrains setting folder
 .idea/
@@ -27,3 +29,6 @@ pnpm-debug.log*
 .playwright-mcp/
 .wrangler/
 *.png.tmp
+
+# source materials staging area, not published
+ignore/

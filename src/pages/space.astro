@@ -1,0 +1,304 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { narrativeImage } from '../lib/images';
+import { withBase } from '../lib/url';
+
+const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
+---
+
+<BaseLayout
+  title="The Space"
+  description="The Greek Revival church at 141–145 West 13th Street, the interfaith covenant between its Presbyterian and Jewish congregations, and the basement auditorium that became the Greenwich Mews Theater."
+>
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <h1 class="page-hero__title fade-in">The Space</h1>
+      <p class="page-hero__subtitle fade-in">One House Serving Two Faiths</p>
+    </div>
+  </section>
+
+  <section class="lead-figure section">
+    <div class="container">
+      <figure class="lead-figure__figure fade-in">
+        <div class="img-frame">
+          <Image
+            src={leadImage}
+            alt="The Village Presbyterian Church portico in 1964. A hanging sign reads Greenwich Mews Theatre Entrance, and a banner below it advertises the production of Jerico-Jim Crow."
+            widths={[600, 1000, 1600]}
+            sizes="(max-width: 900px) 100vw, 900px"
+            loading="eager"
+          />
+        </div>
+        <figcaption class="lead-figure__caption">
+          The Greenwich Mews Theatre entrance on West 13th Street, c.&nbsp;1964, with a banner for
+          Langston Hughes's <em>Jerico-Jim Crow</em>.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="venue section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">The Building</h2>
+
+      <div class="venue__content fade-in">
+        <p>
+          Architect Samuel Thomson designed the Greek Revival church building at 141–145 West
+          13th Street, erected between 1839 and 1846. Fires in 1855 and 1902 necessitated major
+          reconstructions, always preserving its original building design. After a series of
+          mergers between downtown Presbyterian churches, the church was renamed the Village
+          Presbyterian in the 1950s.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="venue venue--alt section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">A Covenant of Brotherhood</h2>
+
+      <div class="venue__content fade-in">
+        <p>
+          In 1948, Rabbi Julian F. Fleg proposed to Rev. Jesse Stitt that his newly opened
+          Village Temple rent a room in the church's recreation building for their Friday night
+          services. The pastor offered Fleg the use of the main sanctuary of the church instead.
+          In 1952, the arrival of a young rabbi, Irving Block, launched the next phase of the
+          interfaith collaboration when his Brotherhood Synagogue replaced the Village Temple as
+          co-equal residents of the church premises and codified the arrangement with a "Covenant
+          of Brotherhood" between the pastor and rabbi.
+        </p>
+        <p>
+          A sign on the gate outside the main sanctuary read "One House Serving Two Faiths."
+          Press coverage celebrated the ecumenical arrangement as the only church-temple of its
+          kind in the nation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="venue section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">The Basement Auditorium</h2>
+
+      <div class="venue__content fade-in">
+        <p>
+          The auditorium in its basement also transformed across the decades. In the 1940s Erwin
+          Piscator's nearby Dramatic Workshop utilized the space; the pastor's wife operated an
+          amateur drama group there, as did the Greenwich Mews Players, whose director wanted to
+          provide theatrical opportunities for returning servicemen and women. The Equity Library
+          Theatre (ELT), a pioneering training ground for aspiring actors—and one of the few that
+          cast Black performers in robust dramatic roles at the time—remounted its most popular
+          offerings there, under the name the Greenwich Mews Library Theatre. An experimental
+          collective, Lemonade Opera, also called the space its home beginning in 1947.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="venue venue--alt section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">1951: The Greenwich Mews</h2>
+
+      <div class="venue__content fade-in">
+        <p>
+          In 1951, an interracial collective of actors and directors formed a new membership
+          theater, The Greenwich Mews, in the basement auditorium. Among the founders were
+          administrative coordinator Stella Holt; producer Lily Turner; actor, director, and
+          teacher Osceola Archer; and actors R. Graham Browne and Salem Ludwig. Their mission
+          statement echoed the neighborly imperatives of their co-sponsors, pledging to operate
+          "without preference for or prejudice to race, creed, or color."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="venue section">
+    <div class="container container--narrow">
+      <h2 class="section-heading fade-in">Afterward</h2>
+
+      <div class="venue__content fade-in">
+        <p>
+          The Brotherhood Synagogue left the church building in 1974; the church dissolved in
+          1975. In 1982, architect Stephen B. Jacobs converted the space into an 11-unit
+          residential coop, preserving its original façade.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="venue-links section">
+    <div class="container">
+      <h2 class="section-heading section-heading--center fade-in">Explore Further</h2>
+
+      <div class="venue-links__grid fade-in stagger">
+        <a href={withBase('/archive')} class="venue-link">
+          <h4>Archive</h4>
+          <p>Photographs, playbills, and documents from the building and the theater</p>
+        </a>
+        <a href={withBase('/people')} class="venue-link">
+          <h4>People &amp; Documents</h4>
+          <p>The founders, clergy, and artists who made the Mews</p>
+        </a>
+        <a href={withBase('/productions')} class="venue-link">
+          <h4>Productions</h4>
+          <p>Every production staged in the basement auditorium, 1951–1973</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    text-align: center;
+    background: var(--color-parchment);
+    position: relative;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-sepia), transparent);
+  }
+
+  .page-hero__inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .page-hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-tobacco);
+  }
+
+  /* Section Headings */
+  .section-heading {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-tobacco);
+    margin-bottom: var(--space-md);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-rust);
+  }
+
+  .section-heading--center {
+    display: block;
+    text-align: center;
+  }
+
+  .section-heading--center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Lead figure */
+  .lead-figure__figure {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .lead-figure__figure .img-frame {
+    aspect-ratio: 1918 / 1300;
+  }
+
+  .lead-figure__caption {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-tobacco);
+    margin-top: var(--space-sm);
+    max-width: 60ch;
+  }
+
+  /* Venue prose */
+  .venue--alt {
+    background: var(--color-parchment);
+  }
+
+  .venue__content p {
+    margin-bottom: var(--space-sm);
+  }
+
+  .venue__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Explore Further */
+  .venue-links {
+    background: var(--color-parchment);
+  }
+
+  .venue-links__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .venue-link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    border-left: 3px solid var(--color-sepia);
+    background: var(--color-cream);
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .venue-link:hover {
+    border-color: var(--color-rust);
+    transform: translateY(-2px);
+  }
+
+  .venue-link h4 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: 0.25em;
+  }
+
+  .venue-link p {
+    font-size: 0.9375rem;
+    color: var(--color-tobacco);
+  }
+
+  @media (max-width: 900px) {
+    .venue-links__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+      display: block;
+      text-align: center;
+    }
+
+    .section-heading::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>

@@ -31,6 +31,9 @@ const socialImage = new URL(withBase(image), Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
 
+    <!-- Draft site: keep it out of search results and caches until it is ready to circulate. -->
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+
     <!-- Open Graph -->
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
@@ -52,6 +55,14 @@ const socialImage = new URL(withBase(image), Astro.site).href;
       <slot />
     </main>
     <Footer />
+
+    <div class="draft-notice" role="note">
+      <span class="draft-notice__stamp">Draft</span>
+      <p class="draft-notice__text">
+        Work in progress — not for circulation. Content, images, and rights clearances are still
+        being checked.
+      </p>
+    </div>
 
     <script>
       // Scroll-triggered animations
@@ -81,5 +92,68 @@ const socialImage = new URL(withBase(image), Astro.site).href;
   #main-content {
     min-height: 100vh;
     padding-top: 80px; /* Account for fixed nav */
+  }
+
+  /* Clear the fixed draft notice so it never covers the end of the footer.
+     Sized for the two-line wrap the notice takes on narrow viewports. */
+  body {
+    padding-bottom: 5rem;
+  }
+</style>
+
+<style>
+  .draft-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    padding: 0.6rem var(--space-md);
+    background: var(--color-espresso);
+    border-top: 2px solid var(--color-rust);
+    text-align: center;
+  }
+
+  .draft-notice__stamp {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-cream);
+    border: 1px solid var(--color-rust);
+    padding: 0.15em 0.6em;
+    flex: none;
+  }
+
+  .draft-notice__text {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--color-sepia);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  @media (max-width: 600px) {
+    .draft-notice {
+      gap: 0.4rem;
+      padding: 0.5rem var(--space-sm);
+    }
+
+    .draft-notice__text {
+      font-size: 0.6875rem;
+    }
+  }
+
+  @media print {
+    .draft-notice {
+      position: static;
+    }
   }
 </style>
