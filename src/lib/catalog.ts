@@ -121,6 +121,28 @@ export async function getItemPayloads(): Promise<ItemPayload[]> {
   return payloads.sort((a, b) => a.sortYear - b.sortYear);
 }
 
+/**
+ * The credit line for a single figure, keyed by the author's own `Fig` number.
+ * Both narrative pages show an archival photograph outside the item catalog —
+ * the home page hero and the lead figure on The Space — and the credit they
+ * print has to stay the spreadsheet's, not a copy that drifts from it.
+ * Returns null while a row's credit line is still blank.
+ */
+export async function getFigureCredit(figId: string): Promise<string | null> {
+  const items = await getCollection('items');
+  const item = items.find((entry) => entry.data.figId === figId);
+  if (!item) return null;
+
+  const creator = item.data.creator.trim();
+  const source = item.data.source.trim();
+  // "unknown" is how the spreadsheet records an unidentified photographer;
+  // printing it as a credit would say less than saying nothing.
+  const parts = [creator.toLowerCase() === 'unknown' ? '' : creator, source]
+    .map((part) => part.replace(/\.\s*$/, ''))
+    .filter(Boolean);
+  return parts.length ? `${parts.join('. ')}.` : null;
+}
+
 export function companyLabel(slug: string): string {
   return COMPANIES[slug as keyof typeof COMPANIES] ?? slug;
 }

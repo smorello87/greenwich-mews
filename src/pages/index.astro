@@ -4,12 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import StorySection from '../components/StorySection.astro';
 import narrativeData from '../data/narrative.json';
 import { narrativeImage } from '../lib/images';
+import { getFigureCredit } from '../lib/catalog';
 import { withBase } from '../lib/url';
 
 const hero = narrativeData.find(s => s.type === 'hero');
 const sections = narrativeData.filter(s => s.type === 'section');
 const cta = narrativeData.find(s => s.type === 'cta');
 const heroImage = hero?.image ? await narrativeImage(hero.image) : null;
+const heroCredit = await getFigureCredit('Fig1');
 const sectionImages = await Promise.all(
   sections.map((s) => (s.image ? narrativeImage(s.image) : null))
 );
@@ -52,6 +54,8 @@ const sectionImages = await Promise.all(
         <div class="hero__scroll-line"></div>
       </div>
     </div>
+
+    {heroCredit && <p class="hero__credit">{heroCredit}</p>}
 
     <div class="hero__film-strip" aria-hidden="true">
       <div class="hero__film-holes"></div>
@@ -136,6 +140,20 @@ const sectionImages = await Promise.all(
     text-align: center;
     padding: var(--space-xl) var(--space-md);
     max-width: 900px;
+  }
+
+  .hero__credit {
+    position: absolute;
+    z-index: 1;
+    right: var(--space-md);
+    bottom: var(--space-sm);
+    max-width: 40ch;
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1.6;
+    color: var(--color-parchment);
+    opacity: 0.65;
   }
 
   .hero__badge {

@@ -3,9 +3,11 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlanCard from '../components/PlanCard.astro';
 import { narrativeImage, itemImage } from '../lib/images';
+import { getFigureCredit } from '../lib/catalog';
 import { withBase } from '../lib/url';
 
 const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
+const leadCredit = await getFigureCredit('Fig2');
 
 // The two Municipal Archives sheets, each scanned front and back.
 const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
@@ -43,6 +45,7 @@ const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
           The Greenwich Mews Theatre entrance on West 13th Street, c.&nbsp;1964, with a banner for
           Langston Hughes's <em>Jerico-Jim Crow</em>.
         </figcaption>
+        {leadCredit && <p class="lead-figure__credit">{leadCredit}</p>}
       </figure>
     </div>
   </section>
@@ -284,6 +287,17 @@ const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
     line-height: 1.6;
     color: var(--color-tobacco);
     margin-top: var(--space-sm);
+    max-width: 60ch;
+  }
+
+  .lead-figure__credit {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.7;
+    color: var(--color-tobacco);
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-sepia);
     max-width: 60ch;
   }
 

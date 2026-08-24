@@ -23,9 +23,9 @@
     "title": "The Village Presbyterian Church exterior, c. 1964",
     "image": "fig02.jpg",
     "caption": "The Village Presbyterian Church exterior, c. 1964",
-    "creator": "",
+    "creator": "unknown",
     "date": "1964",
-    "source": "",
+    "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
     "rights": "Yes",
     "tags": [
       "space"
@@ -33,19 +33,17 @@
     "people": [],
     "contributors": [],
     "productions": [],
-    "needs": [
-      "credit line"
-    ]
+    "needs": []
   },
   {
     "id": "fig03",
     "figId": "Fig3",
-    "title": "Street Map, 1940s - useful?",
+    "title": "Street View, 1940s",
     "image": null,
-    "caption": "Street Map, 1940s - useful?",
-    "creator": "",
+    "caption": "Street View, 1940s",
+    "creator": "NYC Department of Records",
     "date": "1940s",
-    "source": "Public",
+    "source": "https://1940s.nyc",
     "rights": "",
     "tags": [
       "space"
@@ -55,7 +53,6 @@
     "productions": [],
     "needs": [
       "image file",
-      "credit line",
       "rights status"
     ]
   },
@@ -85,7 +82,7 @@
     "title": "Rev. Stitt and Rabbi Block smiling in the church library",
     "image": "fig05.jpg",
     "caption": "Rev. Stitt and Rabbi Block smiling in the church library.",
-    "creator": "",
+    "creator": "unknown",
     "date": "",
     "source": "Photo Courtesy of the American Jewish Historical Society, New York. From the Irving J. Block Papers (P-867).",
     "rights": "",
@@ -739,7 +736,7 @@
     "image": null,
     "caption": "Jericho-Jim Crow Program",
     "creator": "",
-    "date": "",
+    "date": "1964",
     "source": "Billy Rose Theatre Division, The New York Public Library. \"Program for Jerico-Jim Crow\" The New York Public Library Digital Collections. 1964. https://digitalcollections.nypl.org/items/babf77e0-8e4b-013d-7034-0242ac110004",
     "rights": "",
     "tags": [
@@ -752,7 +749,6 @@
     "needs": [
       "production link (ran in both 1964 and 1968 - which production?)",
       "image file",
-      "date",
       "rights status"
     ]
   },
@@ -763,7 +759,7 @@
     "image": null,
     "caption": "Jericho-Jim Crow program (my photo) T-PRG",
     "creator": "",
-    "date": "",
+    "date": "1964",
     "source": "unknown",
     "rights": "",
     "tags": [
@@ -776,7 +772,6 @@
     "needs": [
       "production link (ran in both 1964 and 1968 - which production?)",
       "image file",
-      "date",
       "credit line",
       "rights status"
     ]
