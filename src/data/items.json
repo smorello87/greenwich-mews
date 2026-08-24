@@ -39,7 +39,7 @@
     "id": "fig03",
     "figId": "Fig3",
     "title": "Street View, 1940s",
-    "image": null,
+    "image": "fig03.jpg",
     "caption": "Street View, 1940s",
     "creator": "NYC Department of Records",
     "date": "1940s",
@@ -52,7 +52,6 @@
     "contributors": [],
     "productions": [],
     "needs": [
-      "image file",
       "rights status"
     ]
   },
@@ -60,7 +59,7 @@
     "id": "fig04",
     "figId": "Fig4",
     "title": "Rev. Jesse Stitt and Rabbi Irving Block outside of the church. Photo by…",
-    "image": null,
+    "image": "fig04.jpg",
     "caption": "Rev. Jesse Stitt and Rabbi Irving Block outside of the church. Photo by Ben Ross.",
     "creator": "Ben Ross",
     "date": "1969 (estimated; published Nov 9, 1969 in Parade)",
@@ -72,9 +71,7 @@
     "people": [],
     "contributors": [],
     "productions": [],
-    "needs": [
-      "image file"
-    ]
+    "needs": []
   },
   {
     "id": "fig05",
@@ -516,7 +513,7 @@
     "id": "fig27",
     "figId": "Fig27",
     "title": "Stella Holt and Langston Hughes Memorial Dedication Program, 1968",
-    "image": null,
+    "image": "fig27.jpg",
     "caption": "Stella Holt and Langston Hughes Memorial Dedication Program, 1968.",
     "creator": "",
     "date": "",
@@ -533,7 +530,6 @@
     "contributors": [],
     "productions": [],
     "needs": [
-      "image file",
       "date"
     ]
   },
@@ -541,7 +537,7 @@
     "id": "fig28",
     "figId": "Fig28",
     "title": "Life is a Dream (La Vida es Sueño), 1971",
-    "image": null,
+    "image": "fig28.jpg",
     "caption": "Life is a Dream (La Vida es Sueño), 1971.",
     "creator": "",
     "date": "",
@@ -556,7 +552,6 @@
       "life-is-a-dream-la-vida-es-sueno-1971"
     ],
     "needs": [
-      "image file",
       "date",
       "rights status"
     ]
