@@ -97,10 +97,12 @@ productions that now have one and featured four that rendered empty.
 
 Regenerate this list any time with `build.py --report`.
 
-- **`Fig8` is used twice** — once for the *Courageous One* stage shot and once
-  for a pair of altar photographs. Only one `Fig8` master exists (the stage
-  shot), so the altar photographs have neither a number nor a file. The second
-  row is skipped and reported.
+- ~~**`Fig8` is used twice**~~ — *settled.* The second `Fig8` was an old row
+  the author meant to delete; she has cleared the number, so the one `Fig8`
+  master (the *Courageous One* stage shot) is the correct claimant. The altar
+  photographs are now an unnumbered row, skipped like any other. Note they
+  appear **twice** in the spreadsheet, both unnumbered — numbering one and
+  forgetting the other would bring this back.
 - **`Folder12` is one row for four scans** — two drawings, each shot front and
   back. Only the fronts become catalog items, `folder12a` (cyanotype) and
   `folder12b` (pencil original); the versos are converted as
@@ -108,8 +110,14 @@ Regenerate this list any time with `build.py --report`.
   each sheet as a card you can turn over. They carry no drawing but are not
   blank: the Department of Buildings approval stamps and the block/lot
   annotations are on them. The row still wants splitting.
-- **`Jericho-Jim Crow` ran in both 1964 and 1968**, so `Fig36`/`Fig37` cannot be
-  linked to a production without a year.
+- ~~**`Jericho-Jim Crow` ran in both 1964 and 1968**~~ — *settled.* The 1968
+  staging was a benefit revival mounted after Langston Hughes died; the author
+  expects the materials to pertain to the original, so 1964 is the default for
+  this title (`AMBIGUOUS_DEFAULTS`). It is only a fallback: a row whose own
+  Date names a single year is linked by that year instead, so an item that
+  really does belong to the revival cannot be filed under 1964 by default.
+  `Fig36` and `Fig37` both carry 1964 themselves, and `Fig36`'s NYPL credit
+  line dates it independently, so both resolve on their own evidence.
 - **`Holy Moses` (`Fig46`) is not in the appendix at all** — either the
   production is missing from it or the figure is labelled with a working title.
 - **Seven numbered rows have no master yet**: Fig3, Fig4, Fig27, Fig28, Fig36,

@@ -51,8 +51,19 @@ TITLE_ALIASES = {
 # Titles that legitimately match more than one production, or none at all.
 # Left unlinked on purpose -- resolving them needs the author, not a guess.
 NEEDS_AUTHOR = {
-    "jericho-jim crow": "ran in both 1964 and 1968 - which production?",
     "holy moses": "no production of this name in the appendix",
+}
+
+# Titles the appendix carries more than once, where the author has named which
+# staging her materials belong to. The row's own Date still wins when it picks
+# out a single year -- this is only the fallback for a row that has no usable
+# date, so a genuinely later item cannot be silently misfiled under the default.
+#
+# Jericho-Jim Crow: the 1968 staging was a benefit revival mounted after
+# Langston Hughes died; the author expects the materials to pertain to the
+# original 1964 production.
+AMBIGUOUS_DEFAULTS = {
+    "jericho-jim crow": 1964,
 }
 
 MEDIA_TAGS = [
@@ -65,6 +76,17 @@ MEDIA_TAGS = [
     ("plan", r"\bbuilding plans|seating diagram\b"),
     ("portrait", r"\bportrait|headshot\b"),
 ]
+
+
+def year_of(value: str) -> int | None:
+    """The single year a Date cell names, or None if it names none or several.
+
+    The cells are free text -- "1964", "1940s", "1969 (estimated; published
+    Nov 9, 1969 in Parade)". A cell naming two different years is treated as
+    no answer rather than picking one.
+    """
+    years = {int(y) for y in re.findall(r"\b(?:18|19|20)\d{2}\b", value)}
+    return years.pop() if len(years) == 1 else None
 
 
 def slugify(value: str) -> str:
@@ -145,8 +167,10 @@ def main() -> int:
     people_by_name = {norm(p["name"]): p["id"] for p in people}
     contributors = contributor_index(productions)
     productions_by_title: dict[str, list[str]] = {}
+    production_year: dict[str, int] = {}
     for prod in productions:
         productions_by_title.setdefault(norm(prod["title"]), []).append(prod["id"])
+        production_year[prod["id"]] = prod["year"]
 
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.reader(handle))[1:]  # drop header
@@ -247,7 +271,19 @@ def main() -> int:
                     if found and len(found) == 1:
                         linked_productions.append(found[0])
                     elif found:
-                        needs.append(f"production link (“{title}” matches {len(found)} productions)")
+                        year = year_of(row[DATE])
+                        if year is None:
+                            year = AMBIGUOUS_DEFAULTS.get(key)
+                        picked = [i for i in found if production_year.get(i) == year]
+                        if len(picked) == 1:
+                            linked_productions.append(picked[0])
+                        else:
+                            years = ", ".join(
+                                str(production_year[i]) for i in sorted(found, key=lambda i: production_year[i])
+                            )
+                            needs.append(
+                                f"production link (“{title}” ran in {years} - which production?)"
+                            )
                     else:
                         needs.append(f"production link (“{title}” not in the appendix)")
                     continue
