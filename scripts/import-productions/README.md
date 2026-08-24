@@ -39,10 +39,17 @@ Answers given after the first pass, now encoded in `build.py`:
 - **Playwright fallbacks** — all four stand as filled. The Mikado is billed
   **W.S. Gilbert**, not William Schwenck Gilbert, with Sullivan on music and
   Gilbert on libretto.
+- **George Bernard Shaw** — the appendix bills him in full twice and as
+  "Bernard Shaw" once, on `An Evening with Shaw` (1955); the author confirms
+  the full form throughout. Because the short form is a *substring* of the
+  long one, this fix lives in `NAME_FIXES_RE`, not `NAME_FIXES` — a plain
+  replace would compound the two correct entries into "George George Bernard
+  Shaw" on every run.
 - **Preferred spellings**: Anne Fielding, Frances Drucker, L.D. Clements, James
   Gore, Manolo de Orellana, Thomas S. Vasiloff, Antoinette Kray (no "Toni"),
   and **R. Graham Brown** for every billing of a man who changed his stage name
-  repeatedly. David Lucas is provisional.
+  repeatedly — the author confirms this against his archives and has corrected
+  her own draft to match. David Lucas is provisional.
 - **Jericho-Jim Crow** — the programs drop the "h"; the published spelling wins,
   for the 1964 production and the 1968 revival alike.
 - **Harriet Bailin** is the correct spelling in `Carricknabauna` (1968).

@@ -280,9 +280,19 @@ def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", text).strip("-")
 
 
+# Fixes whose "wrong" form is a substring of the right one, so a plain
+# replace would compound on every run. The appendix bills him "George Bernard
+# Shaw" twice and "Bernard Shaw" once; the author confirms the full form.
+NAME_FIXES_RE = [
+    (re.compile(r"(?<!George )\bBernard Shaw\b"), "George Bernard Shaw"),
+]
+
+
 def fix_names(value):
     for wrong, right in NAME_FIXES.items():
         value = value.replace(wrong, right)
+    for pattern, right in NAME_FIXES_RE:
+        value = pattern.sub(right, value)
     pair = AND_PAIR.match(value)
     return f"{pair.group(1)}, {pair.group(2)}" if pair else value
 
