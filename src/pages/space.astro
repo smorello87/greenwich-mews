@@ -9,6 +9,13 @@ import { withBase } from '../lib/url';
 const leadImage = await narrativeImage('fig02-mews-entrance-1964.jpg');
 const leadCredit = await getFigureCredit('Fig2');
 
+// A hand crop of Fig3, which is a screenshot pairing a tax photograph with the
+// land-use plate. Only the plate earns a place here: the page already carries
+// two photographs of this same portico. The full screenshot stays in the
+// Archive as `fig03.jpg`.
+const blockMap = await itemImage('fig03-map.jpg');
+const blockMapCredit = await getFigureCredit('Fig3');
+
 // The two Municipal Archives sheets, each scanned front and back.
 const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
   itemImage('folder12a.jpg'),
@@ -63,6 +70,25 @@ const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
           Presbyterian in the 1950s.
         </p>
       </div>
+
+      <figure class="block-map fade-in">
+        <div class="img-frame block-map__frame">
+          <Image
+            src={blockMap}
+            alt="A 1940s land-use plate of the block. Lots are washed pink for brick construction, with lot numbers and frontages inked on each. The church parcel on the north side of West 13th Street is marked and labelled Greenwich Pres. Ch."
+            widths={[456, 912]}
+            sizes="(max-width: 700px) 100vw, 700px"
+          />
+        </div>
+        <figcaption class="block-map__caption">
+          The same block on the city's land-use plate of the 1940s. The marked lot on the north
+          side of West 13th Street is labelled <em>Greenwich Pres. Ch.</em> — the name the
+          congregation carried before the downtown mergers made it the Village Presbyterian.
+          Lofts run back along the avenue, and the Railways Express Agency yard occupies much of
+          the south side.
+        </figcaption>
+        {blockMapCredit && <p class="block-map__credit">{blockMapCredit}</p>}
+      </figure>
     </div>
   </section>
 
@@ -299,6 +325,34 @@ const [planAFront, planABack, planBFront, planBBack] = await Promise.all([
     padding-top: var(--space-sm);
     border-top: 1px solid var(--color-sepia);
     max-width: 60ch;
+  }
+
+  /* Block map */
+  .block-map {
+    margin: var(--space-lg) auto 0;
+    max-width: 700px;
+  }
+
+  .block-map__frame {
+    aspect-ratio: 912 / 991;
+  }
+
+  .block-map__caption {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-tobacco);
+    margin-top: var(--space-sm);
+  }
+
+  .block-map__credit {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.7;
+    color: var(--color-tobacco);
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-sepia);
   }
 
   /* Plans */
